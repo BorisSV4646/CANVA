@@ -1,0 +1,26 @@
+{
+  "name": "canva",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BorisSV4646/CANVA.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BorisSV4646/CANVA/issues"
+  },
+  "homepage": "https://github.com/BorisSV4646/CANVA#readme",
+  "dependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+    "@openzeppelin/contracts": "^4.9.1",
+    "dotenv": "^16.1.4",
+    "hardhat": "^2.14.0"
+  }
+}
