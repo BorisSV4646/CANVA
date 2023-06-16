@@ -7,39 +7,109 @@ async function main() {
 
   console.log("Deploying contracts with the account:", await deployer.address);
 
-  // console.log("Account balance:", (await deployer.getBalance()).toString());
-
-  // const canva = await hre.ethers.deployContract("CanvaToken", [
-  // "CanvaToken",
-  // "CV",
-  // "0x176d7b70b643688d528ac0387a8e9b609cae5d028b4165dc095b886044086d2f",
-  // 30,
-  // ]);
-
-  // await canva.waitForDeployment();
-
   const canva = await ethers.getContractFactory("CanvaToken", deployer);
 
-  const canvaERC20 = await canva.deploy(
+  const CanvaToken = await canva.deploy(
     "CanvaToken",
     "CV",
     "0xDbfEEa0fc1F1F2f43F7DbaD7827Cccad8C47c337",
-    30
+    30,
+    deployer.address
   );
 
-  await canvaERC20.deployed(
+  const finalDeployCanva = await CanvaToken.deployed(
     "CanvaToken",
     "CV",
     "0xDbfEEa0fc1F1F2f43F7DbaD7827Cccad8C47c337",
-    30
+    30,
+    deployer.address
   );
 
-  console.log("Token ERC20 address:", canvaERC20.address);
+  console.log("Token ERC20 address:", CanvaToken.address);
 
-  // saveForFront({ canvaERC20: canva });
+  const blocStart = await ethers.provider.getBlock(finalDeployCanva.blockHash);
+
+  CanvaToken.setTargetInfo(0, [
+    310000000,
+    0,
+    blocStart.timestamp,
+    348350,
+    true,
+  ]);
+  CanvaToken.setTargetInfo(1, [
+    100000000,
+    0,
+    blocStart.timestamp,
+    112350,
+    true,
+  ]);
+  CanvaToken.setTargetInfo(2, [
+    250000000,
+    0,
+    blocStart.timestamp,
+    280890,
+    true,
+  ]);
+  CanvaToken.setTargetInfo(3, [70000000, 70000000, 0, 0, true]);
+  CanvaToken.setTargetInfo(4, [
+    150000000,
+    0,
+    blocStart.timestamp,
+    168530,
+    true,
+  ]);
+  CanvaToken.setTargetInfo(5, [80000000, 0, blocStart.timestamp, 89880, true]);
+  CanvaToken.setTargetInfo(6, [30000000, 30000000, 0, 0, true]);
+  CanvaToken.setTargetInfo(7, [10000000, 10000000, 0, 0, true]);
+
+  console.log("All targets set");
+
+  const burn = await ethers.getContractFactory("BurnTokens", deployer);
+
+  const BurnTokens = await burn.deploy();
+
+  await BurnTokens.deployed();
+
+  console.log("Contract BurnTokens address:", BurnTokens.address);
+
+  const factory = await ethers.getContractFactory("StakingFactory", deployer);
+
+  const StakingFactory = await factory.deploy();
+
+  const finalDeploy = await StakingFactory.deployed();
+
+  console.log("StakingFactory address:", StakingFactory.address);
+
+  const block = await ethers.provider.getBlock(finalDeploy.blockHash);
+  const endblock = block + (365 * 24 * 60 * 60) / 12;
+
+  StakingFactory.deployPool(
+    CanvaToken.address,
+    CanvaToken.address,
+    8,
+    block,
+    endblock,
+    0,
+    deployer.address,
+    deployer.address
+  );
+
+  const addressPool = await StakingFactory.allPools(0);
+
+  console.log("Pool CANVA earn CANVA address:", addressPool);
+
+  CanvaToken.setWhitelistAddress(addressPool, true);
+
+  console.log("Pool add to whitelist CanvaToken");
+
+  // saveForFront({
+  //   CanvaToken: CanvaToken,
+  //   BurnTokens: BurnTokens,
+  //   StakingFactory: StakingFactory,
+  // });
 }
 
-async function saveForFront(contracts) {
+function saveForFront(contracts) {
   const contractsDir = path.join(__dirname, "../src/contracts");
 
   if (!fs.existsSync(contractsDir)) {

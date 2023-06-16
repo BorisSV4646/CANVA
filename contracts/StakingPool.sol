@@ -31,10 +31,10 @@ contract StakingPool is Ownable, ReentrancyGuard {
     // Accrued token per share
     uint256 public accTokenPerShare;
 
-    // The block number when EVX mining ends.
+    // The block number when token mining ends.
     uint256 public bonusEndBlock;
 
-    // The block number when EVX mining starts.
+    // The block number when token mining starts.
     uint256 public startBlock;
 
     // The block number of the last pool update
@@ -43,7 +43,7 @@ contract StakingPool is Ownable, ReentrancyGuard {
     // The pool limit (0 if none)
     uint256 public poolLimitPerUser;
 
-    // EVX tokens created per block.
+    // reward tokens created per block.
     uint256 public rewardPerBlock;
 
     // The precision factor
@@ -56,16 +56,16 @@ contract StakingPool is Ownable, ReentrancyGuard {
     ERC20 public stakedToken;
 
     // Period in seconds with increased fee on unstake
-    uint256 public increasedFeePeriod = 15 days;
+    uint256 public increasedFeePeriod = 40 days;
 
-    // Early unstake fee (when increasedFeePeriod is not passed) is 10% by default. 1000000 = 100%.
-    uint256 public earlyUnstakeFee = 100000;
+    // Early unstake fee (when increasedFeePeriod is not passed) is 20% by default. 1000000 = 100%.
+    uint256 public earlyUnstakeFee = 200000;
 
-    // Unstake fee (when increasedFeePeriod is passed) is 0.99% by default. 1000000 = 100%.
-    uint256 public unstakeFee = 9900;
+    // Unstake fee (when increasedFeePeriod is passed) is 1% by default. 1000000 = 100%.
+    uint256 public unstakeFee = 10000;
 
-    // Harvest fee is 1.99% by default. 1000000 = 100%.
-    uint256 public harvestFee = 19900;
+    // Harvest fee is 3% by default. 1000000 = 100%.
+    uint256 public harvestFee = 30000;
 
     // Fee precision
     uint256 constant FEE_PRECISION = 1000000;
@@ -254,12 +254,12 @@ contract StakingPool is Ownable, ReentrancyGuard {
             PRECISION_FACTOR
         );
 
-        // ReferralProgram(referralProgramAddress).accrue(
-        //     ReferralProgram.SourceRefContract.Staking,
-        //     pending,
-        //     _parentRefAddress,
-        //     msg.sender
-        // );
+        ReferralProgram(referralProgramAddress).accrue(
+            ReferralProgram.SourceRefContract.Staking,
+            pending,
+            _parentRefAddress,
+            msg.sender
+        );
 
         emit Withdraw(msg.sender, _amount);
     }
@@ -316,9 +316,18 @@ contract StakingPool is Ownable, ReentrancyGuard {
     /*
      * @notice Stop rewards
      * @dev Only callable by owner
+     * @param _newBonusEndBlock: a new end block after being paused
+     * @param _pause: if you need a pause, then it is true, if you remove it from the pause, then it is false
      */
-    function stopReward() external onlyOwner {
-        bonusEndBlock = block.number;
+    function pauseReward(
+        uint256 _newBonusEndBlock,
+        bool _pause
+    ) external onlyOwner {
+        if (_pause) {
+            bonusEndBlock = block.number;
+        } else {
+            bonusEndBlock = _newBonusEndBlock;
+        }
     }
 
     /*
@@ -414,9 +423,9 @@ contract StakingPool is Ownable, ReentrancyGuard {
         uint256 stakedTokenSupply = stakedToken.balanceOf(address(this));
         if (block.number > lastRewardBlock && stakedTokenSupply != 0) {
             uint256 multiplier = _getMultiplier(lastRewardBlock, block.number);
-            uint256 evxReward = multiplier.mul(rewardPerBlock);
+            uint256 tokenReward = multiplier.mul(rewardPerBlock);
             uint256 adjustedTokenPerShare = accTokenPerShare.add(
-                evxReward.mul(PRECISION_FACTOR).div(stakedTokenSupply)
+                tokenReward.mul(PRECISION_FACTOR).div(stakedTokenSupply)
             );
             return
                 user
@@ -448,14 +457,14 @@ contract StakingPool is Ownable, ReentrancyGuard {
         }
 
         uint256 multiplier = _getMultiplier(lastRewardBlock, block.number);
-        uint256 evxReward = multiplier.mul(rewardPerBlock);
+        uint256 tokenReward = multiplier.mul(rewardPerBlock);
         rewardToken.mintByContract(
             address(this),
-            evxReward,
-            CanvaToken.Target.YIELD_FARMING_AND_STAKING
+            tokenReward,
+            CanvaToken.Target.STAKING
         );
         accTokenPerShare = accTokenPerShare.add(
-            evxReward.mul(PRECISION_FACTOR).div(stakedTokenSupply)
+            tokenReward.mul(PRECISION_FACTOR).div(stakedTokenSupply)
         );
         lastRewardBlock = block.number;
     }

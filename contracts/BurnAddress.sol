@@ -10,11 +10,15 @@ import "./CanvaToken.sol";
 contract BurnTokens is Ownable {
     // contract addresses that can burn tokens
     mapping(address => bool) public whitelist;
+
+    // how many tokens already burned
+    uint public burnedAmount;
+
     CanvaToken _burnToken;
 
     modifier onlyOwnerAndWhitelist() {
         require(
-            whitelist(msg.sender) || msg.sender == owner(),
+            whitelist[msg.sender] || msg.sender == owner(),
             "BurnTokens: you don't have rights"
         );
         _;
@@ -37,6 +41,7 @@ contract BurnTokens is Ownable {
      * @param _amount number of tokens
      */
     function burn(uint256 _amount) external onlyOwnerAndWhitelist {
+        burnedAmount += _amount;
         _burnToken._burn(address(this), _amount);
     }
 
@@ -49,6 +54,7 @@ contract BurnTokens is Ownable {
         address _to,
         uint256 _amount
     ) external onlyOwnerAndWhitelist {
+        burnedAmount += _amount;
         _burnToken.transfer(_to, _amount);
     }
 }
