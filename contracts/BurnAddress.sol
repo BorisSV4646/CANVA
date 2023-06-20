@@ -14,7 +14,11 @@ contract BurnTokens is Ownable {
     // how many tokens already burned
     uint public burnedAmount;
 
-    CanvaToken _burnToken;
+    CanvaToken public burnToken;
+
+    constructor(CanvaToken _burnToken) {
+        burnToken = _burnToken;
+    }
 
     modifier onlyOwnerAndWhitelist() {
         require(
@@ -42,7 +46,7 @@ contract BurnTokens is Ownable {
      */
     function burn(uint256 _amount) external onlyOwnerAndWhitelist {
         burnedAmount += _amount;
-        _burnToken._burn(address(this), _amount);
+        burnToken._burn(address(this), _amount);
     }
 
     /**
@@ -50,11 +54,11 @@ contract BurnTokens is Ownable {
      * @param _amount number of tokens
      * @param _to to whom to transfer tokens
      */
-    function tracnsfer(
+    function transfer(
         address _to,
         uint256 _amount
     ) external onlyOwnerAndWhitelist {
         burnedAmount += _amount;
-        _burnToken.transfer(_to, _amount);
+        burnToken.transfer(_to, _amount);
     }
 }

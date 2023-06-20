@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.4.22 <0.9.0;
+pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
@@ -8,8 +8,7 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 
 import "./CanvaToken.sol";
-
-// import "./ReferralProgram.sol";
+import "./ReferralProgram.sol";
 
 contract StakingPool is Ownable, ReentrancyGuard {
     using SafeMath for uint256;
@@ -21,6 +20,9 @@ contract StakingPool is Ownable, ReentrancyGuard {
 
     // address of the ref contract
     address public referralProgramAddress;
+
+    // address of the admin
+    address private admin;
 
     // Whether a limit is set for users
     bool public hasUserLimit;
@@ -66,6 +68,9 @@ contract StakingPool is Ownable, ReentrancyGuard {
 
     // Harvest fee is 3% by default. 1000000 = 100%.
     uint256 public harvestFee = 30000;
+
+    // Referal fee is 7% by default. 1000000 = 100%.
+    uint256 public referalFee = 70000;
 
     // Fee precision
     uint256 constant FEE_PRECISION = 1000000;
@@ -141,6 +146,8 @@ contract StakingPool is Ownable, ReentrancyGuard {
         // Set the lastRewardBlock as the startBlock
         lastRewardBlock = startBlock;
 
+        admin = _admin;
+
         // Transfer ownership to the admin address who becomes owner of the contract
         transferOwnership(_admin);
     }
@@ -149,8 +156,19 @@ contract StakingPool is Ownable, ReentrancyGuard {
      * @notice Deposit staked tokens and collect reward tokens (if any)
      * @param _amount: amount to withdraw (in rewardToken)
      */
-    function deposit(uint256 _amount) external nonReentrant {
+    function deposit(
+        uint256 _amount,
+        address _recipient
+    ) external nonReentrant {
         UserInfo storage user = userInfo[msg.sender];
+
+        address recipient;
+
+        if (_recipient == address(0)) {
+            recipient = admin;
+        } else {
+            recipient = _recipient;
+        }
 
         if (hasUserLimit) {
             require(
@@ -171,12 +189,20 @@ contract StakingPool is Ownable, ReentrancyGuard {
             if (pending > 0) {
                 // calculate fee
                 uint256 feeAmount = pending.mul(harvestFee).div(FEE_PRECISION);
+                // calculate reef reward
+                uint256 reefReward = pending.mul(referalFee).div(FEE_PRECISION);
                 // send fees to burn address
                 rewardToken.safeTransfer(rewardToken.burnAddress(), feeAmount);
                 // send rewards to user
                 rewardToken.safeTransfer(
                     address(msg.sender),
-                    pending.sub(feeAmount)
+                    pending.sub(feeAmount).sub(reefReward)
+                );
+                // update referal info
+                ReferralProgram(referralProgramAddress).updateNexttDeposit(
+                    recipient,
+                    _amount,
+                    reefReward
                 );
             }
         }
@@ -192,6 +218,13 @@ contract StakingPool is Ownable, ReentrancyGuard {
             );
         }
 
+        // set referal info
+        ReferralProgram(referralProgramAddress).updateFirstDeposit(
+            recipient,
+            msg.sender,
+            _amount
+        );
+
         user.rewardDebt = user.amount.mul(accTokenPerShare).div(
             PRECISION_FACTOR
         );
@@ -204,12 +237,12 @@ contract StakingPool is Ownable, ReentrancyGuard {
      * @param _amount: amount to withdraw (in rewardToken)
      * @param _parentRefAddress parent ref address
      */
-    function withdraw(
-        uint256 _amount,
-        address _parentRefAddress
-    ) external nonReentrant {
+    function withdraw(uint256 _amount) external nonReentrant {
         UserInfo storage user = userInfo[msg.sender];
         require(user.amount >= _amount, "Amount to withdraw too high");
+
+        address recipient = ReferralProgram(referralProgramAddress)
+            .showBeneficiarInfo(msg.sender);
 
         _updatePool();
 
@@ -241,24 +274,26 @@ contract StakingPool is Ownable, ReentrancyGuard {
         if (pending > 0) {
             // calculate fee
             uint256 feeAmount = pending.mul(harvestFee).div(FEE_PRECISION);
+            // calculate reef reward
+            uint256 reefReward = pending.mul(referalFee).div(FEE_PRECISION);
             // send fees to burn address
             rewardToken.safeTransfer(rewardToken.burnAddress(), feeAmount);
             // send rewards to user
             rewardToken.safeTransfer(
                 address(msg.sender),
-                pending.sub(feeAmount)
+                pending.sub(feeAmount).sub(reefReward)
             );
         }
 
-        user.rewardDebt = user.amount.mul(accTokenPerShare).div(
-            PRECISION_FACTOR
+        // update referal info
+        ReferralProgram(referralProgramAddress).updateInfoWithdraw(
+            recipient,
+            _amount,
+            pending
         );
 
-        ReferralProgram(referralProgramAddress).accrue(
-            ReferralProgram.SourceRefContract.Staking,
-            pending,
-            _parentRefAddress,
-            msg.sender
+        user.rewardDebt = user.amount.mul(accTokenPerShare).div(
+            PRECISION_FACTOR
         );
 
         emit Withdraw(msg.sender, _amount);
@@ -418,7 +453,7 @@ contract StakingPool is Ownable, ReentrancyGuard {
      * @param _user: user address
      * @return Pending reward for a given user
      */
-    function pendingReward(address _user) external view returns (uint256) {
+    function pendingReward(address _user) public view returns (uint256) {
         UserInfo storage user = userInfo[_user];
         uint256 stakedTokenSupply = stakedToken.balanceOf(address(this));
         if (block.number > lastRewardBlock && stakedTokenSupply != 0) {
@@ -439,6 +474,50 @@ contract StakingPool is Ownable, ReentrancyGuard {
                     user.rewardDebt
                 );
         }
+    }
+
+    /*
+     * @notice The function of collecting rewards for staking
+     */
+    function harvestReward() external nonReentrant {
+        UserInfo storage user = userInfo[msg.sender];
+
+        address recipient = ReferralProgram(referralProgramAddress)
+            .showBeneficiarInfo(msg.sender);
+
+        _updatePool();
+
+        uint256 amountReward = user
+            .amount
+            .mul(accTokenPerShare)
+            .div(PRECISION_FACTOR)
+            .sub(user.rewardDebt);
+
+        if (amountReward > 0) {
+            // calculate fee
+            uint256 feeAmount = amountReward.mul(harvestFee).div(FEE_PRECISION);
+            // calculate reef reward
+            uint256 reefReward = amountReward.mul(referalFee).div(
+                FEE_PRECISION
+            );
+            // send fees to burn address
+            rewardToken.safeTransfer(rewardToken.burnAddress(), feeAmount);
+            // send rewards to user
+            rewardToken.safeTransfer(
+                address(msg.sender),
+                amountReward.sub(feeAmount).sub(reefReward)
+            );
+        }
+
+        // update referal info
+        ReferralProgram(referralProgramAddress).updateInfoHarvest(
+            recipient,
+            amountReward
+        );
+
+        user.rewardDebt = user.amount.mul(accTokenPerShare).div(
+            PRECISION_FACTOR
+        );
     }
 
     /*

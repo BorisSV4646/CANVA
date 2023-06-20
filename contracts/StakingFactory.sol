@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.4.22 <0.9.0;
+pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
@@ -11,10 +11,6 @@ contract StakingFactory is Ownable {
 
     // all pools addresses
     address[] public allPools;
-
-    constructor() {
-        //
-    }
 
     /**
      * @notice Returns all staking pools length
@@ -45,7 +41,6 @@ contract StakingFactory is Ownable {
         address _admin,
         address _referralProgramAddress
     ) external onlyOwner {
-        require(_stakedToken.totalSupply() >= 0);
         require(_rewardToken.totalSupply() >= 0);
 
         bytes memory bytecode = type(StakingPool).creationCode;
