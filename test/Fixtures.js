@@ -96,6 +96,8 @@ async function deployFixture() {
 
   CanvaToken.transfer(BurnTokens.address, 1000);
 
+  ReferralProgram.setPoolAdress(addressPool);
+
   return {
     deployer,
     otherAccount1,

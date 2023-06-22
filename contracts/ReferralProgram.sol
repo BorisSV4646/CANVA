@@ -4,10 +4,12 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
 import "./CanvaToken.sol";
+import "./StakingPool.sol";
 
-contract ReferralProgram is Ownable, AccessControl {
+contract ReferralProgram is Ownable, AccessControl, ReentrancyGuard {
     using SafeERC20 for CanvaToken;
 
     bytes32 public constant STAKING_CONTRACT_ROLE =
@@ -15,6 +17,9 @@ contract ReferralProgram is Ownable, AccessControl {
 
     // The reward token
     CanvaToken public rewardToken;
+
+    // The Pool address
+    StakingPool public poolCanva;
 
     // Referral and Beneficiary Information
     struct beneficiary {
@@ -33,6 +38,12 @@ contract ReferralProgram is Ownable, AccessControl {
     constructor(CanvaToken _rewardToken) {
         rewardToken = _rewardToken;
         _grantRole(DEFAULT_ADMIN_ROLE, owner());
+    }
+
+    function setPoolAdress(
+        StakingPool _poolCanva
+    ) external onlyRole(DEFAULT_ADMIN_ROLE) {
+        poolCanva = _poolCanva;
     }
 
     function grantStakerRole(
@@ -114,16 +125,24 @@ contract ReferralProgram is Ownable, AccessControl {
             .totalStakedReferalls -= _amountWithdraw;
     }
 
-    function claimRewards() external {
+    function claimRewards() external nonReentrant {
         require(
             beneficiaries[msg.sender].exists,
             "ReferralProgram: beneficiar not register"
+        );
+        require(
+            beneficiaries[msg.sender].unclaimReward > 0,
+            "ReferralProgram: not reward for claim"
         );
 
         uint256 amount = beneficiaries[msg.sender].unclaimReward;
 
         beneficiaries[msg.sender].unclaimReward = 0;
 
-        rewardToken.safeTransfer(address(msg.sender), amount);
+        rewardToken.safeTransferFrom(
+            address(poolCanva),
+            address(msg.sender),
+            amount
+        );
     }
 }

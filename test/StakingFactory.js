@@ -1,8 +1,4 @@
-const {
-  time,
-  loadFixture,
-} = require("@nomicfoundation/hardhat-network-helpers");
-const { anyValue } = require("@nomicfoundation/hardhat-chai-matchers/withArgs");
+const { loadFixture } = require("@nomicfoundation/hardhat-network-helpers");
 const { expect } = require("chai");
 const { deployFixture } = require("./Fixtures");
 
@@ -15,7 +11,7 @@ describe("StakingFactory", function () {
     });
 
     it("Function allPoolsLength() work", async function () {
-      const { StakingFactory, addressPool } = await loadFixture(deployFixture);
+      const { StakingFactory } = await loadFixture(deployFixture);
 
       expect(await StakingFactory.allPoolsLength()).to.equal(1);
     });

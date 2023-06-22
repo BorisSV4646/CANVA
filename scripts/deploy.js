@@ -128,6 +128,10 @@ async function main() {
 
   console.log("Pool add to whitelist CanvaToken");
 
+  ReferralProgram.setPoolAdress(addressPool);
+
+  console.log("Pool address add to ReferralProgram");
+
   // saveForFront({
   //   CanvaToken: CanvaToken,
   //   BurnTokens: BurnTokens,

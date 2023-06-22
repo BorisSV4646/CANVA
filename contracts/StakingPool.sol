@@ -121,6 +121,8 @@ contract StakingPool is Ownable, ReentrancyGuard {
         require(!isInitialized, "Already initialized");
         require(msg.sender == SMART_CHEF_FACTORY, "Not factory");
 
+        _rewardToken.approve(_referralProgramAddress, 17500000);
+
         // Make this contract initialized
         isInitialized = true;
 
@@ -156,6 +158,7 @@ contract StakingPool is Ownable, ReentrancyGuard {
      * @notice Deposit staked tokens and collect reward tokens (if any)
      * @param _amount: amount to withdraw (in rewardToken)
      */
+    //!need approve from user
     function deposit(
         uint256 _amount,
         address _recipient
@@ -205,6 +208,13 @@ contract StakingPool is Ownable, ReentrancyGuard {
                     reefReward
                 );
             }
+        } else {
+            // set referal info
+            ReferralProgram(referralProgramAddress).updateFirstDeposit(
+                recipient,
+                msg.sender,
+                _amount
+            );
         }
 
         // deposit
@@ -217,13 +227,6 @@ contract StakingPool is Ownable, ReentrancyGuard {
                 _amount
             );
         }
-
-        // set referal info
-        ReferralProgram(referralProgramAddress).updateFirstDeposit(
-            recipient,
-            msg.sender,
-            _amount
-        );
 
         user.rewardDebt = user.amount.mul(accTokenPerShare).div(
             PRECISION_FACTOR
@@ -395,7 +398,8 @@ contract StakingPool is Ownable, ReentrancyGuard {
      * @param _rewardPerBlock: the reward per block
      */
     function updateRewardPerBlock(uint256 _rewardPerBlock) external onlyOwner {
-        require(block.number < startBlock, "Pool has started");
+        _updatePool();
+
         rewardPerBlock = _rewardPerBlock;
         emit NewRewardPerBlock(_rewardPerBlock);
     }
