@@ -236,8 +236,9 @@ describe("StakingPool", function () {
     });
 
     it("User information is updated", async function () {
-      const { deployer, StakingPool, CanvaToken, otherAccount1 } =
-        await loadFixture(deployFixture);
+      const { deployer, StakingPool, CanvaToken } = await loadFixture(
+        deployFixture
+      );
 
       await mine(100);
 
@@ -258,13 +259,8 @@ describe("StakingPool", function () {
     });
 
     it("Referral information is updated", async function () {
-      const {
-        deployer,
-        StakingPool,
-        CanvaToken,
-        otherAccount1,
-        ReferralProgram,
-      } = await loadFixture(deployFixture);
+      const { deployer, StakingPool, CanvaToken, ReferralProgram } =
+        await loadFixture(deployFixture);
 
       await mine(100);
 
@@ -326,9 +322,262 @@ describe("StakingPool", function () {
   });
 
   describe("Function withdraw()", async function () {
+    async function deployNewFixture() {
+      const {
+        ReferralProgram,
+        CanvaToken,
+        addressPool,
+        otherAccount1,
+        otherAccount2,
+        StakingPool,
+        deployer,
+        BurnTokens,
+      } = await loadFixture(deployFixture);
+
+      CanvaToken.approve(StakingPool.address, 100);
+      const update = await StakingPool.deposit(100, deployer.address);
+
+      const block = await ethers.provider.getBlock(update.blockHash);
+
+      await mine(50);
+
+      return {
+        ReferralProgram,
+        otherAccount1,
+        StakingPool,
+        otherAccount2,
+        CanvaToken,
+        addressPool,
+        deployer,
+        update,
+        block,
+        BurnTokens,
+      };
+    }
+
     it("User information is updated", async function () {
-      const { deployer, StakingPool, CanvaToken, otherAccount1 } =
-        await loadFixture(deployFixture);
+      const { StakingPool, block } = await loadFixture(deployNewFixture);
+
+      const before = await StakingPool.accTokenPerShare();
+
+      const withDraw = await StakingPool.withdraw(50);
+
+      const blockWithdraw = await ethers.provider.getBlock(withDraw.blockHash);
+
+      const reward = (blockWithdraw.number - block.number) * 8;
+      const accTokenPerShare = before + (reward * 10 ** 12) / 100;
+      expect(await StakingPool.lastRewardBlock()).to.equal(
+        blockWithdraw.number
+      );
+      expect(await StakingPool.accTokenPerShare()).to.equal(accTokenPerShare);
+    });
+
+    it("Withdraw nad Harvest work correct", async function () {
+      const { deployer, StakingPool, CanvaToken, block, update, BurnTokens } =
+        await loadFixture(deployNewFixture);
+
+      const withDraw = await StakingPool.withdraw(50);
+      const user = await StakingPool.userInfo(deployer.address);
+      const accTokenPerShare = await StakingPool.accTokenPerShare();
+      const blockWithdraw = await ethers.provider.getBlock(withDraw.blockHash);
+
+      await expect(user.amount).to.equal(50);
+
+      const feeRate =
+        blockWithdraw.timestamp - block.timestamp >= 40 * 24 * 60 * 60
+          ? 10000
+          : 200000;
+      const feeAmount = (50 * feeRate) / 1000000;
+      const reward = (blockWithdraw.timestamp - block.timestamp) * 8;
+      const pending = (100 * accTokenPerShare) / 10 ** 12 - 0;
+      const feeAmount2 = (pending * 30000) / 1000000;
+      const feeReff = (pending * 70000) / 1000000;
+      const final = pending - Math.floor(feeAmount2) - Math.floor(feeReff);
+      await expect(withDraw).to.changeTokenBalances(
+        CanvaToken,
+        [StakingPool.address, deployer.address, BurnTokens.address],
+        [
+          -50 + Math.floor(feeReff),
+          50 - Math.floor(feeAmount) + final,
+          Math.floor(feeAmount) + Math.floor(feeAmount2),
+        ]
+      );
+
+      await expect(user.rewardDebt).to.equal(
+        (50 * accTokenPerShare) / 10 ** 12
+      );
+
+      await expect(withDraw)
+        .to.emit(StakingPool, "Withdraw")
+        .withArgs(deployer.address, 50);
+    });
+
+    it("Referral information is updated", async function () {
+      const { deployer, StakingPool, ReferralProgram } = await loadFixture(
+        deployNewFixture
+      );
+
+      await StakingPool.withdraw(50);
+
+      const beneficiaryInfo = await ReferralProgram.beneficiaryInfo(
+        deployer.address
+      );
+
+      expect(beneficiaryInfo.unclaimReward).to.equal(408);
+      expect(beneficiaryInfo.totalEarned).to.equal(408);
+      expect(beneficiaryInfo.totalStakedReferalls).to.equal(50);
+    });
+  });
+
+  describe("Another functions work correct", async function () {
+    async function deployNewFixture() {
+      const {
+        ReferralProgram,
+        CanvaToken,
+        addressPool,
+        otherAccount1,
+        otherAccount2,
+        StakingPool,
+        deployer,
+        BurnTokens,
+      } = await loadFixture(deployFixture);
+
+      CanvaToken.approve(StakingPool.address, 100);
+      const update = await StakingPool.deposit(100, deployer.address);
+
+      const block = await ethers.provider.getBlock(update.blockHash);
+
+      await mine(50);
+
+      return {
+        ReferralProgram,
+        otherAccount1,
+        StakingPool,
+        otherAccount2,
+        CanvaToken,
+        addressPool,
+        deployer,
+        update,
+        block,
+        BurnTokens,
+      };
+    }
+
+    it("Function emergencyWithdraw() work correct", async function () {
+      const { deployer, StakingPool, CanvaToken, ReferralProgram } =
+        await loadFixture(deployNewFixture);
+
+      const emergensyWothdraw = await StakingPool.emergencyWithdraw();
+
+      const user = await StakingPool.userInfo(deployer.address);
+
+      await expect(emergensyWothdraw).to.changeTokenBalances(
+        CanvaToken,
+        [StakingPool.address, deployer.address],
+        [-100, 100]
+      );
+
+      await expect(user.amount).to.equal(0);
+      await expect(user.rewardDebt).to.equal(0);
+
+      await expect(emergensyWothdraw)
+        .to.emit(StakingPool, "EmergencyWithdraw")
+        .withArgs(deployer.address, 100);
+
+      const beneficiaryInfo = await ReferralProgram.beneficiaryInfo(
+        deployer.address
+      );
+
+      expect(beneficiaryInfo.unclaimReward).to.equal(0);
+      expect(beneficiaryInfo.totalEarned).to.equal(0);
+      expect(beneficiaryInfo.totalStakedReferalls).to.equal(0);
+    });
+
+    it("Function pauseReward() work correct", async function () {
+      const { deployer, StakingPool, CanvaToken, ReferralProgram } =
+        await loadFixture(deployNewFixture);
+
+      const rewardBefore = await StakingPool.pendingReward(deployer.address);
+
+      const pause = await StakingPool.pauseReward(100, true);
+
+      await mine(150);
+
+      const rewardAfter = await StakingPool.pendingReward(deployer.address);
+
+      await expect(rewardBefore).to.equal(rewardAfter - 8);
+
+      const pauseOff = await StakingPool.pauseReward(1000, false);
+
+      await mine(150);
+
+      const rewardAfterOff = await StakingPool.pendingReward(deployer.address);
+
+      await expect(rewardAfter - 8).to.not.equal(rewardAfterOff);
+    });
+
+    it("Function updateRewardPerBlock() work correct", async function () {
+      const { deployer, StakingPool, CanvaToken, ReferralProgram } =
+        await loadFixture(deployNewFixture);
+
+      const rewardBefore = await StakingPool.pendingReward(deployer.address);
+
+      const updateReward = await StakingPool.updateRewardPerBlock(1);
+
+      await mine(100);
+
+      const rewardAfter = await StakingPool.pendingReward(deployer.address);
+
+      await expect(rewardBefore + 8 * 100).to.not.equal(rewardAfter);
+
+      await expect(updateReward)
+        .to.emit(StakingPool, "NewRewardPerBlock")
+        .withArgs(1);
+    });
+
+    it("Function harvestReward() work correct", async function () {
+      const {
+        deployer,
+        StakingPool,
+        CanvaToken,
+        ReferralProgram,
+        otherAccount1,
+        BurnTokens,
+      } = await loadFixture(deployNewFixture);
+
+      const newUser = await StakingPool.connect(otherAccount1);
+
+      await expect(newUser.harvestReward()).to.be.revertedWith(
+        "StakingPool: not rewards"
+      );
+
+      const reward = await StakingPool.pendingReward(deployer.address);
+      const feeAmount = (reward * 30000) / 1000000;
+      const feeReff = (reward * 70000) / 1000000;
+      const harvestReward = await StakingPool.harvestReward();
+
+      await expect(harvestReward).to.changeTokenBalances(
+        CanvaToken,
+        [StakingPool.address, deployer.address, BurnTokens.address],
+        [
+          Math.floor(feeReff) + 1,
+          reward - Math.floor(feeAmount) - Math.floor(feeReff) + 7,
+          Math.floor(feeAmount),
+        ]
+      );
+
+      const user = await StakingPool.userInfo(deployer.address);
+
+      await expect(user.rewardDebt).to.equal(
+        (100 * (await StakingPool.accTokenPerShare())) / 10 ** 12
+      );
+
+      const beneficiaryInfo = await ReferralProgram.beneficiaryInfo(
+        deployer.address
+      );
+
+      expect(beneficiaryInfo.unclaimReward).to.equal(Number(reward) + 8);
+      expect(beneficiaryInfo.totalEarned).to.equal(Number(reward) + 8);
     });
   });
 });

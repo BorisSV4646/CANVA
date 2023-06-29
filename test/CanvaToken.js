@@ -72,7 +72,7 @@ describe("CanvaToken", function () {
       const target = await CanvaToken.targets(2);
 
       const amountAvailable =
-        ((19 - target.lastHarvestedAtBlock) * 30 * target.tokensPerBlockRate) /
+        ((20 - target.lastHarvestedAtBlock) * 30 * target.tokensPerBlockRate) /
         1000000;
 
       const mint = await newUSer.mintByContract(addressPool, 1000, 2);
@@ -89,7 +89,7 @@ describe("CanvaToken", function () {
         Math.floor(amountAvailable)
       );
 
-      expect(await target2.lastHarvestedAtBlock).to.equal(Math.floor(19));
+      expect(await target2.lastHarvestedAtBlock).to.equal(Math.floor(20));
     });
 
     it("You can't mint if you're not on the whitelist", async function () {
@@ -132,7 +132,7 @@ describe("CanvaToken", function () {
       const target = await CanvaToken.targets(2);
 
       const amountAvailable =
-        ((19 - target.lastHarvestedAtBlock) * 30 * target.tokensPerBlockRate) /
+        ((20 - target.lastHarvestedAtBlock) * 30 * target.tokensPerBlockRate) /
         1000000;
 
       const mint = await CanvaToken.mintByOwner(deployer.address, 1000, 2);
@@ -149,7 +149,7 @@ describe("CanvaToken", function () {
         Math.floor(amountAvailable)
       );
 
-      expect(await target2.lastHarvestedAtBlock).to.equal(Math.floor(19));
+      expect(await target2.lastHarvestedAtBlock).to.equal(Math.floor(20));
     });
 
     it("The function setBurnAddress() works", async function () {

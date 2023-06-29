@@ -307,6 +307,9 @@ contract StakingPool is Ownable, ReentrancyGuard {
      * @dev Needs to be for emergency.
      */
     function emergencyWithdraw() external nonReentrant {
+        address recipient = ReferralProgram(referralProgramAddress)
+            .showBeneficiarInfo(msg.sender);
+
         UserInfo storage user = userInfo[msg.sender];
         uint256 amountToTransfer = user.amount;
         user.amount = 0;
@@ -316,7 +319,14 @@ contract StakingPool is Ownable, ReentrancyGuard {
             stakedToken.safeTransfer(address(msg.sender), amountToTransfer);
         }
 
-        emit EmergencyWithdraw(msg.sender, user.amount);
+        // update referal info
+        ReferralProgram(referralProgramAddress).updateInfoWithdraw(
+            recipient,
+            amountToTransfer,
+            0
+        );
+
+        emit EmergencyWithdraw(msg.sender, amountToTransfer);
     }
 
     /*
@@ -485,6 +495,8 @@ contract StakingPool is Ownable, ReentrancyGuard {
      */
     function harvestReward() external nonReentrant {
         UserInfo storage user = userInfo[msg.sender];
+
+        require(user.amount > 0, "StakingPool: not rewards");
 
         address recipient = ReferralProgram(referralProgramAddress)
             .showBeneficiarInfo(msg.sender);

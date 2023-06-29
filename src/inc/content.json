@@ -1,0 +1,332 @@
+{
+  "Title": "CanvaIsland",
+  "SiteTitle": "CanvaIsland - ",
+  "shareimg": "https://canvaisland.com/img/share.jpg",
+  
+  "IndexTitle": "Home Page",
+  "IndexDescription": "IndexDescription",
+  "IndexKeywords": "IndexKeywords",  
+  
+  "PlayTitle": "Play",
+  "PlayDescription": "PlayDescription",
+  "PlayKeywords": "PlayKeywords", 
+
+  "IslandTitle": "Island",
+  "IslandDescription": "IslandDescription",
+  "IslandKeywords": "IslandKeywords",  
+  
+  "AvatarsTitle": "Avatars",
+  "AvatarsDescription": "AvatarsDescription",
+  "AvatarsKeywords": "AvatarsKeywords",  
+  
+  "StakingTitle": "Staking",
+  "StakingDescription": "StakingDescription",
+  "StakingKeywords": "StakingKeywords",  
+  
+  "SwapTitle": "Swap",
+  "SwapDescription": "SwapDescription",
+  "SwapKeywords": "SwapKeywords",  
+  
+  "ReferralTitle": "Referral",
+  "ReferralDescription": "ReferralDescription",
+  "ReferralKeywords": "ReferralKeywords",  
+  
+  "AppTitle": "App",
+  "AppDescription": "AppDescription",
+  "AppKeywords": "AppKeywords",  
+  
+  "TokenTitle": "Token",
+  "TokenDescription": "TokenDescription",
+  "TokenKeywords": "TokenKeywords",
+  
+
+   "links": {
+		"quest_play": "quest_play_link",
+		
+		"facebook": "linkfb",
+		"telegram": "https://t.me/canvaisland",
+		"twitter": "https://twitter.com/CanvaIsland",
+		"discord": "linkds",
+
+		"googleplay" : "googleplaylink",
+		"appstore" : "appstorelink",
+		
+		"opensea": "https://opensea.io/collection/canvaisland-avatars",
+		"bscscan" : "bscscanlink",
+		"ourmedia" : "ourmedialink",
+		
+		"game_moreinfo" : "game_moreinfolink",
+		"dapp_moreinfo" : "dapp_moreinfolink",
+		"about_moreinfo" : "about_moreinfolink"
+	},
+	
+	
+	"IslandLevels": {
+		"title": "MAP LVL & yield",
+		"items": [
+			{
+				"level": 1,
+				"color": "",
+				"yield": "0.05 ETH",
+				"count": 256,
+				"sold": 234,
+				"totalEarned": "12.1 ETH",
+				"description": "d, a portal has opened, similar to the one from which a dinosaur climbed out. Only, apparently, it is from the 2D world and various objects flew out of it, which began to stick to the locals and thereby imprinting them in a frame."
+			},
+			{
+				"level": 2,
+				"color": "lightblue",
+				"yield": "0.1 ETH",
+				"count": 256,
+				"sold": 234,
+				"totalEarned": "12.1 ETH",
+				"description": "In the uone from which a dinosaur climbed out. Only, apparently, it is from the 2D world and various objects flew out of it, which began to stick to the locals and thereby imprinting them in a frame."
+			},
+			{
+				"level": 3,
+				"color": "peach",
+				"yield": "0.2 ETH",
+				"count": 256,
+				"sold": 234,
+				"totalEarned": "12.1 ETH",
+				"description": "In the universe ofrom which a dinosaur climbed out. Only, apparently, it is from the 2D world and various objects flew out of it, which began to stick to the locals and thereby imprinting them in a frame."
+			},
+			{
+				"level": 4,
+				"color": "purple",
+				"yield": "0.3 ETH",
+				"count": 256,
+				"sold": 234,
+				"totalEarned": "12.1 ETH",
+				"description": "In the universe of CanvaIslanects flew out of it, which began to stick to the locals and thereby imprinting them in a frame."
+			},		
+			{
+				"level": 5,
+				"color": "red",
+				"yield": "0.5 ETH",
+				"count": 256,
+				"sold": 234,
+				"totalEarned": "22.1 ETH",
+				"description": "In the universe of CanvaIsland,jects flew out of it, which began to stick to the locals and thereby imprinting them in a frame."
+			}
+		]
+	},
+
+   "roadmap":[
+      {
+         "phase":"Phase 1: Build",
+         "blocks":[
+            {
+               "title":"Phase: Start, 2021-2022",
+               "items":[
+                  {
+                     "title":"Tokenomic Design",
+                     "active":true
+                  },
+                  {
+                     "title":"Whitepaper + Website",
+                     "active":true
+                  },
+                  {
+                     "title":"Social Medias",
+                     "active":true
+                  },
+                  {
+                     "title":"SAFU + KYC + Audit",
+                     "active":true
+                  },
+                  {
+                     "title":"Pinksale Fairlaunch Presale",
+                     "active":false
+                  },
+                  {
+                     "title":"Prelaunch Marketing",
+                     "active":false
+                  },
+                  {
+                     "title":"Binance Live AMA",
+                     "active":false
+                  }
+               ]
+            },
+            {
+               "title":"Phase: Start, 2021-2022",
+               "items":[
+                  {
+                     "title":"Tokenomic Design",
+                     "active":true
+                  },
+                  {
+                     "title":"Whitepaper + Website",
+                     "active":true
+                  },
+                  {
+                     "title":"Social Medias",
+                     "active":true
+                  },
+                  {
+                     "title":"SAFU + KYC + Audit",
+                     "active":true
+                  },
+                  {
+                     "title":"Pinksale Fairlaunch Presale",
+                     "active":false
+                  },
+                  {
+                     "title":"Prelaunch Marketing",
+                     "active":false
+                  },
+                  {
+                     "title":"Binance Live AMA",
+                     "active":false
+                  }
+               ]
+            },
+            {
+               "title":"Phase: Start, 2021-2022",
+               "items":[
+                  {
+                     "title":"Tokenomic Design",
+                     "active":true
+                  },
+                  {
+                     "title":"Whitepaper + Website",
+                     "active":true
+                  },
+                  {
+                     "title":"Social Medias",
+                     "active":true
+                  },
+                  {
+                     "title":"SAFU + KYC + Audit",
+                     "active":true
+                  },
+                  {
+                     "title":"Pinksale Fairlaunch Presale",
+                     "active":false
+                  },
+                  {
+                     "title":"Prelaunch Marketing",
+                     "active":false
+                  },
+                  {
+                     "title":"Binance Live AMA",
+                     "active":false
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "phase":"Phase 2: Build",
+         "blocks":[
+            {
+               "title":"Phase: Start, 2021-2022",
+               "items":[
+                  {
+                     "title":"Tokenomic Design",
+                     "active":true
+                  },
+                  {
+                     "title":"Whitepaper + Website",
+                     "active":true
+                  },
+                  {
+                     "title":"Social Medias",
+                     "active":true
+                  },
+                  {
+                     "title":"SAFU + KYC + Audit",
+                     "active":true
+                  },
+                  {
+                     "title":"Pinksale Fairlaunch Presale",
+                     "active":false
+                  },
+                  {
+                     "title":"Prelaunch Marketing",
+                     "active":false
+                  },
+                  {
+                     "title":"Binance Live AMA",
+                     "active":false
+                  }
+               ]
+            },
+            {
+               "title":"Phase: Start, 2021-2022",
+               "items":[
+                  {
+                     "title":"Tokenomic Design",
+                     "active":true
+                  },
+                  {
+                     "title":"Whitepaper + Website",
+                     "active":true
+                  },
+                  {
+                     "title":"Social Medias",
+                     "active":true
+                  },
+                  {
+                     "title":"SAFU + KYC + Audit",
+                     "active":true
+                  },
+                  {
+                     "title":"Pinksale Fairlaunch Presale",
+                     "active":false
+                  },
+                  {
+                     "title":"Prelaunch Marketing",
+                     "active":false
+                  },
+                  {
+                     "title":"Binance Live AMA",
+                     "active":false
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "phase":"Phase 3: Build",
+         "blocks":[
+            {
+               "title":"Phase: Start, 2021-2022",
+               "items":[
+                  {
+                     "title":"Tokenomic Design",
+                     "active":true
+                  },
+                  {
+                     "title":"Whitepaper + Website",
+                     "active":true
+                  },
+                  {
+                     "title":"Social Medias",
+                     "active":true
+                  },
+                  {
+                     "title":"SAFU + KYC + Audit",
+                     "active":true
+                  },
+                  {
+                     "title":"Pinksale Fairlaunch Presale",
+                     "active":false
+                  },
+                  {
+                     "title":"Prelaunch Marketing",
+                     "active":false
+                  },
+                  {
+                     "title":"Binance Live AMA",
+                     "active":false
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+
+
+}
