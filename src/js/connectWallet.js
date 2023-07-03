@@ -1,4 +1,5 @@
 const connectButton2 = document.getElementById("connect_button");
+const spanElement = connectButton2.querySelector("span");
 connectButton2.addEventListener("click", myFunction);
 
 async function myFunction() {
@@ -22,17 +23,10 @@ async function myFunction() {
       console.error("Ошибка при запросе аккаунтов:", error);
     });
 
-  // if (isAccountConnected) {
-  //   // Возвращаем кнопку в исходное состояние
-  //   connectButton2.disabled = false;
-  //   connectButton2.textContent = "Connect Wallet";
-  //   return;
-  }
-
   try {
     await window.ethereum.request({
       method: "wallet_switchEthereumChain",
-      params: [{ chainId: "0x5" }],
+      params: [{ chainId: "0xaa36a7" }],
     });
     console.log("Вы переключились на нужную сеть");
   } catch (switchError) {
@@ -43,10 +37,10 @@ async function myFunction() {
           method: "wallet_addEthereumChain",
           params: [
             {
-              chainId: "0x5",
-              chainName: "Goerli",
-              rpcUrls: ["https://ethereum-goerli.publicnode.com"],
-              blockExplorerUrls: ["https://goerli.etherscan.io/"],
+              chainId: "0xaa36a7",
+              chainName: "Sepolia",
+              rpcUrls: ["https://rpc.sepolia.org"],
+              blockExplorerUrls: ["https://sepolia.etherscan.io/"],
               nativeCurrency: {
                 name: "ETH",
                 symbol: "ETH",
@@ -70,12 +64,10 @@ async function myFunction() {
         const connectedAccount = accounts[0];
         const buttonTextSmal = `${connectedAccount.substring(
           0,
-          4
+          5
         )}...${connectedAccount.slice(-4)}`;
 
-        connectButton2.disabled = true;
-        connectButton2.textContent = buttonTextSmal;
-        connectButton2.title = connectedAccount;
+        spanElement.textContent = buttonTextSmal;
 
         localStorage.setItem("connectedAccount", connectedAccount);
       } else {
@@ -89,15 +81,14 @@ async function myFunction() {
   return isAccountConnected;
 }
 
-// if (myFunction()) {
-//   const savedAccount = localStorage.getItem("connectedAccount");
-//   if (savedAccount) {
-//     const buttonTextSmal = `${savedAccount.substring(
-//       0,
-//       4
-//     )}...${savedAccount.slice(-4)}`;
+if (myFunction() === true) {
+  const savedAccount = localStorage.getItem("connectedAccount");
+  if (savedAccount) {
+    const buttonTextSmal = `${savedAccount.substring(
+      0,
+      5
+    )}...${savedAccount.slice(-4)}`;
 
-//     connectButton2.disabled = true;
-//     connectButton2.textContent = buttonTextSmal;
-//   }
-// }
+    spanElement.textContent = buttonTextSmal;
+  }
+}

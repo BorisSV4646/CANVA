@@ -9,12 +9,12 @@
                      <div class="footer-l-top">
                         <div class="footer-l-top-text">
                            <img src="img/header-submenu-r-bottom.png" alt="">
-                           <span class="green">1 $NAME =</span>
+                           <span class="green">1 $CNV =</span>
                            <span>$0,023</span>
                         </div>
 						<a href="/token" target="_blank">
 							<div class="footer-l-top-btn btn green">
-							   <span>BUY $NAME</span>
+							   <span>BUY $CNV</span>
 							</div>
 						</a>
                      </div>
@@ -22,13 +22,13 @@
                         <div class="footer-l-bottom-items">
                            <div class="footer-l-bottom-item">
                               <span>Max supply:</span>
-                              <span>2300 0000 000</span>
+                              <span>1 000 000 000</span>
                            </div>
-                           <div class="footer-l-bottom-item">
+                           <div class="footer-l-bottom-item" id="totalSuplay">
                               <span>Total supply:</span>
-                              <span>18 000 000</span>
+                              <span>0</span>
                            </div>
-                           <div class="footer-l-bottom-item">
+                           <div class="footer-l-bottom-item" id="totalBurned">
                               <span>Total Burned:</span>
                               <span>0</span>
                            </div>
@@ -129,6 +129,8 @@
    <script src="libs/fancybox/fancybox.umd.js"></script>
    <script src="libs/swiper/swiper-bundle.min.js"></script>
    <script src="js/main.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+   <script src="js/footerSuplay.js"></script>
 </body>
 
 </html>

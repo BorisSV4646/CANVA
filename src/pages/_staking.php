@@ -26,13 +26,13 @@
                            <div class="staking-item-top">
                               <div class="staking-item-top-l">
                                  <div class="staking-item-top-icon-1">
-                                    <img src="img/bnb-icon.png" alt="">
+                                    <img src="img/header-submenu-r-bottom.png" alt="">
                                  </div>
                                  <div class="staking-item-top-icon-2">
-                                    <img src="img/bnb-icon.png" alt="">
+                                    <img src="img/header-submenu-r-bottom.png" alt="">
                                  </div>
                               </div>
-                              <div class="staking-item-top-r">BNB/BNB</div>
+                              <div class="staking-item-top-r">CNV/CNV</div>
                            </div>
                            <div class="staking-item-info">
                               <div class="staking-item-info-row">
@@ -48,38 +48,38 @@
                                     </span>
                                  </p>
                                  <p>
-                                    <span class="per">1080.74%</span>
+                                    <span class="per">365%</span>
                                  </p>
                               </div>
                               <div class="staking-item-info-row">
                                  <p>Earn</p>
-                                 <p>BNB</p>
+                                 <p>CNV</p>
                               </div>
-                              <div class="staking-item-info-bottom">
-                                 <p>0.1% unstaking fee until</p>
-                                 <p>03d: 01h: 56m: 44s</p>
+                              <div class="staking-item-info-bottom" id="timeStake">
+                                 <p>20% unstaking fee until</p>
+                                 <p>40d: 00h: 00m: 00s</p>
                               </div>
                            </div>
                            <div class="staking-item-center">
                               <div class="staking-item-center-row">
-                                 <div class="staking-item-center-row-l">
+                                 <div class="staking-item-center-row-l" id="harvestBalance">
                                     <p>Earned:</p>
                                     <p>0.000</p>
                                  </div>
                                  <div class="staking-item-center-row-r">
-                                    <div class="staking-item-center-row-btn btn disabled">
+                                    <div class="staking-item-center-row-btn btn disabled" id="harvest">
                                        <span>Harvest</span>
                                     </div>
                                  </div>
                               </div>
                               <div class="staking-item-center-row">
-                                 <div class="staking-item-center-row-l">
+                                 <div class="staking-item-center-row-l" id="balanceStaked">
                                     <p>CNV Staked:</p>
                                     <p>0.000</p>
                                  </div>
-                                 <div class="staking-item-center-row-r">
+                                 <!-- <div class="staking-item-center-row-r">
                                     <a href="#" class="staking-item-center-row-link">Mint</a>
-                                 </div>
+                                 </div> -->
                               </div>
                            </div>
                            <div class="staking-item-btns">
@@ -111,14 +111,14 @@
                                     <p>10,283.9043</p>
                                  </div>
                                  <div class="staking-item-details-bottom-center">
-                                    <a href="#">View contract <svg xmlns="http://www.w3.org/2000/svg" width="18"
+                                    <a href="https://sepolia.etherscan.io/address/0xa43fa2cff564f70376b422aa3d3b45f63fcdbca2">View contract <svg xmlns="http://www.w3.org/2000/svg" width="18"
                                           height="18" viewBox="0 0 18 18" fill="none">
                                           <path
                                              d="M15.5887 1.7942C15.5663 1.7949 15.544 1.79686 15.5219 1.80006H12.0004C11.784 1.797 11.5827 1.91069 11.4737 2.09758C11.3646 2.28448 11.3646 2.51564 11.4737 2.70253C11.5827 2.88943 11.784 3.00311 12.0004 3.00005H14.1519L7.97617 9.17583C7.81943 9.32632 7.75628 9.54979 7.8111 9.76006C7.86591 9.97032 8.03012 10.1345 8.24038 10.1893C8.45064 10.2442 8.67411 10.181 8.82461 10.0243L15.0004 3.84849V6.00005C14.9973 6.21643 15.111 6.4177 15.2979 6.52678C15.4848 6.63587 15.716 6.63587 15.9029 6.52678C16.0898 6.4177 16.2034 6.21643 16.2004 6.00005V2.47622C16.2246 2.30138 16.1705 2.12475 16.0527 1.99335C15.9348 1.86195 15.7651 1.7891 15.5887 1.7942ZM3.60039 4.20006C2.94455 4.20006 2.40039 4.74422 2.40039 5.40006V14.4001C2.40039 15.0559 2.94455 15.6001 3.60039 15.6001H12.6004C13.2562 15.6001 13.8004 15.0559 13.8004 14.4001V8.40005V6.85318L12.6004 8.05318V9.60006V14.4001H3.60039V5.40006H8.40039H9.60039H9.94727L11.1473 4.20006H9.60039H8.40039L3.60039 4.20006Z"
                                              fill="#BAD34A" />
                                        </svg>
                                     </a>
-                                    <a href="#">Add ADA <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    <a href="0x5Ec8d136E4F4E5fBA63Fb1aC7679ee8C4fA3Ace7" id="addTokenButton">Add CNV <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                           viewBox="0 0 24 24" fill="none">
                                           <path d="M21.9206 1.67773L13.3145 8.05582L14.9132 4.29701L21.9206 1.67773Z"
                                              fill="#E17726" />
@@ -200,7 +200,7 @@
                                        </svg>
                                     </a>
                                  </div>
-                                 <div class="staking-item-details-bottom-bottom">
+                                 <!-- <div class="staking-item-details-bottom-bottom">
                                     <a href="#">Add USDT <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                           viewBox="0 0 24 24" fill="none">
                                           <path d="M21.9206 1.67773L13.3145 8.05582L14.9132 4.29701L21.9206 1.67773Z"
@@ -282,7 +282,7 @@
                                              fill="#F5841F" />
                                        </svg>
                                     </a>
-                                 </div>
+                                 </div> -->
                               </div>
                            </div>
                         </div>
@@ -352,20 +352,20 @@
                   <div class="staking-modal-field-wrapper">
                      <div class="staking-modal-field-top">
                         <p>Stake</p>
-                        <p>Balance: 2.0032 <span>MAX</span></p>
+                        <p>Balance: <span id="balanceUser">0</span></p>
                      </div>
                      <div class="staking-modal-field">
                         <div class="staking-modal-field-l">
                            <img src="img/staking-icon.png" alt="">
-                           <input type="text" placeholder="0">
+                           <input type="text" id="myInputStake" placeholder="0" value="0">
                         </div>
-                        <div class="staking-modal-field-r">~2 354,91 USD</div>
+                        <div class="staking-modal-field-r" id="priceStaking">~0 USD</div>
                      </div>
                   </div>
                   <div class="staking-modal-range-block">
                      <div class="staking-modal-range-wrapper">
                         <div class="staking-modal-range-greyline"></div>
-                        <input type="range" min="0" max="100" step="1" value="5" id="slider1">
+                        <input type="range" id="slider1" min="0" max="100" step="1" value="0" >
                         <div id="selector1" class="staking-modal-range-thumb" style="left: 60%;"></div>
                         <div id="range-line1" class="staking-modal-range-line" style="width: 60%;"></div>
                      </div>
@@ -389,4 +389,6 @@
             </div>
          </section>
       </div>
+      <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+      <script src="js/stakingPool.js"></script>
    </main>
