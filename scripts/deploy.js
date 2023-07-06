@@ -11,21 +11,21 @@ async function main() {
     "CanvaToken",
     "CNV",
     deployer.address,
-    30, //!(30 * 10 ** 18).toLocaleString("fullwide", { useGrouping: false }),
+    (30 * 10 ** 18).toLocaleString("fullwide", { useGrouping: false }),
     deployer.address
   );
   const finalDeployCanva = await CanvaToken.deployed(
     "CanvaToken",
     "CNV",
     deployer.address,
-    30, // !(30 * 10 ** 18).toLocaleString("fullwide", { useGrouping: false }),
+    (30 * 10 ** 18).toLocaleString("fullwide", { useGrouping: false }),
     deployer.address
   );
   console.log("Token ERC20 address:", CanvaToken.address);
 
   const blocStart = await ethers.provider.getBlock(finalDeployCanva.blockHash);
   await CanvaToken.setTargetInfo(0, [
-    (310000000 * 10 ** 18).toLocaleString("fullwide", { useGrouping: false }), // TODO что тут? Менять или нет
+    (310000000 * 10 ** 18).toLocaleString("fullwide", { useGrouping: false }),
     0,
     blocStart.number,
     348350,
@@ -124,7 +124,7 @@ async function main() {
   const deployPool = await StakingFactory.deployPool(
     CanvaToken.address,
     CanvaToken.address,
-    8, // !(8 * 10 ** 18).toLocaleString("fullwide", { useGrouping: false }),
+    (8 * 10 ** 18).toLocaleString("fullwide", { useGrouping: false }),
     block.number,
     endblock,
     0,
@@ -148,7 +148,7 @@ async function main() {
     "CanvaToken",
     "CNV",
     deployer.address,
-    30, // !String(30 * 10 ** 18),
+    String(30 * 10 ** 18),
     deployer.address,
   ]);
   await verify(BurnTokens.address, [CanvaToken.address]);

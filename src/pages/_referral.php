@@ -14,13 +14,13 @@
                            <p>Refer Friends<br><span class="green">Earn Crypto</span> Together</p>
                            <p>Refer Friends<br>Earn Crypto Together</p>
                         </div>
-                        <div class="referral-banner-text">Earn up to <span>5% from your friends’</span> earnings</div>
+                        <div class="referral-banner-text">Earn up to <span>7% from your friends’</span> earnings</div>
                      </div>
                      <div class="referral-banner-r">
                         <div class="referral-banner-block">
                            <div class="referral-banner-block-title">YOUR Invitation Link</div>
                            <div class="referral-banner-block-field">
-                              <p>https://biswap.org/?ref=d87b4761e5f 8ee4d80e4</p>
+                              <p id="link">https://biswap.org/?ref=d87b4761e5f 8ee4d80e4</p>
                               <div class="referral-banner-block-field-icon">
                                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                                     fill="none">
@@ -71,10 +71,10 @@
                                        <span class="info-block up">Content text</span>
                                     </span>
                                  </p>
-                                 <p>1 546</p>
+                                 <p id="totalInvited">1 546</p>
                               </div>
                               <div class="referral-info-item">
-                                 <p>Pending Friends 
+                                 <p>Staked Friends 
                                     <span class="info">
                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                        viewBox="0 0 20 20" fill="none">
@@ -85,7 +85,7 @@
                                        <span class="info-block up">Content text</span>
                                     </span>
                                  </p>
-                                 <p>34</p>
+                                 <p id="pendingFriends">34</p>
                               </div>
                               <div class="referral-info-item">
                                  <p>Total Rewards Earned 
@@ -100,7 +100,7 @@
                                        <span class="info-block right">Content text</span>
                                     </span>
                                  </p>
-                                 <p>21 122.032 $CNV<br><span>~$23.0928</span></p>
+                                 <p id="totalErned">21 122.032 $CNV<br><span id="spanValue">~$23.0928</span></p>
                               </div>
                            </div>
                         </div>
@@ -110,20 +110,20 @@
                                  <div class="referral-info-block-top">Unclaimed Rewards</div>
                                  <div class="referral-info-block-center">
                                     <img src="img/staking-icon.png" alt="">
-                                    <span>192 CNV</span>
+                                    <span id="unclaimReward">192 CNV</span>
                                  </div>
-                                 <div class="referral-info-block-bottom">~$23.0928</div>
+                                 <div class="referral-info-block-bottom" id="spanValue2">~$23.0928</div>
                               </div>
                               <div class="referral-info-block-r">
                                  <div class="referral-info-block-btn btn green">
-                                    <span>CLAIM</span>
+                                    <span id="claimRewards">CLAIM</span>
                                  </div>
                               </div>
                            </div>
                         </div>
                      </div>
-                     <div class="referral-info-bottom-text">Minimum claim amount: 37,952.89 CNV* | Network Fee: 5,440.16
-                        CNV</div>
+                     <!-- <div class="referral-info-bottom-text">Minimum claim amount: 37,952.89 CNV* | Network Fee: 5,440.16
+                        CNV</div> -->
                      <div class="referral-table">
                         <div class="referral-table-top">
                            <div class="referral-table-top-l">
@@ -150,56 +150,14 @@
                                  <div class="referral-table-body-h-col">Staked in pools</div>
                                  <div class="referral-table-body-h-col">Total earned</div>
                               </div>
-                              <div class="referral-table-body-rows">
+                              <!-- <div class="referral-table-body-rows">
                                  <div class="referral-table-body-r">
                                     <div class="referral-table-body-r-col">05/29/22</div>
                                     <div class="referral-table-body-r-col">0xa5...6e93</div>
                                     <div class="referral-table-body-r-col">1.23 CNV</div>
                                     <div class="referral-table-body-r-col green">0.0000 CNV</div>
                                  </div>
-                                 <div class="referral-table-body-r">
-                                    <div class="referral-table-body-r-col">05/29/22</div>
-                                    <div class="referral-table-body-r-col">0xa5...6e93</div>
-                                    <div class="referral-table-body-r-col">1.23 CNV</div>
-                                    <div class="referral-table-body-r-col green">0.0000 CNV</div>
-                                 </div>
-                                 <div class="referral-table-body-r">
-                                    <div class="referral-table-body-r-col">05/29/22</div>
-                                    <div class="referral-table-body-r-col">0xa5...6e93</div>
-                                    <div class="referral-table-body-r-col">1.23 CNV</div>
-                                    <div class="referral-table-body-r-col green">0.0000 CNV</div>
-                                 </div>
-                                 <div class="referral-table-body-r">
-                                    <div class="referral-table-body-r-col">05/29/22</div>
-                                    <div class="referral-table-body-r-col">0xa5...6e93</div>
-                                    <div class="referral-table-body-r-col">1.23 CNV</div>
-                                    <div class="referral-table-body-r-col green">0.0000 CNV</div>
-                                 </div>
-                                 <div class="referral-table-body-r">
-                                    <div class="referral-table-body-r-col">05/29/22</div>
-                                    <div class="referral-table-body-r-col">0xa5...6e93</div>
-                                    <div class="referral-table-body-r-col">1.23 CNV</div>
-                                    <div class="referral-table-body-r-col green">0.0000 CNV</div>
-                                 </div>
-                                 <div class="referral-table-body-r">
-                                    <div class="referral-table-body-r-col">05/29/22</div>
-                                    <div class="referral-table-body-r-col">0xa5...6e93</div>
-                                    <div class="referral-table-body-r-col">1.23 CNV</div>
-                                    <div class="referral-table-body-r-col green">0.0000 CNV</div>
-                                 </div>
-                                 <div class="referral-table-body-r">
-                                    <div class="referral-table-body-r-col">05/29/22</div>
-                                    <div class="referral-table-body-r-col">0xa5...6e93</div>
-                                    <div class="referral-table-body-r-col">1.23 CNV</div>
-                                    <div class="referral-table-body-r-col green">0.0000 CNV</div>
-                                 </div>
-                                 <div class="referral-table-body-r">
-                                    <div class="referral-table-body-r-col">05/29/22</div>
-                                    <div class="referral-table-body-r-col">0xa5...6e93</div>
-                                    <div class="referral-table-body-r-col">1.23 CNV</div>
-                                    <div class="referral-table-body-r-col green">0.0000 CNV</div>
-                                 </div>
-                              </div>
+                              </div> -->
                            </div>
                            <div class="referral-pagination pagination">
                               <a href="#" class="pagination-item">
@@ -339,7 +297,9 @@
                </div>
             </div>
          </section>
-		 
+		<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="js/referalPages.js"></script>
 	<?php include("inc/socials.php"); ?>
 
       </div>

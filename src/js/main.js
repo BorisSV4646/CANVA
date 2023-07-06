@@ -388,13 +388,18 @@ $(document).ready(function () {
   });
 
   let swapRow;
+  let swapRow2;
+  getTokenBalanceETH("balanceEth");
+  getTokenBalanceBNB("balanceBnb");
 
   $(".staking-modal-close, .staking-modal-bg").click(function () {
     $(".staking-modal-wrapper").removeClass("active");
   });
 
   $(".staking-modal-btn").click(function () {
-    $(".staking-modal-wrapper").removeClass("active");
+    if ($(this).hasClass("cancel")) {
+      $(".staking-modal-wrapper").removeClass("active");
+    }
   });
 
   $(".open-staking").click(function () {
@@ -413,12 +418,32 @@ $(document).ready(function () {
     swapRow = "";
   });
 
+  // $(".swap-block-field-row-top-l").click(function () {
+  //   $(".swap-modal-wrapper").addClass("active");
+  //   swapRow = $(this);
+  //   swapRow2 = $(".swap-block-field-row-top-l.two");
+  // });
+
+  // $(".swap-block-field-row-top-l.two").click(function () {
+  //   $(".swap-modal-wrapper").addClass("active");
+  //   swapRow = $(this);
+  //   swapRow2 = $(".swap-block-field-row-top-l");
+  // });
+
   $(".swap-block-field-row-top-l").click(function () {
     $(".swap-modal-wrapper").addClass("active");
     swapRow = $(this);
+    swapRow2 = $(this).hasClass("two")
+      ? $(".swap-block-field-row-top-l")
+      : $(".swap-block-field-row-top-l.two");
   });
 
-  $(".swap-modal-item").click(function () {
+  const inputElement = document.getElementById("inputSwap");
+
+  $(".swap-modal-item").click(async function () {
+    const ethPrice = await getPriceEth();
+    const bnbPrice = await getPriceBNB();
+
     if (swapRow.find(".swap-block-field-row-top-text-icon img").length) {
       swapRow
         .find(".swap-block-field-row-top-text-icon img")
@@ -432,8 +457,63 @@ $(document).ready(function () {
     swapRow
       .find(".swap-block-field-row-top-text span:last-child")
       .text($(this).find(".swap-modal-item-l span").text());
+    if ($(this).find(".swap-modal-item-l span").text() === "eth") {
+      if (swapRow2.find(".swap-block-field-row-top-text-icon img").length) {
+        swapRow2
+          .find(".swap-block-field-row-top-text-icon img")
+          .attr("src", "img/bnb-icon.png");
+      } else {
+        swapRow2.find(".swap-block-field-row-top-text-icon").append("<img>");
+        swapRow2
+          .find(".swap-block-field-row-top-text-icon img")
+          .attr("src", "img/bnb-icon.png");
+      }
+      swapRow2
+        .find(".swap-block-field-row-top-text span:last-child")
+        .text("BNB");
+
+      getTokenBalanceETH("balance1");
+      getTokenBalanceBNB("balance2");
+
+      const tokenPer = document.getElementById("tokenPer");
+      tokenPer.innerHTML = `${(ethPrice / bnbPrice).toFixed(2)} BNB per ETH`;
+
+      inputElement.addEventListener("input", async function () {
+        const value = parseFloat(inputElement.value);
+        const priceElement = document.getElementById("tokenPrice");
+        priceElement.innerHTML = `${ethPrice * value} $USD`;
+      });
+    } else if ($(this).find(".swap-modal-item-l span").text() === "bnb") {
+      if (swapRow2.find(".swap-block-field-row-top-text-icon img").length) {
+        swapRow2
+          .find(".swap-block-field-row-top-text-icon img")
+          .attr("src", "img/eth-icon.png");
+      } else {
+        swapRow2.find(".swap-block-field-row-top-text-icon").append("<img>");
+        swapRow2
+          .find(".swap-block-field-row-top-text-icon img")
+          .attr("src", "img/eth-icon.png");
+      }
+      swapRow2
+        .find(".swap-block-field-row-top-text span:last-child")
+        .text("ETH");
+
+      getTokenBalanceETH("balance2");
+      getTokenBalanceBNB("balance1");
+
+      const tokenPer = document.getElementById("tokenPer");
+      tokenPer.innerHTML = `${(bnbPrice / ethPrice).toFixed(2)} ETH per BNB`;
+
+      inputElement.addEventListener("input", async function () {
+        const value = parseFloat(inputElement.value);
+        const priceElement = document.getElementById("tokenPrice");
+        priceElement.innerHTML = `${bnbPrice * value} $USD`;
+      });
+    }
+
     $(".swap-modal-wrapper").removeClass("active");
     swapRow = "";
+    swapRow2 = "";
   });
 
   if ($("#slider1").length) {
@@ -448,3 +528,110 @@ $(document).ready(function () {
     };
   }
 });
+
+async function getPriceEth() {
+  try {
+    const response = await fetch(
+      "https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd"
+    );
+    const data = await response.json();
+    const ethPrice = data.ethereum.usd;
+    return ethPrice;
+  } catch (error) {
+    console.error("Ошибка при получении цены ETH:", error);
+  }
+}
+
+async function getPriceBNB() {
+  try {
+    const response = await fetch(
+      "https://api.coingecko.com/api/v3/simple/price?ids=binancecoin&vs_currencies=usd"
+    );
+    const data = await response.json();
+    const bnbPrice = data.binancecoin.usd;
+    return bnbPrice;
+  } catch (error) {
+    console.error("Ошибка при получении цены BNB:", error);
+  }
+}
+
+async function getWallet() {
+  if (typeof web3 !== "undefined") {
+    web3 = new Web3(window.ethereum);
+  } else {
+    alert(
+      "Metamask не доступен, установите необходимое расширение https://chrome.google.com/webstore"
+    );
+    return;
+  }
+
+  try {
+    const accounts = await web3.eth.getAccounts();
+    if (accounts.length > 0) {
+      const connectedAccount = accounts[0];
+      return connectedAccount;
+    } else {
+      console.log("Аккаунты не доступны.");
+    }
+  } catch (error) {
+    console.error("Ошибка при получении аккаунтов:", error);
+  }
+}
+
+async function getTokenBalanceETH(element) {
+  const web3 = new Web3("https://rpc.sepolia.org");
+  const walletAddress = await getWallet();
+
+  web3.eth
+    .getBalance(walletAddress)
+    .then((balance) => {
+      const balanceInEther = web3.utils.fromWei(balance, "ether");
+      const balanceEth = document.getElementById(element);
+      balanceEth.innerHTML = `${Number(balanceInEther).toFixed(4)} ETH`;
+    })
+    .catch((error) => {
+      console.error("Ошибка при получении баланса:", error);
+    });
+}
+
+async function getTokenBalanceBNB(element) {
+  const web3 = new Web3("https://rpc.sepolia.org");
+  const tokenContractAddress = "0x68194a729C2450ad26072b3D33ADaCbcef39D574";
+  const waleetAdress = await getWallet();
+
+  const tokenContractABI = [
+    {
+      constant: true,
+      inputs: [
+        {
+          name: "account",
+          type: "address",
+        },
+      ],
+      name: "balanceOf",
+      outputs: [
+        {
+          name: "",
+          type: "uint256",
+        },
+      ],
+      payable: false,
+      stateMutability: "view",
+      type: "function",
+    },
+  ];
+
+  const tokenContract = new web3.eth.Contract(
+    tokenContractABI,
+    tokenContractAddress
+  );
+
+  try {
+    const balance = await tokenContract.methods.balanceOf(waleetAdress).call();
+
+    const balanceBnb = document.getElementById(element);
+    balanceBnb.innerHTML = `${Number(balance).toFixed(4)} BNB`;
+  } catch (error) {
+    console.error("Ошибка при получении баланса токенов:", error);
+  }
+}

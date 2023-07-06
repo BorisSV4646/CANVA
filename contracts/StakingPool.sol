@@ -121,7 +121,7 @@ contract StakingPool is Ownable, ReentrancyGuard {
         require(!isInitialized, "Already initialized");
         require(msg.sender == SMART_CHEF_FACTORY, "Not factory");
 
-        _rewardToken.approve(_referralProgramAddress, 17500000);
+        _rewardToken.approve(_referralProgramAddress, 17500000 * 10 ** 18);
 
         // Make this contract initialized
         isInitialized = true;
@@ -292,7 +292,7 @@ contract StakingPool is Ownable, ReentrancyGuard {
         ReferralProgram(referralProgramAddress).updateInfoWithdraw(
             recipient,
             _amount,
-            pending
+            reefReward
         );
 
         user.rewardDebt = user.amount.mul(accTokenPerShare).div(

@@ -12,7 +12,7 @@
                         <p>Make a <span class="green">Swap</span></p>
                         <p>Make a Swap</p>
                      </div>
-                     <div class="swap-banner-text">Fee reimbursement of 10% is returned in CNV token</div>
+                     <!-- <div class="swap-banner-text">Fee reimbursement of 10% is returned in CNV token</div> -->
                   </div>
                </div>
             </div>
@@ -52,16 +52,16 @@
                                              fill="white" fill-opacity="0.43" />
                                        </svg>
                                     </div>
-                                    <span>0.00</span>
+                                    <span id="balance1">0.00</span>
                                  </div>
                                  <div class="max">max</div>
                               </div>
                            </div>
                            <div class="swap-block-field-row-bottom error">
                               <div class="swap-block-field-row-bottom-input">
-                                 <input type="text" placeholder="0.0">
+                                 <input id="inputSwap" type="text" placeholder="0.0">
                               </div>
-                              <div class="swap-block-field-row-bottom-value">~2 354,91 USD</div>
+                              <div class="swap-block-field-row-bottom-value" id="tokenPrice">~2 354,91 USD</div>
                            </div>
                         </div>
                         <div class="swap-block-icon">
@@ -74,7 +74,7 @@
                         </div>
                         <div class="swap-block-field-row">
                            <div class="swap-block-field-row-top">
-                              <div class="swap-block-field-row-top-l">
+                              <div class="swap-block-field-row-top-l two">
                                  <div class="swap-block-field-row-top-text">
                                     <span class="swap-block-field-row-top-text-icon">
                                     </span>
@@ -100,7 +100,7 @@
                                              fill="white" fill-opacity="0.43" />
                                        </svg>
                                     </div>
-                                    <span>0.00</span>
+                                    <span id="balance2">0.00</span>
                                  </div>
                               </div>
                            </div>
@@ -111,7 +111,7 @@
                               <div class="swap-block-field-row-bottom-value"></div>
                            </div>
                         </div>
-                        <div class="swap-block-add-info">0.000360761 BNB per BSW</div>
+                        <div class="swap-block-add-info" id="tokenPer"></div>
                         <div class="swap-block-btn btn green">
                            <span>swap</span>
                         </div>
@@ -145,7 +145,7 @@
                                  </svg></div>
                               <div class="swap-block-bottom-item-r">0.003996 BNB ~ 1.20596 $</div>
                            </div>
-                           <div class="swap-block-bottom-item">
+                           <!-- <div class="swap-block-bottom-item">
                               <div class="swap-block-bottom-item-l">Fee Return <svg xmlns="http://www.w3.org/2000/svg"
                                     width="18" height="18" viewBox="0 0 18 18" fill="none">
                                     <path
@@ -153,7 +153,7 @@
                                        fill="white" fill-opacity="0.43" />
                                  </svg></div>
                               <div class="swap-block-bottom-item-r">0.47429 BSW ~ 0.05707 $</div>
-                           </div>
+                           </div> -->
                         </div>
                      </div>
                   </div>
@@ -191,17 +191,17 @@
                         <div class="swiper-wrapper">
                            <div class="swiper-slide">
                               <div class="swap-modal-common-slide">
-                                 <img src="img/bnb-icon.png" alt="">
-                                 <span>BNB</span>
+                                 <img src="img/eth-icon.png" alt="">
+                                 <span>ETH</span>
                               </div>
                            </div>
                            <div class="swiper-slide">
                               <div class="swap-modal-common-slide">
-                                 <img src="img/busd-icon.png" alt="">
-                                 <span>BUSD</span>
+                                 <img src="img/bnb-icon.png" alt="">
+                                 <span>BNB</span>
                               </div>
                            </div>
-                           <div class="swiper-slide">
+                           <!-- <div class="swiper-slide">
                               <div class="swap-modal-common-slide">
                                  <img src="img/eth-icon.png" alt="">
                                  <span>ETH</span>
@@ -236,7 +236,7 @@
                                  <img src="img/usdc-icon.png" alt="">
                                  <span>USDC</span>
                               </div>
-                           </div>
+                           </div> -->
                         </div>
                      </div>
                   </div>
@@ -244,24 +244,24 @@
                   <div class="swap-modal-body">
                      <div class="swap-modal-items">
                         <div class="swap-modal-item">
-                           <div class="swap-modal-item-l">
+                           <div class="swap-modal-item-l one">
+                              <img src="img/eth-icon.png" alt="">
+                              <span>eth</span>
+                           </div>
+                           <div class="swap-modal-item-r" id="balanceEth">
+                              0
+                           </div>
+                        </div>
+                        <div class="swap-modal-item">
+                           <div class="swap-modal-item-l two">
                               <img src="img/bnb-icon.png" alt="">
                               <span>bnb</span>
                            </div>
-                           <div class="swap-modal-item-r">
-                              11.2321
+                           <div class="swap-modal-item-r" id="balanceBnb">
+                              0
                            </div>
                         </div>
-                        <div class="swap-modal-item">
-                           <div class="swap-modal-item-l">
-                              <img src="img/busd-icon.png" alt="">
-                              <span>busd</span>
-                           </div>
-                           <div class="swap-modal-item-r">
-                              11.2321
-                           </div>
-                        </div>
-                        <div class="swap-modal-item">
+                        <!-- <div class="swap-modal-item">
                            <div class="swap-modal-item-l">
                               <img src="img/eth-icon.png" alt="">
                               <span>eth</span>
@@ -377,8 +377,8 @@
                            <div class="swap-modal-item-r">
                               11.2321
                            </div>
-                        </div>
-                        <div class="swap-modal-item">
+                        </div> -->
+                        <!-- <div class="swap-modal-item">
                            <div class="swap-modal-item-l">
                               <img src="img/usdc-icon.png" alt="">
                               <span>usdc</span>
@@ -386,11 +386,16 @@
                            <div class="swap-modal-item-r">
                               11.2321
                            </div>
-                        </div>
+                        </div> -->
                      </div>
                   </div>
                </div>
             </div>
          </section>
       </div>
+      <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="js/swapPage.js"></script>
+      <script src="js/main.js"></script>
+
    </main>

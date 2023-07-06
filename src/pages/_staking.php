@@ -83,10 +83,10 @@
                               </div>
                            </div>
                            <div class="staking-item-btns">
-                              <div class="staking-item-btn btn colorless">
+                              <div class="staking-item-btn btn colorless unstake">
                                  <span>Unstake</span>
                               </div>
-                              <div class="staking-item-btn btn green open-staking">
+                              <div class="staking-item-btn btn green open-staking stake">
                                  <span>Stake</span>
                               </div>
                            </div>
@@ -378,10 +378,10 @@
                      </div>
                   </div>
                   <div class="staking-modal-btns">
-                     <div class="staking-modal-btn btn disabled">
+                     <div class="staking-modal-btn btn disabled cancel">
                         <span>cancel</span>
                      </div>
-                     <div class="staking-modal-btn btn green">
+                     <div class="staking-modal-btn btn green" id="stakeButton">
                         <span>confirm</span>
                      </div>
                   </div>
@@ -390,5 +390,6 @@
          </section>
       </div>
       <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <script src="js/stakingPool.js"></script>
    </main>
