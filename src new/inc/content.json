@@ -1,0 +1,412 @@
+{
+  "TokenName": "$CANVA",	
+	
+  "Title": "CanvaIsland - GameFI P2E metaverse based on Ethereum",
+  "SiteTitle": "CanvaIsland - GameFI P2E metaverse based on Ethereum ",
+  "shareimg": "https://canvaisland.com/img/share.jpg",
+  
+  "IndexTitle": "CanvaIsland - GameFI P2E metaverse based on Ethereum",
+  "IndexDescription": "CanvaIsland -  innovative crypto metaverse and DeFi ecosystem on Ethereum. Explore immersive P2E gameplay, unlock lucrative financial opportunities, and embrace the future of gaming and finance",
+  "IndexKeywords": "CanvaIsland, crypto metaverse, DeFi ecosystem, Ethereum, blockchain, cryptocurrency, virtual world, decentralized finance",  
+  
+  "PlayTitle": "Play",
+  "PlayDescription": "PlayDescription",
+  "PlayKeywords": "PlayKeywords", 
+
+  "IslandTitle": "CanvaIsland NFT Lands: Own Your Exclusive Virtual Land in the Crypto P2E Metaverse",
+  "IslandDescription": "Own exclusive virtual land in the Crypto P2E metaverse with CanvaIsland. Experience the power of ownership in a thriving meta world. Unlock limitless possibilities today.",
+  "IslandKeywords": "CanvaIsland, NFT lands, exclusive virtual land, Crypto, P2E, metaverse, ownership, virtual world, digital assets, blockchain",  
+  
+  "AvatarsTitle": "CanvaIsland NFT Avatars: Collect and Stake Your Unique Virtual Identity",
+  "AvatarsDescription": "Discover CanvaIsland's exclusive NFT avatars, the perfect virtual representation. Own and stake your unique digital identity in the immersive metaverse and unlock endless possibilities.",
+  "AvatarsKeywords": "CanvaIsland, NFT avatars, virtual identity, staking, metaverse, Sandbox, Decentraland, virtual world, blockchain, digital assets",  
+  
+  "StakingTitle": "Stake and Earn in the DEFI CanvaIsland Metaverse",
+  "StakingDescription": "Discover staking opportunities in the CanvaIsland metaverse and earn passive income. Stake your tokens and participate in the decentralized finance (DeFi) ecosystem for lucrative rewards.",
+  "StakingKeywords": "Staking, CanvaIsland, Metaverse, Passive Income, DeFi, Decentralized Finance, Token Staking",  
+  
+  "SwapTitle": "Swap tokens - DEFI CanvaIsland Metaverse",
+  "SwapDescription": "Swap tokens effortlessly in the CanvaIsland metaverse. Experience fast and secure token exchanges, enhanced liquidity, and seamless transactions in the decentralized finance (DeFi) ecosystem.",
+  "SwapKeywords": "Token Swap, CanvaIsland, Metaverse, DeFi, Decentralized Finance, Token Exchange, Liquidity, Secure Transactions",  
+  
+  "ReferralTitle": "Referral Program: Earn Rewards with CanvaIsland Metaverse",
+  "ReferralDescription": "Participate in the CanvaIsland metaverse referral program and earn exciting rewards. Invite others to join the thriving decentralized finance (DeFi) ecosystem and unlock exclusive benefits.",
+  "ReferralKeywords": "Referral Program, CanvaIsland, Metaverse, Rewards, DeFi, Decentralized Finance, Invite, Benefits",  
+  
+  "WalletTitle": "Canva Crypto Wallet App on Ethereum - The ultimate Web3 Wallet to power your tokens",
+  "WalletDescription": "Experience the power of Canva Crypto Wallet, the ultimate Web3 wallet app on Ethereum. Safely store and manage your tokens with ease. Unlock the full potential of the decentralized world.",
+  "WalletKeywords": "Canva Crypto Wallet, Web3 wallet, Ethereum, tokens, crypto wallet app, decentralized, digital assets, blockchain",  
+  
+  "TokenTitle": "Canva Price: $CANVA tokenomics | CanvaIsland Metaverse",
+  "TokenDescription": "Track the latest Canva price, market cap, trading volume, tokenomics, news and more  ",
+  "TokenKeywords": "canva, canva token, $canva, canva price, canva market cap, canva trading volume",
+  
+
+   "links": {
+		"quest_play": "quest_play_link",
+		
+		"buy_token" : "https://pinksale.finance",
+		
+		"telegram": "https://t.me/+HSLUAsPwZPoyZmJi",
+		"telegram_chat": "https://t.me/+BhLy9j9Y2DkzMTI6",
+		"twitter": "https://twitter.com/canvaisland",
+		"discord": "https://discord.gg/fNUZHnfFy6",
+		"instagram": "http://instagram.com/canvaisland",
+
+		"googleplay" : "googleplaylink",
+		"appstore" : "appstorelink",
+		
+		"opensea": "https://opensea.io/collection/canvaisland-avatars",
+		"opensea_island": "https://opensea.io/collection/canvaisland",
+		"Etherscan" : "Etherscanlink",
+		"ourmedia" : "ourmedialink",
+		
+		"dapp_moreinfo" : "dapp_moreinfolink",
+		"about_moreinfo" : "about_moreinfolink"
+	},
+	
+	
+	"IslandLevels": {
+		"title": "MAP LVL & Pricing",
+		"items": [
+			{
+				"level": 1,
+				"color": "",
+				"yield": "0.05 ETH",
+				"count": 45,
+				"sold": 45,
+				"totalEarned": "12.1 ETH",
+				"description": "d, a portal has opened, similar to the one from which a dinosaur climbed out. Only, apparently, it is from the 2D world and various objects flew out of it, which began to stick to the locals and thereby imprinting them in a frame."
+			},
+			{
+				"level": 2,
+				"color": "lightblue",
+				"yield": "0.1 ETH",
+				"count": 72,
+				"sold": 72,
+				"totalEarned": "12.1 ETH",
+				"description": "In the uone from which a dinosaur climbed out. Only, apparently, it is from the 2D world and various objects flew out of it, which began to stick to the locals and thereby imprinting them in a frame."
+			},
+			{
+				"level": 3,
+				"color": "peach",
+				"yield": "0.2 ETH",
+				"count": 48,
+				"sold": 48,
+				"totalEarned": "12.1 ETH",
+				"description": "In the universe ofrom which a dinosaur climbed out. Only, apparently, it is from the 2D world and various objects flew out of it, which began to stick to the locals and thereby imprinting them in a frame."
+			},
+			{
+				"level": 4,
+				"color": "purple",
+				"yield": "0.3 ETH",
+				"count": 24,
+				"sold": 24,
+				"totalEarned": "12.1 ETH",
+				"description": "In the universe of CanvaIslanects flew out of it, which began to stick to the locals and thereby imprinting them in a frame."
+			},		
+			{
+				"level": 5,
+				"color": "red",
+				"yield": "0.5 ETH",
+				"count": 3,
+				"sold": 3,
+				"totalEarned": "22.1 ETH",
+				"description": "In the universe of CanvaIsland,jects flew out of it, which began to stick to the locals and thereby imprinting them in a frame."
+			}
+		]
+	},
+
+
+
+   "roadmap":[
+      {
+         "phase":"Phase 1: Create",
+         "blocks":[
+            {
+               "title":"2021, Canva Island Functional Basis",
+               "items":[
+                  {
+                     "title":"Development of Metaverse and NFT objects",
+                     "active":true
+                  },
+                  {
+                     "title":"Testing, debug and optimize the metaverse",
+                     "active":true
+                  },
+                  {
+                     "title":"Launch the first island with 256 sectors",
+                     "active":true
+                  },
+                  {
+                     "title":"Creating a stable platform for islands and general camera control functionality",
+                     "active":true
+                  },
+                  {
+                     "title":"Basic character WASD control, jump, shift and fly",
+                     "active":true
+                  }
+               ]
+            },
+            {
+               "title":"2022, Building",
+               "items":[
+                  {
+                     "title":"Injecting models animations",
+                     "active":true
+                  },
+                  {
+                     "title":"Improving game mechanics & live text chat",
+                     "active":true
+                  },
+                  {
+                     "title":"Anonymous mode authorization or via MetaMask, Trust Wallet",
+                     "active":true
+                  },
+                  {
+                     "title":"Adding an inventory which shows purchased lands, avatars, character accessories, and other",
+                     "active":true
+                  },
+                  {
+                     "title":"For landowners adding the ability to build anything on their plots using voxels",
+                     "active":true
+                  }
+               ]
+            },
+            {
+               "title":"2023, Q1",
+               "items":[
+                  {
+                     "title":"Developing PFP avatars for characters",
+                     "active":true
+                  },
+                  {
+                     "title":"The function of creating different quests and interacting with game characters",
+                     "active":true
+                  },
+                  {
+                     "title":"Developing an economic model of $CANVA token and creation the smart contracts",
+                     "active":true
+                  },
+                  {
+                     "title":"Improved graphics: lighting, shades, characters",
+                     "active":true
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "phase":"Phase 2: Launch",
+         "blocks":[
+            {
+               "title":"2023, Q2",
+               "items":[
+                  {
+                     "title":"Developing Canva Island dApp",
+                     "active":true
+                  },
+                  {
+                     "title":"Developing safety Canva Wallet",
+                     "active":true
+                  },
+                  {
+                     "title":"Creation of new island with 1024 sectors",
+                     "active":true
+                  },
+                  {
+                     "title":"Website restyling and update",
+                     "active":true
+                  }
+               ]
+            },
+            {
+               "title":"2023, Q3",
+               "items":[
+                  {
+                     "title":"$CANVA token launch",
+                     "active":false
+                  },
+                  {
+                     "title":"KYC & Audit",
+                     "active":false
+                  },
+                  {
+                     "title":"Fair Launch on Pinksale",
+                     "active":false
+                  },
+                  {
+                     "title":"Marketing campaign (influencers, media, AMAs,Shillers)",
+                     "active":false
+                  },
+                  {
+                     "title":"Massive community building activities (airdrop, contests, giveaways)",
+                     "active":false
+                  },
+                  {
+                     "title":"Uniswap listing",
+                     "active":false
+                  },
+                  {
+                     "title":"Listing on CMC, CG",
+                     "active":false
+                  },
+                  {
+                     "title":"NFT avatars minting (10.000 NFT avatars)",
+                     "active":false
+                  }
+               ]
+            },
+            {
+               "title":"2023, Q4",
+               "items":[
+                  {
+                     "title":"New staking pools",
+                     "active":false
+                  },
+                  {
+                     "title":"NFT Lands minting (1000 uniqe NFT lands)",
+                     "active":false
+                  },
+                  {
+                     "title":"Canva City release",
+                     "active":false
+                  },
+                  {
+                     "title":"Adding a quest line with rewards in $Canva token",
+                     "active":false
+                  },
+                  {
+                     "title":"State Partnerships",
+                     "active":false
+                  },
+                  {
+                     "title":"NFT staking",
+                     "active":false
+                  },
+                  {
+                     "title":"NFT marketplace",
+                     "active":false
+                  },
+                  {
+                     "title":"Game interface improvement & Adding a mini-map",
+                     "active":false
+                  },
+                  {
+                     "title":"CEX listings",
+                     "active":false
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "phase":"Phase 3: Promotion",
+         "blocks":[
+            {
+               "title":"2024, Q1",
+               "items":[
+                  {
+                     "title":"Servers improving, speeding up performance",
+                     "active":false
+                  },
+                  {
+                     "title":"Adding decorative items",
+                     "active":false
+                  },
+                  {
+                     "title":"Injecting your NFTs into built objects",
+                     "active":false
+                  },
+                  {
+                     "title":"Developing the Canva Launchpad",
+                     "active":false
+                  },
+                  {
+                     "title":"Major partnerships & Marketing campaings",
+                     "active":false
+                  }
+               ]
+            },
+            {
+               "title":"2024, Q2",
+               "items":[
+                  {
+                     "title":"Organize the concert on the Canva Island metaverse",
+                     "active":false
+                  },
+                  {
+                     "title":"Clan creation feature & Adding the clan chat",
+                     "active":false
+                  },
+                  {
+                     "title":"Adding new quests",
+                     "active":false
+                  },
+                  {
+                     "title":"Adding the ability to create and purchase equipment: Weapons, armor, jewelry",
+                     "active":false
+                  },
+                  {
+                     "title":"DAO Governance",
+                     "active":false
+                  }
+               ]
+            },
+            {
+               "title":"2024, Q3",
+               "items":[
+                  {
+                     "title":"New NFT objects",
+                     "active":false
+                  },
+                  {
+                     "title":"Clan creation feature & Adding the clan chat",
+                     "active":false
+                  },
+                  {
+                     "title":"World bosses, professions, crafting tables",
+                     "active":false
+                  },
+                  {
+                     "title":"Adding new Play-to-earn mechanics",
+                     "active":false
+                  },
+                  {
+                     "title":"Island expansion to 2048 sectors",
+                     "active":false
+                  }
+               ]
+            },
+            {
+               "title":"2024, Q4",
+               "items":[
+                  {
+                     "title":"The possibility of extracting resources for land owners",
+                     "active":false
+                  },
+                  {
+                     "title":"Improving the mechanics of building objects",
+                     "active":false
+                  },
+                  {
+                     "title":"Mobile game on Android/IOS",
+                     "active":false
+                  },
+                  {
+                     "title":"Trade/retail shop in the Canva Island metaverse",
+                     "active":false
+                  },
+                  {
+                     "title":"PHASE 4: COMING SOON..",
+                     "active":false
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+
+
+
+}

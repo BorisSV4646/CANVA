@@ -21,6 +21,7 @@
   "dependencies": {
     "@nomicfoundation/hardhat-toolbox": "^2.0.2",
     "@openzeppelin/contracts": "^4.9.1",
+    "@pancakeswap/sdk": "^4.0.0",
     "dotenv": "^16.1.4",
     "hardhat": "^2.14.0",
     "mongodb": "^5.6.0",

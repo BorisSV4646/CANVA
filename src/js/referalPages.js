@@ -100,14 +100,14 @@ async function referralInfo() {
 
   priceElement.innerHTML = referralInfo.numberOfReferrer;
   pendingFriends.innerHTML =
-    Number(referralInfo.totalStakedReferalls) / 10 ** 18 + " CNV";
+    Number(referralInfo.totalStakedReferalls) / 10 ** 18 + " CANVA";
   totalErned.firstChild.nodeValue =
-    Math.floor(Number(referralInfo.totalEarned) / 10 ** 18) + " CNV";
+    Math.floor(Number(referralInfo.totalEarned) / 10 ** 18) + " CANVA";
   spanElement.firstChild.nodeValue =
     "~$" +
     Math.floor(Math.floor(Number(referralInfo.totalEarned) / 10 ** 18) * 0.023);
   unclaimReward.innerHTML =
-    Math.floor(Number(referralInfo.unclaimReward) / 10 ** 18) + " CNV";
+    Math.floor(Number(referralInfo.unclaimReward) / 10 ** 18) + " CANVA";
   spanValue2.innerHTML =
     "~$" +
     Math.floor(
@@ -167,7 +167,7 @@ async function createReferralString(referrals) {
       .userInfo(waleetAdress)
       .call();
     const userBalance = balanceStaked.amount;
-    div3.textContent = `${Number(userBalance) / 10 ** 18} CNV`;
+    div3.textContent = `${Number(userBalance) / 10 ** 18} CANVA`;
     childDiv.appendChild(div3);
 
     const div4 = document.createElement("div");
@@ -182,7 +182,7 @@ async function createReferralString(referrals) {
     const erned = Math.floor(
       (totalEarned / totalStakedReferalls) * balanceUser
     );
-    div4.textContent = `${erned} CNV`;
+    div4.textContent = `${erned} CANVA`;
     childDiv.appendChild(div4);
 
     parentDiv.appendChild(childDiv);
@@ -192,11 +192,11 @@ async function createReferralString(referrals) {
   }
 }
 
-const link = document.getElementById("link");
+const linkRef = document.getElementById("linkRef");
 
 async function createLink(walletAddress) {
   const generateLink = `http://canva.com/referral/referrallink?userId=${walletAddress}`;
-  link.innerHTML = generateLink;
+  linkRef.innerHTML = generateLink;
 }
 
 function formatDate(timestamp) {
@@ -211,9 +211,9 @@ function formatDate(timestamp) {
   return `${formattedMonth}/${formattedDay}/${year}`;
 }
 
-link.addEventListener("click", () => {
+linkRef.addEventListener("click", () => {
   const inputElement = document.createElement("input");
-  inputElement.value = link.textContent;
+  inputElement.value = linkRef.textContent;
   document.body.appendChild(inputElement);
   inputElement.select();
   document.execCommand("copy");

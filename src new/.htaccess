@@ -1,0 +1,21 @@
+DirectoryIndex index.php
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+RewriteRule ^index.html$ index.php [L]
+
+RewriteRule ^404(/?)+$ index.php?menu=404 [L]
+RewriteRule ^play(/?)+$ index.php?menu=play [L]
+RewriteRule ^island/view(/?)+$ island-view/index.php [L]
+RewriteRule ^island(/?)+$ index.php?menu=island [L]
+RewriteRule ^avatars(/?)+$ index.php?menu=avatars [L]
+RewriteRule ^staking(/?)+$ index.php?menu=staking [L]
+RewriteRule ^swap(/?)+$ index.php?menu=swap [L]
+RewriteRule ^referral(/?)+$ index.php?menu=referral [L]
+RewriteRule ^token(/?)+$ index.php?menu=token [L]
+RewriteRule ^wallet/policy-privacy(/?)+$ index.php?menu=wallet-policy-privacy [L]
+RewriteRule ^wallet(/?)+$ index.php?menu=wallet [L]
+
+ErrorDocument 404 /404

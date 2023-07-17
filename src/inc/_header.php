@@ -16,6 +16,9 @@
    <link rel="stylesheet" href="css/footer.css">
    <link rel="stylesheet" href="css/main.css">
    
+   	<link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+	<link rel="apple-touch-icon" sizes="180x180" href="../img/favicon.svg">
+
 	<meta property="og:title" content="{!TITLE!}">
 	<meta property="og:description" content="{!DESCRIPTION!}">
 	<meta property="og:type" content="website">
@@ -25,6 +28,7 @@
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="{!TITLE!}">
 	<meta name="twitter:description" content="{!DESCRIPTION!}">
+	<meta name="twitter:site" content="@CanvaIsland" />
 	<meta name="twitter:image" content="<?=$contentData["shareimg"];?>">
 	<meta name="description" content="{!DESCRIPTION!}">
 	<meta name="keywords" content="{!KEYWORDS!}">
@@ -32,6 +36,88 @@
    
 </head>
 <body>
+   <div class="preloader-page" style="position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 20; background-image: url(img/preloader-bg.png); display: none;">
+      <div class="preloader-page-inner">  
+         <div class="preloader-page-suptitle">Explore our metaverse</div>
+          <div class="preloader-page-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="857" height="124" viewBox="0 0 857 124" fill="none">
+               <path d="M0 115.143V8.85714H8.83464V0H70.6771V8.85714H79.5117V53.1429H44.1732V35.4286H35.3385V88.5714H44.1732V62H79.5117V115.143H70.6771V124H8.83464V115.143H0Z" fill="#171B21"></path>
+               <path d="M88.3521 8.85714V0H150.195V8.85714H159.029V124H123.691V88.5714H114.856V124H79.5175V8.85714H88.3521ZM114.856 35.4286V53.1429H123.691V35.4286H114.856Z" fill="#171B21"></path>
+               <path d="M159.035 0H229.712V8.85714H238.547V124H203.208V35.4286H194.374V124H159.035V0Z" fill="#171B21"></path>
+               <path d="M238.552 70.8571V0H273.891V44.2857H291.56V0H326.899V70.8571H318.064V88.5714H309.23V115.143H300.395V124H265.056V115.143H256.222V88.5714H247.387V70.8571H238.552Z" fill="#171B21"></path>
+               <path d="M335.676 8.85714V0H397.518V8.85714H406.353V124H371.014V88.5714H362.18V124H326.841V8.85714H335.676ZM362.18 35.4286V53.1429H371.014V35.4286H362.18Z" fill="#171B21"></path>
+               <path d="M406.359 88.5714H415.193V35.4286H406.359V0H459.367V35.4286H450.532V88.5714H459.367V124H406.359V88.5714Z" fill="#171B21"></path>
+               <path d="M459.418 79.7143H468.253V70.8571H459.418V8.85714H468.253V0H530.095V8.85714H538.93V44.2857H530.095V53.1429H538.93V115.143H530.095V124H468.253V115.143H459.418V79.7143ZM503.592 88.5714V79.7143H494.757V88.5714H503.592ZM494.757 44.2857H503.592V35.4286H494.757V44.2857Z" fill="#171B21"></path>
+               <path d="M538.936 0H574.274V88.5714H618.448V124H538.936V0Z" fill="#171B21"></path>
+               <path d="M627.288 8.85714V0H689.13V8.85714H697.965V124H662.626V88.5714H653.792V124H618.453V8.85714H627.288ZM653.792 35.4286V53.1429H662.626V35.4286H653.792Z" fill="#171B21"></path>
+               <path d="M697.971 0H768.648V8.85714H777.483V124H742.144V35.4286H733.309V124H697.971V0Z" fill="#171B21"></path>
+               <path d="M777.488 0H848.165V8.85714H857V115.143H848.165V124H777.488V0ZM812.827 35.4286V88.5714H821.661V35.4286H812.827Z" fill="#171B21"></path>
+               <path d="M8.83116 8.83333V0H52.9869V8.83333H61.8181V35.3333H44.1558V17.6667H17.6623V88.3333H44.1558V61.8333H61.8181V97.1667H52.9869V106H8.83116V97.1667H0V8.83333H8.83116Z" fill="white"></path>
+               <path d="M79.4861 8.83333H88.3173V0H132.473V8.83333H141.304V106H123.642V70.6667H97.1485V106H79.4861V8.83333ZM123.642 53V17.6667H97.1485V53H123.642Z" fill="white"></path>
+               <path d="M158.972 0H211.959V8.83333H220.79V106H203.128V17.6667H176.635V106H158.972V0Z" fill="white"></path>
+               <path d="M238.458 53V0H256.121V44.1667H264.952V70.6667H282.614V44.1667H291.445V0H309.108V53H300.277V70.6667H291.445V97.1667H282.614V106H264.952V97.1667H256.121V70.6667H247.29V53H238.458Z" fill="white"></path>
+               <path d="M326.712 8.83333H335.544V0H379.699V8.83333H388.531V106H370.868V70.6667H344.375V106H326.712V8.83333ZM370.868 53V17.6667H344.375V53H370.868Z" fill="white"></path>
+               <path d="M406.199 106V88.3333H415.03V17.6667H406.199V0H441.524V17.6667H432.693V88.3333H441.524V106H406.199Z" fill="#BAD34A"></path>
+               <path d="M459.238 79.5H476.9V88.3333H503.394V61.8333H468.069V53H459.238V8.83333H468.069V0H512.225V8.83333H521.056V26.5H503.394V17.6667H476.9V44.1667H512.225V53H521.056V97.1667H512.225V106H468.069V97.1667H459.238V79.5Z" fill="#BAD34A"></path>
+               <path d="M538.724 0H556.386V88.3333H600.542V106H538.724V0Z" fill="#BAD34A"></path>
+               <path d="M618.21 8.83333H627.041V0H671.197V8.83333H680.028V106H662.366V70.6667H635.873V106H618.21V8.83333ZM662.366 53V17.6667H635.873V53H662.366Z" fill="#BAD34A"></path>
+               <path d="M697.696 0H750.683V8.83333H759.514V106H741.852V17.6667H715.359V106H697.696V0Z" fill="#BAD34A"></path>
+               <path d="M777.182 0H830.169V8.83333H839.001V97.1667H830.169V106H777.182V0ZM794.845 88.3333H821.338V17.6667H794.845V88.3333Z" fill="#BAD34A"></path>
+            </svg>
+          </div>
+          <div class="preloader-page-loader-line-title preloader-bg-text title">
+             <p>Loading....</p>
+             <p>Loading....</p>
+          </div>
+          <div class="preloader-page-loader-line-wrapper">
+             <div class="preloader-page-loader-line">
+                <div class="preloader-page-loader-line-inner" style="background-image: url(img/loader-line.png);"></div>
+             </div>
+          </div>
+          <div class="preloader-page-loader-line-per preloader-bg-text title">
+             <p>40%</p>
+             <p>40%</p>
+          </div>
+          <div class="preloader-page-keyboard">
+             <div class="preloader-page-keyboard-l">
+                <div class="preloader-page-keyboard-l-img">
+                   <img src="img/wasd-icon.png" alt="">
+                </div>
+                <div class="preloader-bg-text title"> 
+                   <p>Movement</p>
+                   <p>Movement</p>
+                </div>
+             </div>
+             <div class="preloader-page-keyboard-r">
+                <div class="preloader-page-keyboard-r-imgs">
+                   <div class="preloader-page-keyboard-r-top">
+                      <div class="preloader-page-keyboard-r-top-item">
+                         <img src="img/fly-icon.png" alt="">
+                         <div class="preloader-bg-text title">
+                           <p>FLY</p>
+                           <p>FLY</p>
+                         </div>
+                      </div>
+                      <div class="preloader-page-keyboard-r-top-item">
+                        <div class="preloader-bg-text title">
+                             <p>Boost</p> 
+                             <p>Boost</p> 
+                         </div>
+                         <img src="img/boost-icon.png" alt="">
+                      </div>
+                   </div>
+                   <div class="preloader-page-keyboard-r-bottom">
+                      <img src="img/jump-icon.png" alt="">
+                      <div class="preloader-bg-text title">
+                        <p>jump</p>
+                        <p>jump</p>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+      </div>
+   </div>
    <header>
       <div class="header">
          <div class="header-inner">
@@ -193,7 +279,8 @@
                <div class="header-menu">
                   <div class="header-menu-item">
                      <div class="header-menu-item-link-wrapper">
-                        <div class="header-menu-item-link">Game</div> <svg xmlns="http://www.w3.org/2000/svg" width="13"
+                        <div class="header-menu-item-link">Game</div> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13"
                            height="12" viewBox="0 0 13 12" fill="none">
                            <g clip-path="url(#clip0_0_163)">
                               <path
@@ -210,118 +297,44 @@
                      <div class="header-submenu-wrapper">
                         <div class="header-submenu-inner">
                            <div class="header-submenu-l">
-                              <a href="/play" class="header-submenu-item">
+                              <a href="https://play.canvaisland.com/" class="header-submenu-item">
                                  <div class="header-submenu-item-l">
                                     <div class="header-submenu-item-icon">
-                                       <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70"
-                                          viewBox="0 0 70 70" fill="none">
-                                          <mask id="path-1-inside-1_0_7325" fill="white">
-                                             <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M4.34783 0H65.667V4.34783H70V65.6522H65.667V70L0 70L4.34783 70V65.6522H0V4.34783H4.34783V0Z" />
-                                          </mask>
-                                          <path fill-rule="evenodd" clip-rule="evenodd"
-                                             d="M4.34783 0H65.667V4.34783H70V65.6522H65.667V70L0 70L4.34783 70V65.6522H0V4.34783H4.34783V0Z"
-                                             fill="#EAB585" />
-                                          <path
-                                             d="M65.667 0H69.667V-4H65.667V0ZM4.34783 0V-4H0.347826V0H4.34783ZM65.667 4.34783H61.667V8.34783H65.667V4.34783ZM70 4.34783H74V0.347826H70V4.34783ZM70 65.6522V69.6522H74V65.6522H70ZM65.667 65.6522V61.6522H61.667V65.6522H65.667ZM65.667 70V74H69.667V70H65.667ZM4.34783 70L4.34784 74L8.34783 74V70H4.34783ZM4.34783 65.6522H8.34783V61.6522H4.34783V65.6522ZM0 65.6522H-4V69.6522H0V65.6522ZM0 4.34783V0.347826H-4V4.34783H0ZM4.34783 4.34783V8.34783H8.34783V4.34783H4.34783ZM65.667 -4H4.34783V4H65.667V-4ZM69.667 4.34783V0H61.667V4.34783H69.667ZM70 0.347826H65.667V8.34783H70V0.347826ZM74 65.6522V4.34783H66V65.6522H74ZM65.667 69.6522H70V61.6522H65.667V69.6522ZM69.667 70V65.6522H61.667V70H69.667ZM-2.78839e-06 74L65.667 74V66L2.78839e-06 66L-2.78839e-06 74ZM4.34781 66L-1.40381e-05 66L1.40381e-05 74L4.34784 74L4.34781 66ZM0.347826 65.6522V70H8.34783V65.6522H0.347826ZM0 69.6522H4.34783V61.6522H0V69.6522ZM-4 4.34783V65.6522H4V4.34783H-4ZM4.34783 0.347826H0V8.34783H4.34783V0.347826ZM0.347826 0V4.34783H8.34783V0H0.347826Z"
-                                             fill="white" mask="url(#path-1-inside-1_0_7325)" />
-                                          <path
-                                             d="M21.4002 21.3999C19.8994 21.3999 18.6802 22.6191 18.6802 24.1199V45.8799C18.6802 47.3807 19.8994 48.5999 21.4002 48.5999H22.0802V49.2799H25.4802V48.5999H44.5202V49.2799H47.9202V48.5999H48.6002C50.101 48.5999 51.3202 47.3807 51.3202 45.8799V24.1199C51.3202 22.6191 50.101 21.3999 48.6002 21.3999H21.4002ZM22.7602 24.7999H47.2402C47.6174 24.7999 47.9202 25.1054 47.9202 25.4799V44.5199C47.9202 44.8944 47.6174 45.1999 47.2402 45.1999H22.7602C22.383 45.1999 22.0802 44.8944 22.0802 44.5199V25.4799C22.0802 25.1054 22.383 24.7999 22.7602 24.7999ZM23.4402 26.1599V33.3637L24.6089 34.5112C24.8746 34.7768 24.8746 35.223 24.6089 35.4887L23.4402 36.6362V43.8399H46.5602V26.1599H23.4402ZM34.2989 28.2424C34.3069 28.2424 34.3122 28.2424 34.3202 28.2424V28.8799C34.3175 29.1243 34.445 29.3527 34.6575 29.4776C34.87 29.5998 35.1303 29.5998 35.3428 29.4776C35.5553 29.3527 35.6828 29.1243 35.6802 28.8799V28.2424C37.0508 28.3779 38.3045 28.9038 39.3139 29.7299L38.8464 30.1974C38.6445 30.3621 38.5516 30.6251 38.61 30.8801C38.6684 31.1324 38.8677 31.3316 39.12 31.3901C39.375 31.4485 39.638 31.3555 39.8027 31.1537L40.2702 30.6862C41.0963 31.6955 41.6222 32.9493 41.7577 34.3199H41.1202C41.0989 34.3199 41.0777 34.3199 41.0564 34.3199C41.0352 34.3199 41.0139 34.3199 40.9927 34.3199C40.6181 34.3544 40.3419 34.6891 40.3764 35.0637C40.4109 35.4382 40.7456 35.7144 41.1202 35.6799H41.7577C41.6222 37.0505 41.0963 38.3043 40.2702 39.3137L39.8027 38.8462C39.6619 38.6947 39.4574 38.6177 39.2502 38.6337C39.2289 38.6337 39.2077 38.6337 39.1864 38.6337C38.9314 38.6788 38.7269 38.8647 38.6552 39.1118C38.5835 39.3615 38.6578 39.6271 38.8464 39.8024L39.3139 40.2699C38.3045 41.096 37.0508 41.6219 35.6802 41.7574V41.1199C35.6881 40.9233 35.6084 40.7347 35.4677 40.6019C35.3242 40.4665 35.1303 40.4001 34.9364 40.4187C34.9072 40.424 34.878 40.4319 34.8514 40.4399C34.5353 40.5116 34.3122 40.7958 34.3202 41.1199V41.7574C32.9495 41.6219 31.6958 41.096 30.6864 40.2699L31.1539 39.8024C31.3558 39.6085 31.4169 39.3083 31.308 39.0507C31.2017 38.793 30.9441 38.6283 30.6652 38.6337C30.6439 38.6337 30.6227 38.6337 30.6014 38.6337C30.4474 38.6549 30.3039 38.7319 30.1977 38.8462L29.7302 39.3137C28.9041 38.3043 28.3781 37.0505 28.2427 35.6799H28.8802C29.1245 35.6826 29.353 35.5551 29.4778 35.3426C29.6 35.1301 29.6 34.8698 29.4778 34.6573C29.353 34.4448 29.1245 34.3173 28.8802 34.3199H28.2427C28.3781 32.9493 28.9041 31.6955 29.7302 30.6862L30.1977 31.1537C30.3624 31.3555 30.6253 31.4485 30.8803 31.3901C31.1327 31.3316 31.3319 31.1324 31.3903 30.8801C31.4488 30.6251 31.3558 30.3621 31.1539 30.1974L30.6864 29.7299C31.6905 28.9091 32.9389 28.3805 34.2989 28.2424ZM35.0002 31.5999C33.1302 31.5999 31.6002 33.1299 31.6002 34.9999C31.6002 36.8699 33.1302 38.3999 35.0002 38.3999C36.8702 38.3999 38.4002 36.8699 38.4002 34.9999C38.4002 33.1299 36.8702 31.5999 35.0002 31.5999ZM35.0002 32.9599C36.1344 32.9599 37.0402 33.8657 37.0402 34.9999C37.0402 36.1341 36.1344 37.0399 35.0002 37.0399C33.866 37.0399 32.9602 36.1341 32.9602 34.9999C32.9602 33.8657 33.866 32.9599 35.0002 32.9599Z"
-                                             fill="white" />
-                                       </svg>
+                                       <img src="/img/play.png">
                                     </div>
                                  </div>
                                  <div class="header-submenu-item-r">
                                     <p>Play</p>
-                                    <p>Stake your $NAME tokens and earn more</p>
+                                    <p>Join the Metaverse with wallet connection or as guest</p>
                                  </div>
                               </a>
                               <a href="/island" class="header-submenu-item">
                                  <div class="header-submenu-item-l">
                                     <div class="header-submenu-item-icon">
-                                       <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70"
-                                          viewBox="0 0 70 70" fill="none">
-                                          <mask id="path-1-inside-1_0_7356" fill="white">
-                                             <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M4.34783 0H65.667V4.34783H70V65.6522H65.667V70L0 70L4.34783 70V65.6522H0V4.34783H4.34783V0Z" />
-                                          </mask>
-                                          <path fill-rule="evenodd" clip-rule="evenodd"
-                                             d="M4.34783 0H65.667V4.34783H70V65.6522H65.667V70L0 70L4.34783 70V65.6522H0V4.34783H4.34783V0Z"
-                                             fill="#BA5348" />
-                                          <path
-                                             d="M65.667 0H69.667V-4H65.667V0ZM4.34783 0V-4H0.347826V0H4.34783ZM65.667 4.34783H61.667V8.34783H65.667V4.34783ZM70 4.34783H74V0.347826H70V4.34783ZM70 65.6522V69.6522H74V65.6522H70ZM65.667 65.6522V61.6522H61.667V65.6522H65.667ZM65.667 70V74H69.667V70H65.667ZM4.34783 70L4.34784 74L8.34783 74V70H4.34783ZM4.34783 65.6522H8.34783V61.6522H4.34783V65.6522ZM0 65.6522H-4V69.6522H0V65.6522ZM0 4.34783V0.347826H-4V4.34783H0ZM4.34783 4.34783V8.34783H8.34783V4.34783H4.34783ZM65.667 -4H4.34783V4H65.667V-4ZM69.667 4.34783V0H61.667V4.34783H69.667ZM70 0.347826H65.667V8.34783H70V0.347826ZM74 65.6522V4.34783H66V65.6522H74ZM65.667 69.6522H70V61.6522H65.667V69.6522ZM69.667 70V65.6522H61.667V70H69.667ZM-2.78839e-06 74L65.667 74V66L2.78839e-06 66L-2.78839e-06 74ZM4.34781 66L-1.40381e-05 66L1.40381e-05 74L4.34784 74L4.34781 66ZM0.347826 65.6522V70H8.34783V65.6522H0.347826ZM0 69.6522H4.34783V61.6522H0V69.6522ZM-4 4.34783V65.6522H4V4.34783H-4ZM4.34783 0.347826H0V8.34783H4.34783V0.347826ZM0.347826 0V4.34783H8.34783V0H0.347826Z"
-                                             fill="white" mask="url(#path-1-inside-1_0_7356)" />
-                                          <path fill-rule="evenodd" clip-rule="evenodd"
-                                             d="M40 27.8572L31.0589 21V24.4281C25.4706 24.4283 21 27.8571 21 37C23.2353 33.5715 25.4706 31.2853 31.0589 31.2853V34.7145L40 27.8572Z"
-                                             fill="white" />
-                                          <path fill-rule="evenodd" clip-rule="evenodd"
-                                             d="M30 42.5714L38.9412 49V45.7861C44.5294 45.786 49 42.5716 49 34C46.7647 37.2142 44.5294 39.3576 38.9412 39.3576V36.1427L30 42.5714Z"
-                                             fill="white" />
-                                       </svg>
+                                      <img src="/img/island.png">
                                     </div>
                                  </div>
                                  <div class="header-submenu-item-r">
                                     <p>Island</p>
-                                    <p>Stake your $NAME tokens and earn more</p>
+                                    <p>Read information about islands & NFT-lands</p>
                                  </div>
                               </a>
                               <a href="/avatars" class="header-submenu-item">
                                  <div class="header-submenu-item-l">
                                     <div class="header-submenu-item-icon">
-                                       <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70"
-                                          viewBox="0 0 70 70" fill="none">
-                                          <mask id="path-1-inside-1_0_7340" fill="white">
-                                             <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M4.34783 0H65.667V4.34783H70V65.6522H65.667V70L0 70L4.34783 70V65.6522H0V4.34783H4.34783V0Z" />
-                                          </mask>
-                                          <path fill-rule="evenodd" clip-rule="evenodd"
-                                             d="M4.34783 0H65.667V4.34783H70V65.6522H65.667V70L0 70L4.34783 70V65.6522H0V4.34783H4.34783V0Z"
-                                             fill="#79ACDC" />
-                                          <path
-                                             d="M65.667 0H69.667V-4H65.667V0ZM4.34783 0V-4H0.347826V0H4.34783ZM65.667 4.34783H61.667V8.34783H65.667V4.34783ZM70 4.34783H74V0.347826H70V4.34783ZM70 65.6522V69.6522H74V65.6522H70ZM65.667 65.6522V61.6522H61.667V65.6522H65.667ZM65.667 70V74H69.667V70H65.667ZM4.34783 70L4.34784 74L8.34783 74V70H4.34783ZM4.34783 65.6522H8.34783V61.6522H4.34783V65.6522ZM0 65.6522H-4V69.6522H0V65.6522ZM0 4.34783V0.347826H-4V4.34783H0ZM4.34783 4.34783V8.34783H8.34783V4.34783H4.34783ZM65.667 -4H4.34783V4H65.667V-4ZM69.667 4.34783V0H61.667V4.34783H69.667ZM70 0.347826H65.667V8.34783H70V0.347826ZM74 65.6522V4.34783H66V65.6522H74ZM65.667 69.6522H70V61.6522H65.667V69.6522ZM69.667 70V65.6522H61.667V70H69.667ZM-2.78839e-06 74L65.667 74V66L2.78839e-06 66L-2.78839e-06 74ZM4.34781 66L-1.40381e-05 66L1.40381e-05 74L4.34784 74L4.34781 66ZM0.347826 65.6522V70H8.34783V65.6522H0.347826ZM0 69.6522H4.34783V61.6522H0V69.6522ZM-4 4.34783V65.6522H4V4.34783H-4ZM4.34783 0.347826H0V8.34783H4.34783V0.347826ZM0.347826 0V4.34783H8.34783V0H0.347826Z"
-                                             fill="white" mask="url(#path-1-inside-1_0_7340)" />
-                                          <path
-                                             d="M35 24.8C31.3937 24.8 29.9 27.1132 29.9 29.9C29.9 30.8384 30.3493 31.7816 30.3493 31.7816C30.1691 31.8858 29.8695 32.2172 29.9443 32.802C30.0837 33.8923 30.557 34.1672 30.8585 34.1899C30.9729 35.2076 32.0681 36.5108 32.45 36.7V38.2208C31.6 40.7707 24.8 40.3834 24.8 46.3334H45.2C45.2 40.3834 38.4 40.7707 37.55 38.2208V36.7C37.9331 36.5108 39.0271 35.2076 39.1415 34.1899C39.443 34.1672 39.9163 33.8923 40.0557 32.802C40.1305 32.2161 39.8308 31.8858 39.6506 31.7816C39.6506 31.7816 40.1 30.9302 40.1 29.9C40.1 27.8362 39.2897 26.075 37.55 26.075C37.55 26.075 36.9459 24.8 35 24.8ZM43.5 27.0645C42.9197 27.0645 42.426 27.1695 41.9726 27.3191C42.2208 28.0886 42.3667 28.9469 42.3667 29.9C42.3667 30.503 42.2721 31.0557 42.1519 31.5181C42.3163 32.0043 42.3727 32.539 42.3025 33.0875C42.1427 34.3353 41.6582 35.1834 41.0496 35.7172C40.8728 36.1456 40.6307 36.5515 40.37 36.9391C40.6919 37.5998 41.1631 38.1881 41.375 38.3071V38.3204C43.6836 39.4027 47.4667 41.222 47.4667 46.3334H52C52 40.7143 46.3333 41.5211 45.625 39.1128V38.3049C45.9435 38.1258 46.8557 36.8952 46.9509 35.9342C47.2014 35.9126 47.5968 35.6539 47.7124 34.6237C47.7747 34.0707 47.5255 33.7595 47.3759 33.6609C47.3759 33.6609 47.75 32.8546 47.75 31.8834C47.75 29.934 47.0745 28.2709 45.625 28.2709C45.625 28.2709 45.1218 27.0645 43.5 27.0645ZM26.5 27.0667C24.8782 27.0667 24.375 28.2709 24.375 28.2709C22.9255 28.2709 22.25 29.9363 22.25 31.8856C22.25 32.858 22.6241 33.6609 22.6241 33.6609C22.4734 33.7583 22.2253 34.0707 22.2876 34.6237C22.4032 35.6539 22.7986 35.9148 23.0491 35.9364C23.1443 36.8974 24.0565 38.128 24.375 38.3071V39.1128C23.6667 41.52 18 40.7143 18 46.3334H22.5333C22.5333 41.222 26.3164 39.4038 28.625 38.3204V38.3049C28.8369 38.1859 29.3081 37.601 29.6299 36.9391C29.3693 36.5515 29.1272 36.1434 28.9504 35.715C28.3418 35.1824 27.8562 34.3342 27.6975 33.0875C27.6261 32.5322 27.6847 31.989 27.8525 31.4982C27.7301 31.0324 27.6333 30.4792 27.6333 29.9C27.6333 28.9628 27.766 28.1012 28.0074 27.3146C27.5598 27.1684 27.0723 27.0667 26.5 27.0667Z"
-                                             fill="white" />
-                                       </svg>
+                                       <img src="/img/avatars.png">
                                     </div>
                                  </div>
                                  <div class="header-submenu-item-r">
                                     <p>Avatars</p>
-                                    <p>Stake your $NAME tokens and earn more</p>
-                                 </div>
-                              </a>
-                              <a href="<?=$contentData["links"]["game_moreinfo"];?>" class="header-submenu-item">
-                                 <div class="header-submenu-item-l">
-                                    <div class="header-submenu-item-icon">
-                                       <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70"
-                                          viewBox="0 0 70 70" fill="none">
-                                          <mask id="path-1-inside-1_0_7371" fill="white">
-                                             <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M4.34783 0H65.667V4.34783H70V65.6522H65.667V70L0 70L4.34783 70V65.6522H0V4.34783H4.34783V0Z" />
-                                          </mask>
-                                          <path fill-rule="evenodd" clip-rule="evenodd"
-                                             d="M4.34783 0H65.667V4.34783H70V65.6522H65.667V70L0 70L4.34783 70V65.6522H0V4.34783H4.34783V0Z"
-                                             fill="#272C33" />
-                                          <path
-                                             d="M65.667 0H69.667V-4H65.667V0ZM4.34783 0V-4H0.347826V0H4.34783ZM65.667 4.34783H61.667V8.34783H65.667V4.34783ZM70 4.34783H74V0.347826H70V4.34783ZM70 65.6522V69.6522H74V65.6522H70ZM65.667 65.6522V61.6522H61.667V65.6522H65.667ZM65.667 70V74H69.667V70H65.667ZM4.34783 70L4.34784 74L8.34783 74V70H4.34783ZM4.34783 65.6522H8.34783V61.6522H4.34783V65.6522ZM0 65.6522H-4V69.6522H0V65.6522ZM0 4.34783V0.347826H-4V4.34783H0ZM4.34783 4.34783V8.34783H8.34783V4.34783H4.34783ZM65.667 -4H4.34783V4H65.667V-4ZM69.667 4.34783V0H61.667V4.34783H69.667ZM70 0.347826H65.667V8.34783H70V0.347826ZM74 65.6522V4.34783H66V65.6522H74ZM65.667 69.6522H70V61.6522H65.667V69.6522ZM69.667 70V65.6522H61.667V70H69.667ZM-2.78839e-06 74L65.667 74V66L2.78839e-06 66L-2.78839e-06 74ZM4.34781 66L-1.40381e-05 66L1.40381e-05 74L4.34784 74L4.34781 66ZM0.347826 65.6522V70H8.34783V65.6522H0.347826ZM0 69.6522H4.34783V61.6522H0V69.6522ZM-4 4.34783V65.6522H4V4.34783H-4ZM4.34783 0.347826H0V8.34783H4.34783V0.347826ZM0.347826 0V4.34783H8.34783V0H0.347826Z"
-                                             fill="white" mask="url(#path-1-inside-1_0_7371)" />
-                                          <path
-                                             d="M24.12 30.9199C21.8702 30.9199 20.04 32.7501 20.04 34.9999C20.04 37.2498 21.8702 39.0799 24.12 39.0799C26.3699 39.0799 28.2 37.2498 28.2 34.9999C28.2 32.7501 26.3699 30.9199 24.12 30.9199ZM35 30.9199C32.7502 30.9199 30.92 32.7501 30.92 34.9999C30.92 37.2498 32.7502 39.0799 35 39.0799C37.2499 39.0799 39.08 37.2498 39.08 34.9999C39.08 32.7501 37.2499 30.9199 35 30.9199ZM45.88 30.9199C43.6302 30.9199 41.8 32.7501 41.8 34.9999C41.8 37.2498 43.6302 39.0799 45.88 39.0799C48.1299 39.0799 49.96 37.2498 49.96 34.9999C49.96 32.7501 48.1299 30.9199 45.88 30.9199Z"
-                                             fill="white" />
-                                       </svg>
-                                    </div>
-                                 </div>
-                                 <div class="header-submenu-item-r">
-                                    <p>More info</p>
-                                    <p>Stake your $NAME tokens and earn more</p>
+                                    <p>Read information about NFT avatars</p>
                                  </div>
                               </a>
                            </div>
                            <div class="header-submenu-r">
                               <div class="header-submenu-r-items">
-                                 <a href="<?=$contentData["links"]["opensea"];?>" class="header-submenu-r-item"> 
-                                    Buy NFT’s on OpenSea
+                                 <a href="https://docs.canvaisland.com/canva-island-metaverse/play-to-earn" class="header-submenu-r-item"> 
+                                    About Play to Earn
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                        fill="none">
                                        <path
@@ -329,8 +342,8 @@
                                           fill="white" stroke="white" />
                                     </svg>
                                  </a>
-                                 <a href="<?=$contentData["links"]["bscscan"];?>" class="header-submenu-r-item">
-                                    View in bscscan
+                                 <a href="https://docs.canvaisland.com/canva-island-metaverse/ecosystem" class="header-submenu-r-item">
+                                    About Ecosystem
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                        fill="none">
                                        <path
@@ -338,8 +351,8 @@
                                           fill="white" stroke="white" />
                                     </svg>
                                  </a>
-                                 <a href="<?=$contentData["links"]["ourmedia"];?>" class="header-submenu-r-item"> 
-                                    Subscribe to our media
+                                 <a href="https://docs.canvaisland.com/canva-island-metaverse/rpg" class="header-submenu-r-item"> 
+                                    About RPG
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                        fill="none">
                                        <path
@@ -350,7 +363,7 @@
                               </div>
                               <div class="header-submenu-r-bottom">
                                  <img src="img/header-submenu-r-bottom.png" alt="">
-                                 <span class="green">1 $NAME =</span> <span>$0,023</span>
+                                 <span class="green">1 <?=$contentData["TokenName"];?> =</span> <span>$ ---</span>
                               </div>
                            </div>
                         </div>
@@ -398,7 +411,7 @@
                                  </div>
                                  <div class="header-submenu-item-r">
                                     <p>Staking</p>
-                                    <p>Stake your $NAME tokens and earn more</p>
+                                    <p>Stake your tokens to earn more</p>
                                  </div>
                               </a>
                               <a href="/swap" class="header-submenu-item">
@@ -426,8 +439,8 @@
                                     </div>
                                  </div>
                                  <div class="header-submenu-item-r">
-                                    <p>Exchange</p>
-                                    <p>Stake your $NAME tokens and earn more</p>
+                                    <p>Swap</p>
+                                    <p>Change one token to another via AMM pools on Ethereum</p>
                                  </div>
                               </a>
                               <a href="/referral" class="header-submenu-item">
@@ -453,40 +466,15 @@
                                  </div>
                                  <div class="header-submenu-item-r">
                                     <p>Referral program</p>
-                                    <p>Stake your $NAME tokens and earn more</p>
+                                    <p>Invite friends and earn 10% from their earnings</p>
                                  </div>
                               </a>
-                              <a href="<?=$contentData["links"]["dapp_moreinfo"];?>" class="header-submenu-item">
-                                 <div class="header-submenu-item-l">
-                                    <div class="header-submenu-item-icon">
-                                       <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70"
-                                          viewBox="0 0 70 70" fill="none">
-                                          <mask id="path-1-inside-1_0_7371" fill="white">
-                                             <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M4.34783 0H65.667V4.34783H70V65.6522H65.667V70L0 70L4.34783 70V65.6522H0V4.34783H4.34783V0Z" />
-                                          </mask>
-                                          <path fill-rule="evenodd" clip-rule="evenodd"
-                                             d="M4.34783 0H65.667V4.34783H70V65.6522H65.667V70L0 70L4.34783 70V65.6522H0V4.34783H4.34783V0Z"
-                                             fill="#272C33" />
-                                          <path
-                                             d="M65.667 0H69.667V-4H65.667V0ZM4.34783 0V-4H0.347826V0H4.34783ZM65.667 4.34783H61.667V8.34783H65.667V4.34783ZM70 4.34783H74V0.347826H70V4.34783ZM70 65.6522V69.6522H74V65.6522H70ZM65.667 65.6522V61.6522H61.667V65.6522H65.667ZM65.667 70V74H69.667V70H65.667ZM4.34783 70L4.34784 74L8.34783 74V70H4.34783ZM4.34783 65.6522H8.34783V61.6522H4.34783V65.6522ZM0 65.6522H-4V69.6522H0V65.6522ZM0 4.34783V0.347826H-4V4.34783H0ZM4.34783 4.34783V8.34783H8.34783V4.34783H4.34783ZM65.667 -4H4.34783V4H65.667V-4ZM69.667 4.34783V0H61.667V4.34783H69.667ZM70 0.347826H65.667V8.34783H70V0.347826ZM74 65.6522V4.34783H66V65.6522H74ZM65.667 69.6522H70V61.6522H65.667V69.6522ZM69.667 70V65.6522H61.667V70H69.667ZM-2.78839e-06 74L65.667 74V66L2.78839e-06 66L-2.78839e-06 74ZM4.34781 66L-1.40381e-05 66L1.40381e-05 74L4.34784 74L4.34781 66ZM0.347826 65.6522V70H8.34783V65.6522H0.347826ZM0 69.6522H4.34783V61.6522H0V69.6522ZM-4 4.34783V65.6522H4V4.34783H-4ZM4.34783 0.347826H0V8.34783H4.34783V0.347826ZM0.347826 0V4.34783H8.34783V0H0.347826Z"
-                                             fill="white" mask="url(#path-1-inside-1_0_7371)" />
-                                          <path
-                                             d="M24.12 30.9199C21.8702 30.9199 20.04 32.7501 20.04 34.9999C20.04 37.2498 21.8702 39.0799 24.12 39.0799C26.3699 39.0799 28.2 37.2498 28.2 34.9999C28.2 32.7501 26.3699 30.9199 24.12 30.9199ZM35 30.9199C32.7502 30.9199 30.92 32.7501 30.92 34.9999C30.92 37.2498 32.7502 39.0799 35 39.0799C37.2499 39.0799 39.08 37.2498 39.08 34.9999C39.08 32.7501 37.2499 30.9199 35 30.9199ZM45.88 30.9199C43.6302 30.9199 41.8 32.7501 41.8 34.9999C41.8 37.2498 43.6302 39.0799 45.88 39.0799C48.1299 39.0799 49.96 37.2498 49.96 34.9999C49.96 32.7501 48.1299 30.9199 45.88 30.9199Z"
-                                             fill="white" />
-                                       </svg>
-                                    </div>
-                                 </div>
-                                 <div class="header-submenu-item-r">
-                                    <p>More info</p>
-                                    <p>Stake your $NAME tokens and earn more</p>
-                                 </div>
-                              </a>
+
                            </div>
                            <div class="header-submenu-r">
                               <div class="header-submenu-r-items">
-                                 <a href="<?=$contentData["links"]["opensea"];?>" class="header-submenu-r-item">
-                                    Buy NFT’s on OpenSea
+                                 <a href="https://docs.canvaisland.com/dapp/staking-pools" class="header-submenu-r-item">
+                                  About Staking
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                        fill="none">
                                        <path
@@ -494,8 +482,8 @@
                                           fill="white" stroke="white" />
                                     </svg>
                                  </a>
-                                 <a href="<?=$contentData["links"]["bscscan"];?>" class="header-submenu-r-item">
-                                    View in bscscan
+                                 <a href="https://docs.canvaisland.com/dapp/referral" class="header-submenu-r-item">
+                                  About Referral program
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                        fill="none">
                                        <path
@@ -503,8 +491,8 @@
                                           fill="white" stroke="white" />
                                     </svg>
                                  </a>
-                                 <a href="<?=$contentData["links"]["ourmedia"];?>" class="header-submenu-r-item">
-                                    Subscribe to our media
+                                 <a href="https://docs.canvaisland.com/usdcanva-token/about-usdcanva-token" class="header-submenu-r-item">
+                                    About Canva Token
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                        fill="none">
                                        <path
@@ -515,7 +503,7 @@
                               </div>
                               <div class="header-submenu-r-bottom">
                                  <img src="img/header-submenu-r-bottom.png" alt="">
-                                 <span class="green">1 $NAME =</span> <span>$0,023</span>
+                                 <span class="green">1 <?=$contentData["TokenName"];?> =</span> <span>$ ---</span>
                               </div>
                            </div>
                         </div>
@@ -540,93 +528,45 @@
                      <div class="header-submenu-wrapper">
                         <div class="header-submenu-inner">
                            <div class="header-submenu-l">
-                              <a href="/app" class="header-submenu-item">
+                              <a href="/wallet" class="header-submenu-item">
                                  <div class="header-submenu-item-l">
                                     <div class="header-submenu-item-icon">
-                                       <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70"
-                                          viewBox="0 0 70 70" fill="none">
-                                          <mask id="path-1-inside-1_0_7325" fill="white">
-                                             <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M4.34783 0H65.667V4.34783H70V65.6522H65.667V70L0 70L4.34783 70V65.6522H0V4.34783H4.34783V0Z" />
-                                          </mask>
-                                          <path fill-rule="evenodd" clip-rule="evenodd"
-                                             d="M4.34783 0H65.667V4.34783H70V65.6522H65.667V70L0 70L4.34783 70V65.6522H0V4.34783H4.34783V0Z"
-                                             fill="#EAB585" />
-                                          <path
-                                             d="M65.667 0H69.667V-4H65.667V0ZM4.34783 0V-4H0.347826V0H4.34783ZM65.667 4.34783H61.667V8.34783H65.667V4.34783ZM70 4.34783H74V0.347826H70V4.34783ZM70 65.6522V69.6522H74V65.6522H70ZM65.667 65.6522V61.6522H61.667V65.6522H65.667ZM65.667 70V74H69.667V70H65.667ZM4.34783 70L4.34784 74L8.34783 74V70H4.34783ZM4.34783 65.6522H8.34783V61.6522H4.34783V65.6522ZM0 65.6522H-4V69.6522H0V65.6522ZM0 4.34783V0.347826H-4V4.34783H0ZM4.34783 4.34783V8.34783H8.34783V4.34783H4.34783ZM65.667 -4H4.34783V4H65.667V-4ZM69.667 4.34783V0H61.667V4.34783H69.667ZM70 0.347826H65.667V8.34783H70V0.347826ZM74 65.6522V4.34783H66V65.6522H74ZM65.667 69.6522H70V61.6522H65.667V69.6522ZM69.667 70V65.6522H61.667V70H69.667ZM-2.78839e-06 74L65.667 74V66L2.78839e-06 66L-2.78839e-06 74ZM4.34781 66L-1.40381e-05 66L1.40381e-05 74L4.34784 74L4.34781 66ZM0.347826 65.6522V70H8.34783V65.6522H0.347826ZM0 69.6522H4.34783V61.6522H0V69.6522ZM-4 4.34783V65.6522H4V4.34783H-4ZM4.34783 0.347826H0V8.34783H4.34783V0.347826ZM0.347826 0V4.34783H8.34783V0H0.347826Z"
-                                             fill="white" mask="url(#path-1-inside-1_0_7325)" />
-                                          <path
-                                             d="M21.4002 21.3999C19.8994 21.3999 18.6802 22.6191 18.6802 24.1199V45.8799C18.6802 47.3807 19.8994 48.5999 21.4002 48.5999H22.0802V49.2799H25.4802V48.5999H44.5202V49.2799H47.9202V48.5999H48.6002C50.101 48.5999 51.3202 47.3807 51.3202 45.8799V24.1199C51.3202 22.6191 50.101 21.3999 48.6002 21.3999H21.4002ZM22.7602 24.7999H47.2402C47.6174 24.7999 47.9202 25.1054 47.9202 25.4799V44.5199C47.9202 44.8944 47.6174 45.1999 47.2402 45.1999H22.7602C22.383 45.1999 22.0802 44.8944 22.0802 44.5199V25.4799C22.0802 25.1054 22.383 24.7999 22.7602 24.7999ZM23.4402 26.1599V33.3637L24.6089 34.5112C24.8746 34.7768 24.8746 35.223 24.6089 35.4887L23.4402 36.6362V43.8399H46.5602V26.1599H23.4402ZM34.2989 28.2424C34.3069 28.2424 34.3122 28.2424 34.3202 28.2424V28.8799C34.3175 29.1243 34.445 29.3527 34.6575 29.4776C34.87 29.5998 35.1303 29.5998 35.3428 29.4776C35.5553 29.3527 35.6828 29.1243 35.6802 28.8799V28.2424C37.0508 28.3779 38.3045 28.9038 39.3139 29.7299L38.8464 30.1974C38.6445 30.3621 38.5516 30.6251 38.61 30.8801C38.6684 31.1324 38.8677 31.3316 39.12 31.3901C39.375 31.4485 39.638 31.3555 39.8027 31.1537L40.2702 30.6862C41.0963 31.6955 41.6222 32.9493 41.7577 34.3199H41.1202C41.0989 34.3199 41.0777 34.3199 41.0564 34.3199C41.0352 34.3199 41.0139 34.3199 40.9927 34.3199C40.6181 34.3544 40.3419 34.6891 40.3764 35.0637C40.4109 35.4382 40.7456 35.7144 41.1202 35.6799H41.7577C41.6222 37.0505 41.0963 38.3043 40.2702 39.3137L39.8027 38.8462C39.6619 38.6947 39.4574 38.6177 39.2502 38.6337C39.2289 38.6337 39.2077 38.6337 39.1864 38.6337C38.9314 38.6788 38.7269 38.8647 38.6552 39.1118C38.5835 39.3615 38.6578 39.6271 38.8464 39.8024L39.3139 40.2699C38.3045 41.096 37.0508 41.6219 35.6802 41.7574V41.1199C35.6881 40.9233 35.6084 40.7347 35.4677 40.6019C35.3242 40.4665 35.1303 40.4001 34.9364 40.4187C34.9072 40.424 34.878 40.4319 34.8514 40.4399C34.5353 40.5116 34.3122 40.7958 34.3202 41.1199V41.7574C32.9495 41.6219 31.6958 41.096 30.6864 40.2699L31.1539 39.8024C31.3558 39.6085 31.4169 39.3083 31.308 39.0507C31.2017 38.793 30.9441 38.6283 30.6652 38.6337C30.6439 38.6337 30.6227 38.6337 30.6014 38.6337C30.4474 38.6549 30.3039 38.7319 30.1977 38.8462L29.7302 39.3137C28.9041 38.3043 28.3781 37.0505 28.2427 35.6799H28.8802C29.1245 35.6826 29.353 35.5551 29.4778 35.3426C29.6 35.1301 29.6 34.8698 29.4778 34.6573C29.353 34.4448 29.1245 34.3173 28.8802 34.3199H28.2427C28.3781 32.9493 28.9041 31.6955 29.7302 30.6862L30.1977 31.1537C30.3624 31.3555 30.6253 31.4485 30.8803 31.3901C31.1327 31.3316 31.3319 31.1324 31.3903 30.8801C31.4488 30.6251 31.3558 30.3621 31.1539 30.1974L30.6864 29.7299C31.6905 28.9091 32.9389 28.3805 34.2989 28.2424ZM35.0002 31.5999C33.1302 31.5999 31.6002 33.1299 31.6002 34.9999C31.6002 36.8699 33.1302 38.3999 35.0002 38.3999C36.8702 38.3999 38.4002 36.8699 38.4002 34.9999C38.4002 33.1299 36.8702 31.5999 35.0002 31.5999ZM35.0002 32.9599C36.1344 32.9599 37.0402 33.8657 37.0402 34.9999C37.0402 36.1341 36.1344 37.0399 35.0002 37.0399C33.866 37.0399 32.9602 36.1341 32.9602 34.9999C32.9602 33.8657 33.866 32.9599 35.0002 32.9599Z"
-                                             fill="white" />
-                                       </svg>
+                                       <img src="/img/mobile app.png">
                                     </div>
                                  </div>
                                  <div class="header-submenu-item-r">
-                                    <p>Mobile app</p>
-                                    <p>Stake your $NAME tokens and earn more</p>
+                                    <p>Canva Wallet</p>
+                                    <p>Read information about Canva multi-wallet mobile appe</p>
                                  </div>
                               </a>
                               <a href="/token" class="header-submenu-item">
                                  <div class="header-submenu-item-l">
                                     <div class="header-submenu-item-icon">
-                                       <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70"
-                                          viewBox="0 0 70 70" fill="none">
-                                          <mask id="path-1-inside-1_0_7356" fill="white">
-                                             <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M4.34783 0H65.667V4.34783H70V65.6522H65.667V70L0 70L4.34783 70V65.6522H0V4.34783H4.34783V0Z" />
-                                          </mask>
-                                          <path fill-rule="evenodd" clip-rule="evenodd"
-                                             d="M4.34783 0H65.667V4.34783H70V65.6522H65.667V70L0 70L4.34783 70V65.6522H0V4.34783H4.34783V0Z"
-                                             fill="#BA5348" />
-                                          <path
-                                             d="M65.667 0H69.667V-4H65.667V0ZM4.34783 0V-4H0.347826V0H4.34783ZM65.667 4.34783H61.667V8.34783H65.667V4.34783ZM70 4.34783H74V0.347826H70V4.34783ZM70 65.6522V69.6522H74V65.6522H70ZM65.667 65.6522V61.6522H61.667V65.6522H65.667ZM65.667 70V74H69.667V70H65.667ZM4.34783 70L4.34784 74L8.34783 74V70H4.34783ZM4.34783 65.6522H8.34783V61.6522H4.34783V65.6522ZM0 65.6522H-4V69.6522H0V65.6522ZM0 4.34783V0.347826H-4V4.34783H0ZM4.34783 4.34783V8.34783H8.34783V4.34783H4.34783ZM65.667 -4H4.34783V4H65.667V-4ZM69.667 4.34783V0H61.667V4.34783H69.667ZM70 0.347826H65.667V8.34783H70V0.347826ZM74 65.6522V4.34783H66V65.6522H74ZM65.667 69.6522H70V61.6522H65.667V69.6522ZM69.667 70V65.6522H61.667V70H69.667ZM-2.78839e-06 74L65.667 74V66L2.78839e-06 66L-2.78839e-06 74ZM4.34781 66L-1.40381e-05 66L1.40381e-05 74L4.34784 74L4.34781 66ZM0.347826 65.6522V70H8.34783V65.6522H0.347826ZM0 69.6522H4.34783V61.6522H0V69.6522ZM-4 4.34783V65.6522H4V4.34783H-4ZM4.34783 0.347826H0V8.34783H4.34783V0.347826ZM0.347826 0V4.34783H8.34783V0H0.347826Z"
-                                             fill="white" mask="url(#path-1-inside-1_0_7356)" />
-                                          <path fill-rule="evenodd" clip-rule="evenodd"
-                                             d="M40 27.8572L31.0589 21V24.4281C25.4706 24.4283 21 27.8571 21 37C23.2353 33.5715 25.4706 31.2853 31.0589 31.2853V34.7145L40 27.8572Z"
-                                             fill="white" />
-                                          <path fill-rule="evenodd" clip-rule="evenodd"
-                                             d="M30 42.5714L38.9412 49V45.7861C44.5294 45.786 49 42.5716 49 34C46.7647 37.2142 44.5294 39.3576 38.9412 39.3576V36.1427L30 42.5714Z"
-                                             fill="white" />
-                                       </svg>
+                                       <img src="/img/token.png">
                                     </div>
                                  </div>
                                  <div class="header-submenu-item-r">
-                                    <p>Token</p>
-                                    <p>Stake your $NAME tokens and earn more</p>
+                                    <p>$CANVA Token</p>
+                                    <p>Read information about token and benefits</p>
                                  </div>
                               </a>
 
-                              <a href="<?=$contentData["links"]["about_moreinfo"];?>" class="header-submenu-item">
+                              <a href="https://docs.canvaisland.com/" class="header-submenu-item">
                                  <div class="header-submenu-item-l">
                                     <div class="header-submenu-item-icon">
-                                       <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70"
-                                          viewBox="0 0 70 70" fill="none">
-                                          <mask id="path-1-inside-1_0_7371" fill="white">
-                                             <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M4.34783 0H65.667V4.34783H70V65.6522H65.667V70L0 70L4.34783 70V65.6522H0V4.34783H4.34783V0Z" />
-                                          </mask>
-                                          <path fill-rule="evenodd" clip-rule="evenodd"
-                                             d="M4.34783 0H65.667V4.34783H70V65.6522H65.667V70L0 70L4.34783 70V65.6522H0V4.34783H4.34783V0Z"
-                                             fill="#272C33" />
-                                          <path
-                                             d="M65.667 0H69.667V-4H65.667V0ZM4.34783 0V-4H0.347826V0H4.34783ZM65.667 4.34783H61.667V8.34783H65.667V4.34783ZM70 4.34783H74V0.347826H70V4.34783ZM70 65.6522V69.6522H74V65.6522H70ZM65.667 65.6522V61.6522H61.667V65.6522H65.667ZM65.667 70V74H69.667V70H65.667ZM4.34783 70L4.34784 74L8.34783 74V70H4.34783ZM4.34783 65.6522H8.34783V61.6522H4.34783V65.6522ZM0 65.6522H-4V69.6522H0V65.6522ZM0 4.34783V0.347826H-4V4.34783H0ZM4.34783 4.34783V8.34783H8.34783V4.34783H4.34783ZM65.667 -4H4.34783V4H65.667V-4ZM69.667 4.34783V0H61.667V4.34783H69.667ZM70 0.347826H65.667V8.34783H70V0.347826ZM74 65.6522V4.34783H66V65.6522H74ZM65.667 69.6522H70V61.6522H65.667V69.6522ZM69.667 70V65.6522H61.667V70H69.667ZM-2.78839e-06 74L65.667 74V66L2.78839e-06 66L-2.78839e-06 74ZM4.34781 66L-1.40381e-05 66L1.40381e-05 74L4.34784 74L4.34781 66ZM0.347826 65.6522V70H8.34783V65.6522H0.347826ZM0 69.6522H4.34783V61.6522H0V69.6522ZM-4 4.34783V65.6522H4V4.34783H-4ZM4.34783 0.347826H0V8.34783H4.34783V0.347826ZM0.347826 0V4.34783H8.34783V0H0.347826Z"
-                                             fill="white" mask="url(#path-1-inside-1_0_7371)" />
-                                          <path
-                                             d="M24.12 30.9199C21.8702 30.9199 20.04 32.7501 20.04 34.9999C20.04 37.2498 21.8702 39.0799 24.12 39.0799C26.3699 39.0799 28.2 37.2498 28.2 34.9999C28.2 32.7501 26.3699 30.9199 24.12 30.9199ZM35 30.9199C32.7502 30.9199 30.92 32.7501 30.92 34.9999C30.92 37.2498 32.7502 39.0799 35 39.0799C37.2499 39.0799 39.08 37.2498 39.08 34.9999C39.08 32.7501 37.2499 30.9199 35 30.9199ZM45.88 30.9199C43.6302 30.9199 41.8 32.7501 41.8 34.9999C41.8 37.2498 43.6302 39.0799 45.88 39.0799C48.1299 39.0799 49.96 37.2498 49.96 34.9999C49.96 32.7501 48.1299 30.9199 45.88 30.9199Z"
-                                             fill="white" />
-                                       </svg>
+                                       <img src="img/docs.png">
                                     </div>
                                  </div>
                                  <div class="header-submenu-item-r">
-                                    <p>More info</p>
-                                    <p>Stake your $NAME tokens and earn more</p>
+                                    <p>Docs</p>
+                                    <p>Read full information about Canva Island metaverse project</p>
                                  </div>
                               </a>
                            </div>
                            <div class="header-submenu-r">
                               <div class="header-submenu-r-items">
-                                 <a href="<?=$contentData["links"]["opensea"];?>" class="header-submenu-r-item">
-                                    Buy NFT’s on OpenSea
+                                 <a href="https://docs.canvaisland.com/canva-island-or-overview/team" class="header-submenu-r-item">
+                                    Team
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                        fill="none">
                                        <path
@@ -634,8 +574,8 @@
                                           fill="white" stroke="white" />
                                     </svg>
                                  </a>
-                                 <a href="<?=$contentData["links"]["bscscan"];?>" class="header-submenu-r-item">
-                                    View in bscscan
+                                 <a href="https://docs.canvaisland.com/canva-island-or-overview/community" class="header-submenu-r-item">
+                                    Community
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                        fill="none">
                                        <path
@@ -643,8 +583,8 @@
                                           fill="white" stroke="white" />
                                     </svg>
                                  </a>
-                                 <a href="<?=$contentData["links"]["ourmedia"];?>" class="header-submenu-r-item">
-                                    Subscribe to our media
+                                 <a href="https://docs.canvaisland.com/canva-island-or-overview/roadmap" class="header-submenu-r-item">
+                                    Roadmap
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                        fill="none">
                                        <path
@@ -655,7 +595,7 @@
                               </div>
                               <div class="header-submenu-r-bottom">
                                  <img src="img/header-submenu-r-bottom.png" alt="">
-                                 <span class="green">1 $CV =</span> <span>$0,023</span>
+                                 <span class="green">1 <?=$contentData["TokenName"];?> =</span> <span>$ ---</span>
                               </div>
                            </div>
                         </div>
@@ -665,7 +605,7 @@
             </div>
             <div class="header-r">
                <div class="header-login btn" id="connect_button">
-                  <span>log in</span>
+                  <span><img src="img/connect-btn-icon.png"  alt="">CONNECT</span>
                </div>
                <div class="header-burger">
                   <div class="header-burger-inner">
@@ -677,8 +617,123 @@
             </div>
          </div>
       </div>
-      <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-      <script src="js/connectWallet.js"></script>
    </header>
-   
+   <div class="logout-wallet-wrapper modal-block-wrapper" style="display: none;">
+      <div class="logout-wallet-bg modal-block-bg" id="logoutWallet"></div>
+      <div class="logout-wallet-block modal-block">
+         <div class="logout-wallet-top modal-block-top">
+            <div class="logout-wallet-title modal-block-title">Your Wallet</div>
+            <div class="logout-wallet-close modal-block-close" id="logoutWalletImage">
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" >
+                  <path d="M4.99107 3.99016C4.58415 3.99027 4.21786 4.23692 4.06474 4.61393C3.91162 4.99094 4.00219 5.42314 4.29381 5.70696L10.5868 11.9999L4.29381 18.2929C4.03257 18.5437 3.92734 18.9162 4.0187 19.2666C4.11006 19.6171 4.38373 19.8907 4.73417 19.9821C5.08461 20.0734 5.45706 19.9682 5.70788 19.707L12.0009 13.414L18.2938 19.707C18.5446 19.9682 18.9171 20.0735 19.2675 19.9821C19.618 19.8907 19.8916 19.6171 19.983 19.2666C20.0744 18.9162 19.9691 18.5437 19.7079 18.2929L13.4149 11.9999L19.7079 5.70697C20.0036 5.41948 20.0926 4.9799 19.9318 4.60006C19.7711 4.22021 19.3936 3.97802 18.9813 3.99018C18.7215 3.99792 18.4749 4.1065 18.2938 4.29291L12.0008 10.5859L5.70787 4.29291C5.5196 4.09938 5.26107 3.99017 4.99107 3.99016Z" fill="white"></path>
+               </svg>
+            </div>
+         </div>
+         <div class="logout-wallet-bottom">
+            <div class="logout-wallet-field">
+               <div class="logout-wallet-field-text" id="logout_wallet_field_text">0x96c4...d565ae</div>
+               <div class="logout-wallet-field-btn btn green">
+                  <span id="changetButton">change</span>
+               </div>
+            </div>
+            <div class="logout-wallet-pult">
+               <div class="logout-wallet-pult-item">
+                  <span id="link">Copy Address</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                     <g clip-path="url(#clip0_90_4045)">
+                     <path fill-rule="evenodd" clip-rule="evenodd" d="M4.57486 5.07714C4.58857 3.67714 4.65943 2.86457 5.02171 2.23029C5.32601 1.69666 5.76808 1.25458 6.30171 0.950286C7.09029 0.5 8.15543 0.5 10.2857 0.5C12.416 0.5 13.48 0.5 14.2697 0.950286C14.8033 1.25458 15.2454 1.69666 15.5497 2.23029C16 3.01886 16 4.084 16 6.21429C16 8.34457 16 9.40857 15.5497 10.1983C15.2454 10.7319 14.8033 11.174 14.2697 11.4783C13.6354 11.8406 12.8229 11.9114 11.4229 11.9251L11.4251 11.9286C11.4114 13.3251 11.3394 14.1366 10.9783 14.7697C10.674 15.3033 10.2319 15.7454 9.69829 16.0497C8.90971 16.5 7.84457 16.5 5.71429 16.5C3.584 16.5 2.52 16.5 1.73029 16.0497C1.19666 15.7454 0.75458 15.3033 0.450286 14.7697C0 13.9811 0 12.916 0 10.7857C0 8.65543 0 7.59143 0.450286 6.80171C0.75458 6.26808 1.19666 5.82601 1.73029 5.52171C2.36343 5.16057 3.17486 5.08857 4.57143 5.07486L4.57486 5.07714ZM10.2857 10.2143C9.18971 10.2143 8.48 10.2131 7.94286 10.1651C7.42857 10.1194 7.24229 10.0406 7.15086 9.98914C6.88404 9.837 6.663 9.61596 6.51086 9.34914C6.45943 9.25771 6.38171 9.07143 6.33486 8.55714C6.28686 8.02 6.28571 7.31029 6.28571 6.21429C6.28571 5.11829 6.28686 4.40857 6.33486 3.87143C6.38057 3.35714 6.45943 3.17086 6.51086 3.07943C6.663 2.81261 6.88404 2.59158 7.15086 2.43943C7.24229 2.388 7.42857 2.31029 7.94286 2.26343C8.48 2.21543 9.18971 2.21429 10.2857 2.21429C11.3817 2.21429 12.0914 2.21543 12.6286 2.26343C13.1429 2.30914 13.3291 2.388 13.4206 2.43943C13.6874 2.59158 13.9084 2.81261 14.0606 3.07943C14.112 3.17086 14.1897 3.35714 14.2366 3.87143C14.2846 4.40857 14.2857 5.11829 14.2857 6.21429C14.2857 7.31029 14.2846 8.02 14.2366 8.55714C14.1909 9.07143 14.112 9.25771 14.0606 9.34914C13.9084 9.61596 13.6874 9.837 13.4206 9.98914C13.3291 10.0406 13.144 10.1183 12.6286 10.1651C12.0914 10.2131 11.3817 10.2143 10.2857 10.2143ZM4.57143 6.78914C4.17099 6.78911 3.7707 6.80436 3.37143 6.83486C2.85714 6.88057 2.67086 6.95943 2.57943 7.01086C2.31261 7.163 2.09158 7.38404 1.93943 7.65086C1.888 7.74229 1.81029 7.92857 1.76343 8.44286C1.71543 8.98 1.71429 9.68971 1.71429 10.7857C1.71429 11.8817 1.71543 12.5914 1.76343 13.1286C1.80914 13.6429 1.888 13.8291 1.93943 13.9206C2.09158 14.1874 2.31261 14.4084 2.57943 14.5606C2.67086 14.612 2.85714 14.6897 3.37143 14.7366C3.90857 14.7846 4.61829 14.7857 5.71429 14.7857C6.81029 14.7857 7.52 14.7846 8.05714 14.7366C8.57143 14.6909 8.75771 14.612 8.84914 14.5606C9.11596 14.4084 9.337 14.1874 9.48914 13.9206C9.54057 13.8291 9.61829 13.644 9.66514 13.1286C9.69371 12.8051 9.70514 12.4211 9.71086 11.9286C7.95771 11.9251 7.016 11.8863 6.30171 11.4783C5.76808 11.174 5.32601 10.7319 5.02171 10.1983C4.61371 9.484 4.576 8.54229 4.57143 6.78914Z" fill="#BAD34A"/>
+                     </g>
+                     <defs>
+                     <clipPath id="clip0_90_4045">
+                     <rect width="16" height="16" fill="white" transform="translate(0 0.5)"/>
+                     </clipPath>
+                     </defs>
+                  </svg>
+               </div>
+               <div class="logout-wallet-pult-item">
+                  <span>  <a id="etherscan-link" target="_blank" rel="noopener noreferrer">View on Etherscan</a></span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                     <g>
+                     <path d="M3.33333 2.5C2.60463 2.5 2 3.10463 2 3.83333V13.1667C2 13.8954 2.60463 14.5 3.33333 14.5H12.6667C13.3954 14.5 14 13.8954 14 13.1667V8.5H12.6667V13.1667H3.33333V3.83333H8V2.5H3.33333ZM9.33334 2.5V3.83333H11.724L5.52865 10.0286L6.47135 10.9714L12.6667 4.77604V7.16667H14V2.5H9.33334Z" fill="#BAD34A"/>
+                     </g>
+                  </svg>
+               </div>
+            </div>
+            <div class="logout-wallet-btn btn transparent disabled">
+               <span id="disconnectButton">LOGOUT</span>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="connect-wallet-wrapper modal-block-wrapper" style="display: none;">
+      <div class="connect-wallet-bg modal-block-bg" id="closeWallet"></div>
+      <div class="connect-wallet-block modal-block">
+         <div class="connect-wallet-top modal-block-top">
+            <div class="connect-wallet-title modal-block-title">Connect a Wallet</div>
+            <div class="connect-wallet-close modal-block-close" id="closeWalletImage">
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M4.99107 3.99016C4.58415 3.99027 4.21786 4.23692 4.06474 4.61393C3.91162 4.99094 4.00219 5.42314 4.29381 5.70696L10.5868 11.9999L4.29381 18.2929C4.03257 18.5437 3.92734 18.9162 4.0187 19.2666C4.11006 19.6171 4.38373 19.8907 4.73417 19.9821C5.08461 20.0734 5.45706 19.9682 5.70788 19.707L12.0009 13.414L18.2938 19.707C18.5446 19.9682 18.9171 20.0735 19.2675 19.9821C19.618 19.8907 19.8916 19.6171 19.983 19.2666C20.0744 18.9162 19.9691 18.5437 19.7079 18.2929L13.4149 11.9999L19.7079 5.70697C20.0036 5.41948 20.0926 4.9799 19.9318 4.60006C19.7711 4.22021 19.3936 3.97802 18.9813 3.99018C18.7215 3.99792 18.4749 4.1065 18.2938 4.29291L12.0008 10.5859L5.70787 4.29291C5.5196 4.09938 5.26107 3.99017 4.99107 3.99016Z" fill="white"></path>
+               </svg>
+            </div>
+         </div>
+         <div class="connect-wallet-bottom">
+            <div class="connect-wallet-item">
+               <div class="connect-wallet-item-img">
+                  <img src="img/metamask-icon.png" alt="">
+               </div>
+               <div class="connect-wallet-item-text" id="connect_meatamask">Metamask</div>
+            </div>
+            <div class="connect-wallet-item">
+               <div class="connect-wallet-item-img">
+                  <img src="img/trust-wallet-icon.png" alt="">
+               </div>
+               <div class="connect-wallet-item-text" id="connect_trust">Trust Wallet</div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="mint-nft-wrapper modal-block-wrapper" style="display: none;">
+      <div class="mint-nft-bg modal-block-bg"></div>
+      <div class="mint-nft-block modal-block">
+         <div class="connect-mint-nft modal-block-top">
+            <div class="mint-nft-title modal-block-title">Connect a Wallet</div>
+            <div class="mint-nft-close modal-block-close">
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M4.99107 3.99016C4.58415 3.99027 4.21786 4.23692 4.06474 4.61393C3.91162 4.99094 4.00219 5.42314 4.29381 5.70696L10.5868 11.9999L4.29381 18.2929C4.03257 18.5437 3.92734 18.9162 4.0187 19.2666C4.11006 19.6171 4.38373 19.8907 4.73417 19.9821C5.08461 20.0734 5.45706 19.9682 5.70788 19.707L12.0009 13.414L18.2938 19.707C18.5446 19.9682 18.9171 20.0735 19.2675 19.9821C19.618 19.8907 19.8916 19.6171 19.983 19.2666C20.0744 18.9162 19.9691 18.5437 19.7079 18.2929L13.4149 11.9999L19.7079 5.70697C20.0036 5.41948 20.0926 4.9799 19.9318 4.60006C19.7711 4.22021 19.3936 3.97802 18.9813 3.99018C18.7215 3.99792 18.4749 4.1065 18.2938 4.29291L12.0008 10.5859L5.70787 4.29291C5.5196 4.09938 5.26107 3.99017 4.99107 3.99016Z" fill="white"></path>
+               </svg>
+            </div>
+         </div>
+         <div class="mint-nft-bottom">
+            <div class="avatar-page-banner-img mint-nft-img">
+               <img class="avatar-page-banner-img-1" src="img/avatar-page-banner-img-1.png" id="banner-frame" alt="">
+               <img class="avatar-page-banner-img-2" src="img/avatar-page-banner-img-2.png" id="banner-background" alt="">
+               <img class="avatar-page-banner-img-3" src="img/avatar-page-banner-img-3.png" id="banner-body" alt="">
+               <img class="avatar-page-banner-img-4" src="img/avatar-page-banner-img-4.png" id="banner-head" alt="">
+               <img class="avatar-page-banner-img-5" src="img/avatar-page-banner-img-5.png" id="banner-glasses" alt="">
+               <img class="avatar-page-banner-img-6" src="img/avatar-page-banner-img-6.png" id="banner-headdress" alt="">
+               <img class="avatar-page-banner-img-7" src="img/avatar-page-banner-img-7.png" id="banner-jewel" alt="">
+               <img class="avatar-page-banner-img-8" src="img/avatar-page-banner-img-8.png" id="banner-other" alt="">
+            </div>
+            <div class="mint-nft-total">
+               <p>Total quantity of NFT:</p>
+               <p><span>53</span> / <span>10000</span></p>
+            </div>
+            <div class="mint-nft-counter">
+               <div class="mint-nft-counter-top">Number of NFT</div>
+               <div class="mint-nft-counter-bottom">
+                  <div class="mint-nft-counter-btn">-</div>
+                  <div class="mint-nft-counter-num">
+                     <input type="text" value="2">
+                  </div>
+                  <div class="mint-nft-counter-btn">+</div>
+               </div>
+            </div>
+            <div class="mint-nft-btn btn green">
+               <span>MINT</span>
+            </div>
+         </div>
+      </div>
+   </div>
+   <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+   <script src="js/connectWallet.js"></script>
       <main>

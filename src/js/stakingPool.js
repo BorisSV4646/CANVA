@@ -7,7 +7,7 @@ const spanElementStake = stakeButton.querySelector("span");
 
 addTokenButton.addEventListener("click", function () {
   const tokenAddress = "0x5Ec8d136E4F4E5fBA63Fb1aC7679ee8C4fA3Ace7"; // Адрес токена
-  const tokenSymbol = "CNV"; // Символ токена
+  const tokenSymbol = "CANVA"; // Символ токена
   const tokenDecimals = 18; // Количество десятичных знаков токена
 
   ethereum
@@ -308,6 +308,7 @@ function formatTime(time) {
 
 async function getStaking() {
   const stakeContract = await getContract("https://rpc.sepolia.org");
+  const tokenContract = await getTokenContract("https://rpc.sepolia.org");
   const waleetAdress = await getWallet();
   try {
     const balanceStaked = await stakeContract.methods
@@ -328,7 +329,7 @@ async function getStaking() {
     const balanceHarvest = await stakeContract.methods
       .pendingReward(waleetAdress)
       .call();
-    const finalHarvestStaked = Number(balanceHarvest) / 10 ** 18;
+    const finalHarvestStaked = Math.floor(Number(balanceHarvest) / 10 ** 18);
     const tokenElementStaked = document.getElementById("harvestBalance");
     const spanElementStaked = tokenElementStaked.getElementsByTagName("p");
 
@@ -363,6 +364,13 @@ async function getStaking() {
   if ((await stakeContract.methods.pendingReward(waleetAdress).call()) > 0) {
     button.addClass("green").removeClass("disabled");
   }
+
+  const balanceTotal = await tokenContract.methods
+    .balanceOf("0xa43fA2cfF564f70376b422AA3d3b45f63fCdbca2")
+    .call();
+  const finalBalanceTotal = Math.floor(Number(balanceTotal) / 10 ** 18);
+  const element = document.getElementById("totalStaked");
+  element.innerHTML = `${finalBalanceTotal.toLocaleString()} CANVA`;
 }
 
 getStaking();

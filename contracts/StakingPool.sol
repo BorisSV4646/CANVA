@@ -242,6 +242,7 @@ contract StakingPool is Ownable, ReentrancyGuard {
      */
     function withdraw(uint256 _amount) external nonReentrant {
         UserInfo storage user = userInfo[msg.sender];
+        uint256 reefReward;
         require(user.amount >= _amount, "Amount to withdraw too high");
 
         address recipient = ReferralProgram(referralProgramAddress)
@@ -278,7 +279,7 @@ contract StakingPool is Ownable, ReentrancyGuard {
             // calculate fee
             uint256 feeAmount = pending.mul(harvestFee).div(FEE_PRECISION);
             // calculate reef reward
-            uint256 reefReward = pending.mul(referalFee).div(FEE_PRECISION);
+            reefReward = pending.mul(referalFee).div(FEE_PRECISION);
             // send fees to burn address
             rewardToken.safeTransfer(rewardToken.burnAddress(), feeAmount);
             // send rewards to user

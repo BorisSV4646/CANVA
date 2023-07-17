@@ -20,7 +20,7 @@
                         <div class="referral-banner-block">
                            <div class="referral-banner-block-title">YOUR Invitation Link</div>
                            <div class="referral-banner-block-field">
-                              <p id="link">https://biswap.org/?ref=d87b4761e5f 8ee4d80e4</p>
+                              <p id="linkRef">https://biswap.org/?ref=d87b4761e5f 8ee4d80e4</p>
                               <div class="referral-banner-block-field-icon">
                                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                                     fill="none">
@@ -100,7 +100,7 @@
                                        <span class="info-block right">Content text</span>
                                     </span>
                                  </p>
-                                 <p id="totalErned">21 122.032 $CNV<br><span id="spanValue">~$23.0928</span></p>
+                                 <p id="totalErned">21 122.032 $CANVA<br><span id="spanValue">~$23.0928</span></p>
                               </div>
                            </div>
                         </div>
@@ -110,7 +110,7 @@
                                  <div class="referral-info-block-top">Unclaimed Rewards</div>
                                  <div class="referral-info-block-center">
                                     <img src="img/staking-icon.png" alt="">
-                                    <span id="unclaimReward">192 CNV</span>
+                                    <span id="unclaimReward">192 CANVA</span>
                                  </div>
                                  <div class="referral-info-block-bottom" id="spanValue2">~$23.0928</div>
                               </div>
@@ -127,7 +127,7 @@
                      <div class="referral-table">
                         <div class="referral-table-top">
                            <div class="referral-table-top-l">
-                              <div class="referral-table-title">Free CNV Referral List</div>
+                              <div class="referral-table-title">Free CANVA Referral List</div>
                               <div class="referral-table-text">All your referral friends in one place</div>
                            </div>
                            <div class="referral-table-top-r">

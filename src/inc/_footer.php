@@ -7,14 +7,14 @@
                <div class="footer-top">
                   <div class="footer-l">
                      <div class="footer-l-top">
-                        <div class="footer-l-top-text">
+                        <div class="footer-l-top-text" id="tokenPrice">
                            <img src="img/header-submenu-r-bottom.png" alt="">
-                           <span class="green">1 $CNV =</span>
-                           <span>$0,023</span>
+                           <span class="green">1 CANVA<?=$contentData["TokenName"];?> =</span>
+                           <span>$ ---</span>
                         </div>
-						<a href="/token" target="_blank">
+						<a href="<?=$contentData["links"]["buy_token"];?>" target="_blank">
 							<div class="footer-l-top-btn btn green">
-							   <span>BUY $CNV</span>
+							   <span>BUY CANVA<?=$contentData["TokenName"];?></span>
 							</div>
 						</a>
                      </div>
@@ -28,9 +28,9 @@
                               <span>Total supply:</span>
                               <span>0</span>
                            </div>
-                           <div class="footer-l-bottom-item" id="totalBurned">
-                              <span>Total Burned:</span>
-                              <span>0</span>
+                           <div class="footer-l-bottom-item" id="marketCup">
+                              <span>Market Cap:</span>
+                              <span>-</span>
                            </div>
                         </div>
                      </div>
@@ -54,14 +54,13 @@
                               </svg>
                            </div>
                            <div class="footer-menu-links">
-                              <a href="#" class="footer-menu-link">White Paper</a>
-                              <a href="#" class="footer-menu-link">Project overview</a>
-                              <a href="#" class="footer-menu-link">Token metrics</a>
-                              <a href="#" class="footer-menu-link">Ask Community</a>
+                              <a href="/token" class="footer-menu-link">About <?=$contentData["TokenName"];?> Token</a>
+							  <a href="/wallet" class="footer-menu-link">Mobile app</a>
+							  <a href="https://docs.canvaisland.com/" class="footer-menu-link">White paper</a>
                            </div>
                         </div>
                         <div class="footer-menu-col">
-                           <div class="footer-menu-title">Explore
+                           <div class="footer-menu-title">Game
                               <svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" viewBox="0 0 13 12"
                                  fill="none">
                                  <g clip-path="url(#clip0_0_163)">
@@ -77,13 +76,13 @@
                               </svg>
                            </div>
                            <div class="footer-menu-links">
-                              <a href="#" class="footer-menu-link">GMEE Token</a>
-                              <a href="#" class="footer-menu-link">Arc8 App</a>
-                              <a href="#" class="footer-menu-link">G-Bot NFTs</a>
+                              <a href="/play" class="footer-menu-link">Play</a>
+							  <a href="/island" class="footer-menu-link">Islands</a>
+							  <a href="/avatars" class="footer-menu-link">Avatars</a>
                            </div>
                         </div>
                         <div class="footer-menu-col">
-                           <div class="footer-menu-title">Participate
+                           <div class="footer-menu-title">Follow us
                               <svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" viewBox="0 0 13 12"
                                  fill="none">
                                  <g clip-path="url(#clip0_0_163)">
@@ -99,23 +98,14 @@
                               </svg>
                            </div>
                            <div class="footer-menu-links">
-                              <a href="#" class="footer-menu-link">Press Kit</a>
-                              <a href="#" class="footer-menu-link">Privacy Policy</a>
-                              <a href="#" class="footer-menu-link">Terms & Conditions</a>
-                              <a href="#" class="footer-menu-link">NFT Licence Agreement</a>
+                              <a href="<?=$contentData["links"]["telegram"];?>" class="footer-menu-link">Telegram Announcement</a>
+                              <a href="<?=$contentData["links"]["telegram_chat"];?>" class="footer-menu-link">Telegram Community</a>
+                              <a href="<?=$contentData["links"]["twitter"];?>" class="footer-menu-link">Twitter</a>
+                              <a href="<?=$contentData["links"]["discord"];?>" class="footer-menu-link">Discord</a>
+                              <a href="<?=$contentData["links"]["instagram"];?>" class="footer-menu-link">Instagram</a>
                            </div>
                         </div>
                      </div>
-                  </div>
-               </div>
-               <div class="footer-bottom">
-                  <div class="footer-copy">©2023 Moonfrost Pte. Ltd</div>
-                  <div class="footer-bottom-links">
-                     <a href="#">Presskit</a>
-                     <a href="#">Oxalis</a>
-                     <a href="#">Contact</a>
-                     <a href="#">Collaborations</a>
-                     <a href="#" class="green">Privacy Policy</a>
                   </div>
                </div>
             </div>
@@ -131,6 +121,23 @@
    <script src="js/main.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
    <script src="js/footerSuplay.js"></script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(94250895, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/94250895" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 </body>
 
 </html>

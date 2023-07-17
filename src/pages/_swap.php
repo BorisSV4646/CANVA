@@ -61,7 +61,7 @@
                               <div class="swap-block-field-row-bottom-input">
                                  <input id="inputSwap" type="text" placeholder="0.0">
                               </div>
-                              <div class="swap-block-field-row-bottom-value" id="tokenPrice">~2 354,91 USD</div>
+                              <div class="swap-block-field-row-bottom-value" id="tokenPrice">~0 USD</div>
                            </div>
                         </div>
                         <div class="swap-block-icon">

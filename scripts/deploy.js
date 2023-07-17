@@ -146,7 +146,7 @@ async function main() {
 
   await verify(CanvaToken.address, [
     "CanvaToken",
-    "CNV",
+    "CANVA",
     deployer.address,
     String(30 * 10 ** 18),
     deployer.address,
@@ -173,7 +173,7 @@ async function listenForNewSmartChefContract(stakingFactory) {
 }
 
 function saveForFront(contracts) {
-  const contractsDir = path.join(__dirname, "../src/contracts");
+  const contractsDir = path.join(__dirname, "../src new/contracts");
 
   if (!fs.existsSync(contractsDir)) {
     fs.mkdirSync(contractsDir);

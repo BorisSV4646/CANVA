@@ -12,7 +12,7 @@
                         <p>Staking</p>
                         <p>Staking</p>
                      </div>
-                     <div class="swap-banner-text">Stake $CNV to earn more $CNV</div>
+                     <div class="swap-banner-text">Stake $CANVA to earn more $CANVA</div>
                   </div>
                </div>
             </div>
@@ -32,7 +32,7 @@
                                     <img src="img/header-submenu-r-bottom.png" alt="">
                                  </div>
                               </div>
-                              <div class="staking-item-top-r">CNV/CNV</div>
+                              <div class="staking-item-top-r">CANVA/CANVA</div>
                            </div>
                            <div class="staking-item-info">
                               <div class="staking-item-info-row">
@@ -53,7 +53,7 @@
                               </div>
                               <div class="staking-item-info-row">
                                  <p>Earn</p>
-                                 <p>CNV</p>
+                                 <p>CANVA</p>
                               </div>
                               <div class="staking-item-info-bottom" id="timeStake">
                                  <p>20% unstaking fee until</p>
@@ -74,7 +74,7 @@
                               </div>
                               <div class="staking-item-center-row">
                                  <div class="staking-item-center-row-l" id="balanceStaked">
-                                    <p>CNV Staked:</p>
+                                    <p>CANVA Staked:</p>
                                     <p>0.000</p>
                                  </div>
                                  <!-- <div class="staking-item-center-row-r">
@@ -106,9 +106,9 @@
                                  </svg>
                               </div>
                               <div class="staking-item-details-bottom">
-                                 <div class="staking-item-details-bottom-top">
+                                 <div class="staking-item-details-bottom-top" >
                                     <p>Total Staked</p>
-                                    <p>10,283.9043</p>
+                                    <p id="totalStaked">10,283.9043</p>
                                  </div>
                                  <div class="staking-item-details-bottom-center">
                                     <a href="https://sepolia.etherscan.io/address/0xa43fa2cff564f70376b422aa3d3b45f63fcdbca2">View contract <svg xmlns="http://www.w3.org/2000/svg" width="18"
@@ -118,7 +118,7 @@
                                              fill="#BAD34A" />
                                        </svg>
                                     </a>
-                                    <a href="0x5Ec8d136E4F4E5fBA63Fb1aC7679ee8C4fA3Ace7" id="addTokenButton">Add CNV <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    <a href="0x5Ec8d136E4F4E5fBA63Fb1aC7679ee8C4fA3Ace7" id="addTokenButton">Add CANVA <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                           viewBox="0 0 24 24" fill="none">
                                           <path d="M21.9206 1.67773L13.3145 8.05582L14.9132 4.29701L21.9206 1.67773Z"
                                              fill="#E17726" />
@@ -200,89 +200,6 @@
                                        </svg>
                                     </a>
                                  </div>
-                                 <!-- <div class="staking-item-details-bottom-bottom">
-                                    <a href="#">Add USDT <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                          viewBox="0 0 24 24" fill="none">
-                                          <path d="M21.9206 1.67773L13.3145 8.05582L14.9132 4.29701L21.9206 1.67773Z"
-                                             fill="#E17726" />
-                                          <path d="M2.08789 1.67773L10.609 8.11535L9.08677 4.29701L2.08789 1.67773Z"
-                                             fill="#E27625" />
-                                          <path
-                                             d="M18.8247 16.4663L16.5371 19.97L21.4354 21.3221L22.8301 16.5428L18.8247 16.4663Z"
-                                             fill="#E27625" />
-                                          <path
-                                             d="M1.17773 16.5428L2.5639 21.3221L7.46228 19.97L5.18317 16.4663L1.17773 16.5428Z"
-                                             fill="#E27625" />
-                                          <path
-                                             d="M7.19922 10.5476L5.83008 12.6055L10.6859 12.8267L10.5158 7.59668L7.19922 10.5476Z"
-                                             fill="#E27625" />
-                                          <path
-                                             d="M16.8096 10.5476L13.4335 7.53711L13.3145 12.8266L18.1703 12.6055L16.8096 10.5476Z"
-                                             fill="#E27625" />
-                                          <path d="M7.46289 19.97L10.3884 18.5498L7.87106 16.5769L7.46289 19.97Z"
-                                             fill="#E27625" />
-                                          <path d="M13.6113 18.5498L16.5367 19.97L16.1285 16.5769L13.6113 18.5498Z"
-                                             fill="#E27625" />
-                                          <path
-                                             d="M16.5367 19.97L13.6113 18.5498L13.8409 20.4547L13.8154 21.2541L16.5367 19.97Z"
-                                             fill="#D5BFB2" />
-                                          <path
-                                             d="M7.46289 19.97L10.1843 21.2541L10.1672 20.4547L10.3884 18.5498L7.46289 19.97Z"
-                                             fill="#D5BFB2" />
-                                          <path d="M10.2349 15.3182L7.80273 14.6039L9.52053 13.813L10.2349 15.3182Z"
-                                             fill="#233447" />
-                                          <path d="M13.7637 15.3182L14.478 13.813L16.2128 14.6039L13.7637 15.3182Z"
-                                             fill="#233447" />
-                                          <path d="M7.4627 19.97L7.8879 16.4663L5.18359 16.5428L7.4627 19.97Z"
-                                             fill="#CC6228" />
-                                          <path d="M16.1113 16.4663L16.5365 19.97L18.8241 16.5428L16.1113 16.4663Z"
-                                             fill="#CC6228" />
-                                          <path
-                                             d="M18.1703 12.6052L13.3145 12.8263L13.7652 15.3181L14.4795 13.8129L16.2144 14.6037L18.1703 12.6052Z"
-                                             fill="#CC6228" />
-                                          <path
-                                             d="M7.80302 14.6037L9.52086 13.8129L10.2352 15.3181L10.6859 12.8263L5.83008 12.6052L7.80302 14.6037Z"
-                                             fill="#CC6228" />
-                                          <path d="M5.83008 12.6052L7.87106 16.5767L7.80302 14.6037L5.83008 12.6052Z"
-                                             fill="#E27525" />
-                                          <path d="M16.2139 14.6037L16.1289 16.5767L18.1699 12.6052L16.2139 14.6037Z"
-                                             fill="#E27525" />
-                                          <path
-                                             d="M10.687 12.8264L10.2363 15.3181L10.8061 18.2605L10.9252 14.3827L10.687 12.8264Z"
-                                             fill="#E27525" />
-                                          <path
-                                             d="M13.3136 12.8264L13.084 14.3742L13.1946 18.2605L13.7644 15.3181L13.3136 12.8264Z"
-                                             fill="#E27525" />
-                                          <path
-                                             d="M13.7651 15.3184L13.1953 18.2608L13.612 18.5499L16.1292 16.577L16.2143 14.604L13.7651 15.3184Z"
-                                             fill="#F5841F" />
-                                          <path
-                                             d="M7.80273 14.604L7.87076 16.577L10.388 18.5499L10.8047 18.2608L10.2349 15.3184L7.80273 14.604Z"
-                                             fill="#F5841F" />
-                                          <path
-                                             d="M13.8155 21.2539L13.841 20.4545L13.6284 20.2674H10.3713L10.1672 20.4545L10.1843 21.2539L7.46289 19.9697L8.41533 20.7521L10.3458 22.0873H13.6539L15.5843 20.7521L16.5368 19.9697L13.8155 21.2539Z"
-                                             fill="#C0AC9D" />
-                                          <path
-                                             d="M13.6121 18.5496L13.1954 18.2605H10.8058L10.3891 18.5496L10.168 20.4545L10.3721 20.2674H13.6292L13.8418 20.4545L13.6121 18.5496Z"
-                                             fill="#161616" />
-                                          <path
-                                             d="M22.277 8.47228L22.9998 4.95157L21.9198 1.67749L13.6113 7.84298L16.8088 10.5473L21.316 11.8654L22.311 10.7004L21.8773 10.3857L22.5746 9.75639L22.0474 9.33968L22.7362 8.82095L22.277 8.47228Z"
-                                             fill="#763E1A" />
-                                          <path
-                                             d="M1 4.95157L1.73134 8.47228L1.26363 8.82095L1.95247 9.33968L1.4252 9.75639L2.12254 10.3857L1.68883 10.7004L2.6838 11.8654L7.19949 10.5473L10.3885 7.84298L2.08854 1.67749L1 4.95157Z"
-                                             fill="#763E1A" />
-                                          <path
-                                             d="M21.3164 11.8657L16.8092 10.5476L18.1699 12.6056L16.1289 16.577L18.8247 16.543H22.8301L21.3164 11.8657Z"
-                                             fill="#F5841F" />
-                                          <path
-                                             d="M7.19865 10.5474L2.68297 11.8655L1.17773 16.5428H5.18317L7.87045 16.5768L5.82948 12.6054L7.19865 10.5474Z"
-                                             fill="#F5841F" />
-                                          <path
-                                             d="M13.3144 12.8265L13.6121 7.84309L14.9132 4.29688H9.08789L10.389 7.84309L10.6867 12.8265L10.7972 14.3912L10.8057 18.2606H13.1954L13.2039 14.3912L13.3144 12.8265Z"
-                                             fill="#F5841F" />
-                                       </svg>
-                                    </a>
-                                 </div> -->
                               </div>
                            </div>
                         </div>

@@ -1,0 +1,14 @@
+@font-face {
+   font-family: 'Gouranga';
+   src: url('../fonts/Gouranga/Gouranga-Pixel.ttf');
+   src: url('../fonts/Gouranga/Gouranga-Pixel.ttf') format('truetype');
+   font-weight: 400;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Gouranga Shadow';
+   src: url('../fonts/Gouranga/Gouranga-Shadow.ttf');
+   src: url('../fonts/Gouranga/Gouranga-Shadow.ttf') format('truetype');
+   font-weight: 400;
+}

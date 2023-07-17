@@ -1,7 +1,7 @@
 const totalSuplay = document.getElementById("totalSuplay");
-const totalBurned = document.getElementById("totalBurned");
+// const totalBurned = document.getElementById("totalBurned");
 const spanElementSupply = totalSuplay.querySelectorAll("span");
-const spanElementBurn = totalBurned.querySelectorAll("span");
+// const spanElementBurn = totalBurned.querySelectorAll("span");
 
 function readJSONFile(url) {
   return fetch(url)
@@ -44,34 +44,33 @@ async function getTokenBalance() {
   }
 }
 
-async function getBurnContract(web3provider) {
-  const web3 = new Web3(web3provider);
-  const burnContractAddress = "0x120190C339C3Ef0ECA437C467323197c25967aAc";
+// async function getBurnContract(web3provider) {
+//   const web3 = new Web3(web3provider);
+//   const burnContractAddress = "0x120190C339C3Ef0ECA437C467323197c25967aAc";
 
-  const burnContractABI = await readJSONFile("contracts/BurnTokens.json");
-  const burnContract = new web3.eth.Contract(
-    burnContractABI,
-    burnContractAddress
-  );
+//   const burnContractABI = await readJSONFile("contracts/BurnTokens.json");
+//   const burnContract = new web3.eth.Contract(
+//     burnContractABI,
+//     burnContractAddress
+//   );
 
-  return burnContract;
-}
+//   return burnContract;
+// }
 
-async function getBurnBalance() {
-  const burnContract = await getBurnContract("https://rpc.sepolia.org");
+// async function getBurnBalance() {
+//   const burnContract = await getBurnContract("https://rpc.sepolia.org");
 
-  try {
-    const balance = await burnContract.methods.burnedAmount().call();
+//   try {
+//     const balance = await burnContract.methods.burnedAmount().call();
 
-    if (spanElementBurn.length > 1) {
-      const spanElement = spanElementBurn[1];
-      const balanceBurn = Number(balance) / 10 ** 18;
-      spanElement.textContent = balanceBurn.toLocaleString();
-    }
-  } catch (error) {
-    console.error("Ошибка при получении баланса токенов:", error);
-  }
-}
+//     if (spanElementBurn.length > 1) {
+//       const spanElement = spanElementBurn[1];
+//       const balanceBurn = Number(balance) / 10 ** 18;
+//       spanElement.textContent = balanceBurn.toLocaleString();
+//     }
+//   } catch (error) {
+//     console.error("Ошибка при получении баланса токенов:", error);
+//   }
+// }
 
 getTokenBalance();
-getBurnBalance();
