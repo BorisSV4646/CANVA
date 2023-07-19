@@ -300,7 +300,7 @@
                               <a href="https://play.canvaisland.com/" class="header-submenu-item">
                                  <div class="header-submenu-item-l">
                                     <div class="header-submenu-item-icon">
-                                       <img src="/img/play.png">
+                                       <img src="img/play.png">
                                     </div>
                                  </div>
                                  <div class="header-submenu-item-r">
@@ -311,7 +311,7 @@
                               <a href="/island" class="header-submenu-item">
                                  <div class="header-submenu-item-l">
                                     <div class="header-submenu-item-icon">
-                                      <img src="/img/island.png">
+                                      <img src="img/island.png">
                                     </div>
                                  </div>
                                  <div class="header-submenu-item-r">
@@ -322,7 +322,7 @@
                               <a href="/avatars" class="header-submenu-item">
                                  <div class="header-submenu-item-l">
                                     <div class="header-submenu-item-icon">
-                                       <img src="/img/avatars.png">
+                                       <img src="img/avatars.png">
                                     </div>
                                  </div>
                                  <div class="header-submenu-item-r">
@@ -363,7 +363,7 @@
                               </div>
                               <div class="header-submenu-r-bottom">
                                  <img src="img/header-submenu-r-bottom.png" alt="">
-                                 <span class="green">1 <?=$contentData["TokenName"];?> =</span> <span>$ ---</span>
+                                 <span class="green">1 CANVA<?=$contentData["TokenName"];?> =</span> <span>$ ---</span>
                               </div>
                            </div>
                         </div>
@@ -503,7 +503,7 @@
                               </div>
                               <div class="header-submenu-r-bottom">
                                  <img src="img/header-submenu-r-bottom.png" alt="">
-                                 <span class="green">1 <?=$contentData["TokenName"];?> =</span> <span>$ ---</span>
+                                 <span class="green">1 CANVA<?=$contentData["TokenName"];?> =</span> <span>$ ---</span>
                               </div>
                            </div>
                         </div>
@@ -531,7 +531,7 @@
                               <a href="/wallet" class="header-submenu-item">
                                  <div class="header-submenu-item-l">
                                     <div class="header-submenu-item-icon">
-                                       <img src="/img/mobile app.png">
+                                       <img src="img/mobile app.png">
                                     </div>
                                  </div>
                                  <div class="header-submenu-item-r">
@@ -542,7 +542,7 @@
                               <a href="/token" class="header-submenu-item">
                                  <div class="header-submenu-item-l">
                                     <div class="header-submenu-item-icon">
-                                       <img src="/img/token.png">
+                                       <img src="img/token.png">
                                     </div>
                                  </div>
                                  <div class="header-submenu-item-r">
@@ -595,7 +595,7 @@
                               </div>
                               <div class="header-submenu-r-bottom">
                                  <img src="img/header-submenu-r-bottom.png" alt="">
-                                 <span class="green">1 <?=$contentData["TokenName"];?> =</span> <span>$ ---</span>
+                                 <span class="green">1 CANVA<?=$contentData["TokenName"];?> =</span> <span>$ ---</span>
                               </div>
                            </div>
                         </div>

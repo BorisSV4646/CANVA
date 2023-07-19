@@ -22,7 +22,7 @@
                <div class="container" >
                   <div class="staking-inner" >
                      <div class="staking-items" >
-                        <div class="staking-item" >
+                        <div class="staking-item">
                            <div class="staking-item-top">
                               <div class="staking-item-top-l">
                                  <div class="staking-item-top-icon-1">
@@ -48,7 +48,7 @@
                                     </span>
                                  </p>
                                  <p>
-                                    <span class="per">365%</span>
+                                    <span class="per" id="apr">365%</span>
                                  </p>
                               </div>
                               <div class="staking-item-info-row">
@@ -204,7 +204,7 @@
                            </div>
                         </div>
                         
-                     <div class="staking-pagination pagination">
+                     <!-- <div class="staking-pagination pagination">
                         <a href="#" class="pagination-item" >
                            <span>
                               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"
@@ -240,7 +240,7 @@
                               </svg>
                            </span>
                         </a>
-                     </div>
+                     </div> -->
                   </div>
                </div>
             </div>

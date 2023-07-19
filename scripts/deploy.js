@@ -9,14 +9,14 @@ async function main() {
   const canva = await ethers.getContractFactory("CanvaToken", deployer);
   const CanvaToken = await canva.deploy(
     "CanvaToken",
-    "CNV",
+    "CANVA",
     deployer.address,
     (30 * 10 ** 18).toLocaleString("fullwide", { useGrouping: false }),
     deployer.address
   );
   const finalDeployCanva = await CanvaToken.deployed(
     "CanvaToken",
-    "CNV",
+    "CANVA",
     deployer.address,
     (30 * 10 ** 18).toLocaleString("fullwide", { useGrouping: false }),
     deployer.address

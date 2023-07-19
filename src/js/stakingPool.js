@@ -184,8 +184,20 @@ $(".staking-item-btn").click(function () {
     updateSliderAppearance();
 
     stakeButton.addEventListener("click", function () {
-      const address = "0xDbfEEa0fc1F1F2f43F7DbaD7827Cccad8C47c337"; // ! сделать чтобы подгружал реферала он
-      stakingFunction(address);
+      const url = window.location.href;
+      const addressAdmin = "0xDbfEEa0fc1F1F2f43F7DbaD7827Cccad8C47c337"; //!поменять на актуальный адрес админа
+
+      //TODO пока закоментил, пока нет нормального URL
+      // if (url === "http://canva.com/staking") {
+      //   //!поменять на актуальный адрес стейкинга
+      //   stakingFunction(addressAdmin);
+      // } else {
+      //   const segments = url.split("/");
+      //   const referralAdress = segments[segments.length - 1];
+      //   stakingFunction(referralAdress);
+      // }
+
+      stakingFunction(addressAdmin);
     });
   }
 });
@@ -371,6 +383,10 @@ async function getStaking() {
   const finalBalanceTotal = Math.floor(Number(balanceTotal) / 10 ** 18);
   const element = document.getElementById("totalStaked");
   element.innerHTML = `${finalBalanceTotal.toLocaleString()} CANVA`;
+
+  const apr = document.getElementById("apr");
+  const aprFinal = Math.floor((21024000 / finalBalanceTotal) * 100);
+  apr.innerHTML = `${aprFinal.toLocaleString()}%`;
 }
 
 getStaking();

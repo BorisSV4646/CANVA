@@ -59,7 +59,7 @@ if (isset($_GET["menu"])) {
   }
   
 } else {
-  @include("pages/_swap.php");
+  @include("pages/_index.php");
 }
 
 @include("inc/_footer.php");

@@ -139,10 +139,6 @@ contract ReferralProgram is Ownable, AccessControl, ReentrancyGuard {
 
         beneficiaries[msg.sender].unclaimReward = 0;
 
-        rewardToken.safeTransferFrom(
-            address(poolCanva),
-            address(msg.sender),
-            amount
-        );
+        rewardToken.safeTransfer(address(msg.sender), amount);
     }
 }

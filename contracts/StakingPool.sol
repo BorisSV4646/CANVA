@@ -66,11 +66,8 @@ contract StakingPool is Ownable, ReentrancyGuard {
     // Unstake fee (when increasedFeePeriod is passed) is 1% by default. 1000000 = 100%.
     uint256 public unstakeFee = 10000;
 
-    // Harvest fee is 3% by default. 1000000 = 100%.
-    uint256 public harvestFee = 30000;
-
-    // Referal fee is 7% by default. 1000000 = 100%.
-    uint256 public referalFee = 70000;
+    // Referal fee is 10% by default. 1000000 = 100%.
+    uint256 public referalFee = 100000;
 
     // Fee precision
     uint256 constant FEE_PRECISION = 1000000;
@@ -121,7 +118,8 @@ contract StakingPool is Ownable, ReentrancyGuard {
         require(!isInitialized, "Already initialized");
         require(msg.sender == SMART_CHEF_FACTORY, "Not factory");
 
-        _rewardToken.approve(_referralProgramAddress, 17500000 * 10 ** 18);
+        //? пока не нужно, так как теперь отправляет монеты на реферальный контракт
+        // _rewardToken.approve(_referralProgramAddress, 17500000 * 10 ** 18);
 
         // Make this contract initialized
         isInitialized = true;
@@ -190,16 +188,17 @@ contract StakingPool is Ownable, ReentrancyGuard {
                 .div(PRECISION_FACTOR)
                 .sub(user.rewardDebt);
             if (pending > 0) {
-                // calculate fee
-                uint256 feeAmount = pending.mul(harvestFee).div(FEE_PRECISION);
                 // calculate reef reward
                 uint256 reefReward = pending.mul(referalFee).div(FEE_PRECISION);
-                // send fees to burn address
-                rewardToken.safeTransfer(rewardToken.burnAddress(), feeAmount);
                 // send rewards to user
                 rewardToken.safeTransfer(
                     address(msg.sender),
-                    pending.sub(feeAmount).sub(reefReward)
+                    pending.sub(reefReward)
+                );
+                // send rewards to referral
+                rewardToken.safeTransfer(
+                    address(referralProgramAddress),
+                    reefReward
                 );
                 // update referal info
                 ReferralProgram(referralProgramAddress).updateNexttDeposit(
@@ -276,16 +275,17 @@ contract StakingPool is Ownable, ReentrancyGuard {
 
         // harvest rewards
         if (pending > 0) {
-            // calculate fee
-            uint256 feeAmount = pending.mul(harvestFee).div(FEE_PRECISION);
             // calculate reef reward
             reefReward = pending.mul(referalFee).div(FEE_PRECISION);
-            // send fees to burn address
-            rewardToken.safeTransfer(rewardToken.burnAddress(), feeAmount);
             // send rewards to user
             rewardToken.safeTransfer(
                 address(msg.sender),
-                pending.sub(feeAmount).sub(reefReward)
+                pending.sub(reefReward)
+            );
+            // send rewards to referral
+            rewardToken.safeTransfer(
+                address(referralProgramAddress),
+                reefReward
             );
         }
 
@@ -449,18 +449,15 @@ contract StakingPool is Ownable, ReentrancyGuard {
      * @param _increasedFeePeriod period in seconds with increased unstake fee
      * @param _earlyUnstakeFee early unstake fee when "increasedFeePeriod" is not passed, 1000000 = 100%
      * @param _unstakeFee unstake fee when "increasedFeePeriod" is passed, 1000000 = 100%
-     * @param _harvestFee harvest fee, 1000000 = 100%
      */
     function updateFees(
         uint256 _increasedFeePeriod,
         uint256 _earlyUnstakeFee,
-        uint256 _unstakeFee,
-        uint256 _harvestFee
+        uint256 _unstakeFee
     ) external onlyOwner {
         increasedFeePeriod = _increasedFeePeriod;
         earlyUnstakeFee = _earlyUnstakeFee;
         unstakeFee = _unstakeFee;
-        harvestFee = _harvestFee;
     }
 
     /*
@@ -496,7 +493,7 @@ contract StakingPool is Ownable, ReentrancyGuard {
      */
     function harvestReward() external nonReentrant {
         UserInfo storage user = userInfo[msg.sender];
-
+        uint256 reefReward;
         require(user.amount > 0, "StakingPool: not rewards");
 
         address recipient = ReferralProgram(referralProgramAddress)
@@ -511,25 +508,24 @@ contract StakingPool is Ownable, ReentrancyGuard {
             .sub(user.rewardDebt);
 
         if (amountReward > 0) {
-            // calculate fee
-            uint256 feeAmount = amountReward.mul(harvestFee).div(FEE_PRECISION);
             // calculate reef reward
-            uint256 reefReward = amountReward.mul(referalFee).div(
-                FEE_PRECISION
-            );
-            // send fees to burn address
-            rewardToken.safeTransfer(rewardToken.burnAddress(), feeAmount);
+            reefReward = amountReward.mul(referalFee).div(FEE_PRECISION);
             // send rewards to user
             rewardToken.safeTransfer(
                 address(msg.sender),
-                amountReward.sub(feeAmount).sub(reefReward)
+                amountReward.sub(reefReward)
+            );
+            // send rewards to referral
+            rewardToken.safeTransfer(
+                address(referralProgramAddress),
+                reefReward
             );
         }
 
         // update referal info
         ReferralProgram(referralProgramAddress).updateInfoHarvest(
             recipient,
-            amountReward
+            reefReward
         );
 
         user.rewardDebt = user.amount.mul(accTokenPerShare).div(

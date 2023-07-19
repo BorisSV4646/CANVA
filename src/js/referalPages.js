@@ -195,8 +195,10 @@ async function createReferralString(referrals) {
 const linkRef = document.getElementById("linkRef");
 
 async function createLink(walletAddress) {
-  const generateLink = `http://canva.com/referral/referrallink?userId=${walletAddress}`;
+  const generateLink = `http://canva.com/staking/${walletAddress}`; //!изменить ссылку на актуальный URL
   linkRef.innerHTML = generateLink;
+
+  return generateLink;
 }
 
 function formatDate(timestamp) {
@@ -219,3 +221,23 @@ linkRef.addEventListener("click", () => {
   document.execCommand("copy");
   document.body.removeChild(inputElement);
 });
+
+async function socialShare() {
+  const shareData = {
+    title: "Join to CANVAISLAND",
+    text: "Join us and earn 10% of your friends' income!",
+    url: await createLink(await getWallet()),
+  };
+
+  const shareLink = document.getElementById("shareLink");
+
+  shareLink.addEventListener("click", async () => {
+    try {
+      await navigator.share(shareData);
+    } catch (err) {
+      console.log(err);
+    }
+  });
+}
+
+socialShare();

@@ -14,13 +14,13 @@
                            <p>Refer Friends<br><span class="green">Earn Crypto</span> Together</p>
                            <p>Refer Friends<br>Earn Crypto Together</p>
                         </div>
-                        <div class="referral-banner-text">Earn up to <span>7% from your friends’</span> earnings</div>
+                        <div class="referral-banner-text">Earn up to <span>10% from your friends’</span> earnings</div>
                      </div>
                      <div class="referral-banner-r">
                         <div class="referral-banner-block">
                            <div class="referral-banner-block-title">YOUR Invitation Link</div>
                            <div class="referral-banner-block-field">
-                              <p id="linkRef">https://biswap.org/?ref=d87b4761e5f 8ee4d80e4</p>
+                              <p id="linkRef"></p>
                               <div class="referral-banner-block-field-icon">
                                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                                     fill="none">
@@ -37,7 +37,7 @@
                                  </svg>
                               </div>
                            </div>
-                           <div class="referral-banner-block-share">
+                           <div class="referral-banner-block-share" id="shareLink">
                               Share link
                               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"
                                  fill="none">
@@ -71,7 +71,7 @@
                                        <span class="info-block up">Content text</span>
                                     </span>
                                  </p>
-                                 <p id="totalInvited">1 546</p>
+                                 <p id="totalInvited">0</p>
                               </div>
                               <div class="referral-info-item">
                                  <p>Staked Friends 
@@ -85,7 +85,7 @@
                                        <span class="info-block up">Content text</span>
                                     </span>
                                  </p>
-                                 <p id="pendingFriends">34</p>
+                                 <p id="pendingFriends">0</p>
                               </div>
                               <div class="referral-info-item">
                                  <p>Total Rewards Earned 
@@ -100,7 +100,7 @@
                                        <span class="info-block right">Content text</span>
                                     </span>
                                  </p>
-                                 <p id="totalErned">21 122.032 $CANVA<br><span id="spanValue">~$23.0928</span></p>
+                                 <p id="totalErned">0 $CANVA<br><span id="spanValue">~$0</span></p>
                               </div>
                            </div>
                         </div>
@@ -110,9 +110,9 @@
                                  <div class="referral-info-block-top">Unclaimed Rewards</div>
                                  <div class="referral-info-block-center">
                                     <img src="img/staking-icon.png" alt="">
-                                    <span id="unclaimReward">192 CANVA</span>
+                                    <span id="unclaimReward">0 CANVA</span>
                                  </div>
-                                 <div class="referral-info-block-bottom" id="spanValue2">~$23.0928</div>
+                                 <div class="referral-info-block-bottom" id="spanValue2">~$0</div>
                               </div>
                               <div class="referral-info-block-r">
                                  <div class="referral-info-block-btn btn green">
@@ -159,7 +159,7 @@
                                  </div>
                               </div> -->
                            </div>
-                           <div class="referral-pagination pagination">
+                           <!-- <div class="referral-pagination pagination">
                               <a href="#" class="pagination-item">
                                  <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"
@@ -195,7 +195,7 @@
                                     </svg>
                                  </span>
                               </a>
-                           </div>
+                           </div> -->
                         </div>
                      </div>
                      <div class="referral-asked">
